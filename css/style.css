@@ -329,7 +329,10 @@ img {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg-main) 100%);
+    background: linear-gradient(135deg, rgba(247, 249, 252, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%), url('../images/biwako-hero.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
