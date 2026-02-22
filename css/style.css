@@ -833,28 +833,44 @@ img {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: var(--space-2) 0;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
     .hero {
-        padding-top: 160px;
-        /* Increased further to ensure badge clears header */
+        padding-top: 140px;
     }
 
     .nav {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 80px;
-        /* Start exactly below the header */
+        top: 66px;
         left: 0;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 66px);
         background-color: var(--color-bg-main);
         justify-content: flex-start;
-        /* Align menu items to top */
         align-items: center;
-        padding-top: var(--space-8);
-        /* Add some breathing room at the top */
+        padding-top: var(--space-12);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        /* Optional: add slight shadow to distinguish from content */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: var(--space-6);
+        margin-bottom: var(--space-6);
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: var(--space-3) 0;
     }
 
     .nav.active {
