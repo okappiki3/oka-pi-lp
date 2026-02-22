@@ -474,6 +474,92 @@ img {
 }
 
 /* ==========================================================================
+   Process Section
+   ========================================================================== */
+.process-timeline {
+    max-width: 800px;
+    margin: var(--space-12) auto 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-primary-light);
+}
+
+.process-step {
+    position: relative;
+    margin-bottom: var(--space-8);
+    background: var(--color-bg-card);
+    padding: var(--space-6);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-number {
+    position: absolute;
+    left: -46px;
+    /* 30px padding + 16px half-width */
+    top: 24px;
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 0 0 4px var(--color-bg-alt);
+    z-index: 2;
+}
+
+.process-title {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.process-title i {
+    color: var(--color-primary);
+    font-size: 1.1em;
+}
+
+.process-desc {
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .process-timeline {
+        padding-left: 20px;
+    }
+
+    .process-number {
+        left: -36px;
+    }
+
+    .process-step {
+        padding: var(--space-4);
+    }
+}
+
+/* ==========================================================================
    Works Section (Carousel)
    ========================================================================== */
 .works-slider {
@@ -747,6 +833,11 @@ img {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 140px;
+        /* Increased to account for mobile header + badge */
+    }
+
     .nav {
         display: none;
         flex-direction: column;
