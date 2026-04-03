@@ -328,7 +328,7 @@ img {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 150px;
     background: linear-gradient(135deg, rgba(247, 249, 252, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%), url('../images/biwako-hero.jpg');
     background-size: cover;
     background-position: center bottom;
@@ -857,7 +857,7 @@ img {
     }
 
     .hero {
-        padding-top: 140px;
+        padding-top: 150px;
     }
 
     .nav {
