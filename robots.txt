@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oka-pi.com/sitemap.xml
