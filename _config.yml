@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll) build settings
+# 内部用ファイルを公開サイトから除外する
+exclude:
+  - TODO.md
+  - note-cta-texts.md
