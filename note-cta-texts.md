@@ -65,7 +65,7 @@ URL：https://note.com/okappiki3/n/nfc0e45c07174
 
 ---
 
-## 記事4：新幹線の中で、涙が滲んだ。
+## 記事4：支援先の経営者からのメールで、新幹線の中で涙が滲んだ。
 
 URL：https://note.com/okappiki3/n/n8cf50456fd29
 
@@ -85,7 +85,7 @@ URL：https://note.com/okappiki3/n/n8cf50456fd29
 
 ---
 
-## 記事5：独立開業33日目、初めての売り上げが立った日
+## 記事5：独立開業33日目、生成AIセミナーで初めての売り上げが立った日
 
 URL：https://note.com/okappiki3/n/n9dcd12e1bd58
 
