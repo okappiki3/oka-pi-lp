@@ -672,6 +672,91 @@ img {
 }
 
 /* ==========================================================================
+   Insights Section (note articles)
+   ========================================================================== */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.insights-grid .insight-card:nth-child(4),
+.insights-grid .insight-card:nth-child(5) {
+    /* Naturally wraps to second row (2 cards) on 3-col layout */
+}
+
+.insight-card {
+    background: var(--color-bg-card);
+    padding: var(--space-6);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(10, 88, 132, 0.2);
+}
+
+.insight-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 10px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: var(--space-3);
+}
+
+.insight-title {
+    font-size: var(--text-lg);
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+    line-height: 1.5;
+}
+
+.insight-desc {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: var(--space-4);
+}
+
+.insight-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    margin-top: auto;
+}
+
+.insight-card:hover .insight-link {
+    color: var(--color-primary-dark);
+}
+
+@media (max-width: 992px) {
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
    About Section
    ========================================================================== */
 .about-wrap {
