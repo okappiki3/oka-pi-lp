@@ -3,3 +3,4 @@
 exclude:
   - TODO.md
   - note-cta-texts.md
+  - gen_ogp.py
