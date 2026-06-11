@@ -3,3 +3,5 @@
 exclude:
   - TODO.md
   - note-cta-texts.md
+  - gen_ogp.py
+  - "seminar-page-指示書.md"
