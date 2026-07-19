@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実務ノート｜オカピー・パートナーズ</title>
+<meta name="description" content="製造業の現場経験と生成AIの実践から得た気づきをまとめる実務ノート。中小企業診断士・岡実による記事一覧。">
+<meta property="og:title" content="実務ノート｜オカピー・パートナーズ">
+<meta property="og:description" content="製造業の現場経験と生成AIの実践から得た気づきをまとめる実務ノート。中小企業診断士・岡実による記事一覧。">
+<meta property="og:image" content="https://oka-pi.com/images/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="実務ノート｜オカピー・パートナーズ">
+<meta name="twitter:description" content="製造業の現場経験と生成AIの実践から得た気づきをまとめる実務ノート。中小企業診断士・岡実による記事一覧。">
+<meta name="twitter:image" content="https://oka-pi.com/images/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+    { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --white:      #ffffff;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-600:   #555d6b;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      960px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); line-height: 1.8; font-size: 15px; background: var(--white); -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy-deep); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav a.current { color: var(--blue); font-weight: 700; }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy-deep); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy-deep); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+.hero { background: var(--blue-pale); padding: 56px 0 40px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.sec-label { font-size: 11px; letter-spacing: 3px; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 32px); font-weight: 900; color: var(--navy-deep); margin-bottom: 12px; }
+.lead { color: var(--text-light); max-width: 640px; line-height: 1.9; }
+
+.list-section { padding: 48px 0 32px; }
+.article-card { display: block; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 28px; text-decoration: none; color: var(--text); transition: all 0.2s; margin-bottom: 20px; box-shadow: var(--shadow); }
+.article-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: var(--blue-light); }
+.article-card time { display: block; font-size: 12px; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+.article-card h2 { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin-bottom: 10px; }
+.article-card p { font-size: 14px; line-height: 1.85; color: var(--text-light); margin-bottom: 12px; }
+.article-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.article-tag { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+
+.note-link-block { padding: 32px 0 64px; text-align: center; border-top: 1px solid var(--gray-200); margin-top: 24px; }
+.note-link-block p { color: var(--text-light); margin-bottom: 16px; }
+.note-link { display: inline-flex; align-items: center; gap: 8px; background: #41C9B4; color: var(--white); padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 14px; }
+.back-top { display: inline-block; margin-top: 20px; font-size: 13px; color: var(--text-light); text-decoration: none; }
+.back-top:hover { color: var(--blue); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/" class="current">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">ホーム</a> ／ 実務ノート</p>
+    <p class="sec-label">INSIGHTS FROM THE FIELD</p>
+    <h1>実務ノート</h1>
+    <p class="lead">
+      製造業の現場経験と、生成AIの実践から得た気づきを、解説記事としてまとめています。人柄・日々の気づきは<a href="https://note.com/okappiki3" target="_blank" rel="noopener">note（300件超）</a>で発信中です。
+    </p>
+  </div>
+</section>
+
+<section class="list-section">
+  <div class="container">
+    <a href="/insights/genai-katsuyo-map-756/" class="article-card">
+      <time datetime="2026-07-19">2026年7月19日</time>
+      <h2>製造業の生成AI活用756件を活用マップに重ねて読む</h2>
+      <p>ものづくり新聞の生成AI活用756件レポート（10分野分類）を、独自の「活用マップ」で読み解く解説記事。事例の中心は「組織内×読む」領域。中小製造業がまず取り組むべきことを整理しています。</p>
+      <div class="article-tags">
+        <span class="article-tag">活用マップ</span>
+        <span class="article-tag">生成AI</span>
+        <span class="article-tag">製造業DX</span>
+      </div>
+    </a>
+
+    <div class="note-link-block">
+      <p>人柄・日々の気づきを綴った短編記事は note で発信しています。</p>
+      <a href="https://note.com/okappiki3" target="_blank" rel="noopener" class="note-link">
+        note の全記事を読む（300件超） →
+      </a>
+      <br>
+      <a href="/" class="back-top">← トップに戻る</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
