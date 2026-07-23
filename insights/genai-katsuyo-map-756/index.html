@@ -185,6 +185,19 @@ a { color: var(--blue); }
 .article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
 .article-source { background: var(--gray-50); border-left: 3px solid var(--blue); padding: 12px 16px; margin: 24px 0 32px; font-size: 13.5px; color: var(--text-light); line-height: 1.8; border-radius: 0 var(--radius) var(--radius) 0; }
 .article-source strong { color: var(--navy-deep); }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
 .data-table-wrap { overflow-x: auto; margin: 24px 0; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .data-table th, .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); text-align: left; }
@@ -266,6 +279,34 @@ a { color: var(--blue); }
 <article class="article-body">
   <div class="container">
 
+    <p class="article-lead">
+      製造業の生成AI活用事例756件——その中心にあったのは「組織内 × 読む」でした。243件、全体の3分の1がここに集中しています。
+    </p>
+    <p class="article-lead">
+      なぜここに集まったのか。次にどこへ広がろうとしているのか。企業を越えたデータ連携（Catena-X・ウラノス・エコシステム）は、この地図のどこに位置するのか。——生成AI活用の全体像を、活用マップの上で読み解いていきます。
+    </p>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事で読み解く3つの発見</p>
+      <ol class="article-lead-box__list">
+        <li><strong>中心は「組織内 × 読む」</strong>：756件中243件（全体の3分の1）が全社ナレッジ活用に集中している</li>
+        <li><strong>広がりは「上へ、右へ」</strong>：中心から生産・保全（動かす方向）と営業・SCM（外部方向）へ拡張が始まっている</li>
+        <li><strong>外部連携は右上に構築中</strong>：Catena-X・ウラノス・エコシステム・製造AX拠点が、企業を越えたデータ連携の基盤として並ぶ</li>
+      </ol>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#report-overview">756件レポートの中身</a></li>
+        <li><a href="#katsuyo-map">活用マップの2軸</a></li>
+        <li><a href="#overlay-map">756件をマップに重ねる</a></li>
+        <li><a href="#three-findings">マップから読み取れる3つのこと</a></li>
+        <li><a href="#external-move">「外部×動かす」は、すでに取り組みが進んでいる</a></li>
+        <li><a href="#preparation">外部とつながる準備は、自社の中から</a></li>
+      </ol>
+    </nav>
+
     <p class="article-source">
       <strong>出典レポート：</strong>ものづくり新聞（株式会社パブリカ）が2026年7月17日に公開した「製造業DX事例分析vol.01（生成AI活用事例756件）」。
       <a href="https://mono-shin.com/" target="_blank" rel="noopener">ものづくり新聞</a>が日々自動収集している「製造業DX事例データベース」から、生成AI関連のキーワードで抽出したもの。
@@ -284,7 +325,7 @@ a { color: var(--blue); }
 
     <p>756件をこの地図に重ねてみると、事例の分野構成と、そこから広がる方向が読み取れます。</p>
 
-    <h2>756件レポートの中身</h2>
+    <h2 id="report-overview">756件レポートの中身</h2>
 
     <p>レポートでは、生成AI、ChatGPT、GPT、Copilot、Gemini、Claude、RAG、AIエージェントなどのキーワードで抽出された事例756件（2026年6月末時点）を、10の活用分野に分類しています。</p>
 
@@ -342,7 +383,7 @@ a { color: var(--blue); }
 
     <p>AIの関与が深まるほど、上へ。図では、下に「作る」、中に「読む」、上に「動かす」を置いています。</p>
 
-    <h2>756件をマップに重ねる</h2>
+    <h2 id="overlay-map">756件をマップに重ねる</h2>
 
     <p>10分野は「何をするか」と「誰に関わるか」が混ざった分類なので、各分野を一点ではなく、広がりを持つ帯として置きます。4つの束にまとめました。</p>
 
@@ -364,7 +405,7 @@ a { color: var(--blue); }
 
     <p>自社の現在地をマップに打つときは、この左側も含めて見てみてください。</p>
 
-    <h2>マップから読み取れる3つのこと</h2>
+    <h2 id="three-findings">マップから読み取れる3つのこと</h2>
 
     <p>10分野をマップに置くと、活用がどの方向へ広がっているかも見えてきます。</p>
 
@@ -388,7 +429,7 @@ a { color: var(--blue); }
 
     <p>マップの中心にあるのは「組織内 × 読む」です。そこから上の「動かす」と、右の「外部」へ活用が広がっています。</p>
 
-    <h2>「外部×動かす」は、すでに取り組みが進んでいる</h2>
+    <h2 id="external-move">「外部×動かす」は、すでに取り組みが進んでいる</h2>
 
     <p>マップの右上にあるのが、「外部 × 動かす」の領域です。顧客や取引先、サプライチェーンとデータを共有し、企業をまたいで仕事を動かす。</p>
 
@@ -412,7 +453,7 @@ a { color: var(--blue); }
 
     <p>「外部×動かす」は、将来突然現れるものではなく、基盤やルールを整えながら、少しずつ形になっています。</p>
 
-    <h2>外部とつながる準備は、自社の中から</h2>
+    <h2 id="preparation">外部とつながる準備は、自社の中から</h2>
 
     <p>大手企業のサプライチェーンに入る中小製造業にとって、「外部 × 動かす」は遠い未来の話ではありません。</p>
 
