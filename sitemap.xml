@@ -17,12 +17,17 @@
   </url>
   <url>
     <loc>https://oka-pi.com/insights/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://oka-pi.com/insights/genai-katsuyo-map-756/</loc>
     <lastmod>2026-07-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://oka-pi.com/insights/manufacturing-ax-data/</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
