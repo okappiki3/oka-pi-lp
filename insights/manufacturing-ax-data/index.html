@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>製造AX拠点から考える、中小製造業の「AIに使えるデータ」｜オカピー・パートナーズ</title>
+<meta name="description" content="産総研が構築・運営を担う「製造AX拠点」を入り口に、中小製造業が押さえておきたいデータの持ち方を解説。加工時間や停止時間を製品・工程・設備・理由と結びつけ、比較できる形にする考え方を、専門用語を使わず整理します。">
+<meta name="keywords" content="製造AX拠点,生成AI,製造業DX,製造データ,中小企業">
+<meta property="og:title" content="製造AX拠点から考える、中小製造業の「AIに使えるデータ」｜オカピー・パートナーズ">
+<meta property="og:description" content="産総研が構築・運営を担う「製造AX拠点」を入り口に、中小製造業が押さえておきたいデータの持ち方を解説。加工時間や停止時間を製品・工程・設備・理由と結びつけ、比較できる形にする考え方を、専門用語を使わず整理します。">
+<meta property="og:image" content="https://oka-pi.com/images/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/manufacturing-ax-data/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-08-03">
+<meta property="article:modified_time" content="2026-08-03">
+<meta property="article:author" content="岡 実">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="製造AX拠点から考える、中小製造業の「AIに使えるデータ」｜オカピー・パートナーズ">
+<meta name="twitter:description" content="産総研が構築・運営を担う「製造AX拠点」を入り口に、中小製造業が押さえておきたいデータの持ち方を解説。加工時間や停止時間を製品・工程・設備・理由と結びつけ、比較できる形にする考え方を、専門用語を使わず整理します。">
+<meta name="twitter:image" content="https://oka-pi.com/images/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/manufacturing-ax-data/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://oka-pi.com/insights/manufacturing-ax-data/#article",
+      "headline": "製造AX拠点から考える、中小製造業の「AIに使えるデータ」",
+      "description": "産業技術総合研究所が構築・運営を担う「製造AX拠点」を入り口に、中小製造業が押さえておきたいデータの持ち方を解説する記事。加工時間や停止時間を製品・工程・設備・理由と結びつけ、比較できる形にすることが、現場の改善にもAI活用にも効くという考え方を整理する。",
+      "url": "https://oka-pi.com/insights/manufacturing-ax-data/",
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "inLanguage": "ja",
+      "author": {
+        "@type": "Person",
+        "@id": "https://oka-pi.com/#person",
+        "name": "岡 実",
+        "url": "https://oka-pi.com/",
+        "jobTitle": "中小企業診断士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "オカピー・パートナーズ",
+        "url": "https://oka-pi.com/"
+      },
+      "keywords": "製造AX拠点,生成AI,製造業DX,製造データ",
+      "isPartOf": { "@id": "https://oka-pi.com/insights/" },
+      "citation": {
+        "@type": "CreativeWork",
+        "name": "2026年版ものづくり白書",
+        "publisher": { "@type": "Organization", "name": "経済産業省" }
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://oka-pi.com/insights/manufacturing-ax-data/#glossary",
+      "name": "製造AX拠点まわりの用語",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "製造AX拠点", "description": "経済産業省が推進する構想。産業技術総合研究所が2026年7月2日に構築・運営を担うと発表した。全国の製造現場に分散していた生産設備の稼働データや品質データなどを集約・統合する基盤で、物理的な施設ではなく、国内の工場・AI開発事業者・製造プラットフォーマーをつなぐハブとして機能するバーチャルな拠点とされている。" },
+        { "@type": "DefinedTerm", "name": "AX（AIトランスフォーメーション）", "description": "AIを活用して、仕事や事業の仕組みを変えていく取り組み。製造現場では、生産性向上や省人化、新たな価値創出を目指す動きを指す。" },
+        { "@type": "DefinedTerm", "name": "製造プラットフォーム", "description": "製造現場において生産設備等から取得したデータを用いて開発され、生産の効率化・省人化など製造業の高度化やDXに資する機能を提供するもの（2026年版ものづくり白書）。" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "製造AX拠点から考える、中小製造業の「AIに使えるデータ」" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy:       #0a3d5c;
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --gold-light: #f5edda;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-400:   #9ca3af;
+  --gray-600:   #555d6b;
+  --gray-800:   #2a2f38;
+  --gray-900:   #1a1d23;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      780px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container-wide { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+/* ARTICLE */
+.article-hero { background: var(--blue-pale); padding: 48px 0 32px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.article-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; color: var(--navy-deep); line-height: 1.4; margin-bottom: 20px; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 13px; color: var(--text-light); }
+.article-meta time { font-weight: 700; color: var(--navy-deep); }
+.article-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.article-tag { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+
+.article-body { padding: 48px 0 24px; }
+.article-body h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+.article-body h3 { font-size: 18px; font-weight: 700; color: var(--navy-deep); margin: 32px 0 12px; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul { margin: 0 0 18px 24px; }
+.article-body ul li { margin-bottom: 8px; }
+.article-body strong { color: var(--navy-deep); font-weight: 700; }
+.article-body figure { margin: 32px 0; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px; }
+.article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
+.article-source { background: var(--gray-50); border-left: 3px solid var(--blue); padding: 12px 16px; margin: 24px 0 32px; font-size: 13.5px; color: var(--text-light); line-height: 1.8; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-source strong { color: var(--navy-deep); }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
+.data-table-wrap { overflow-x: auto; margin: 24px 0; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.data-table th, .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); text-align: left; }
+.data-table th { background: var(--navy-deep); color: var(--white); font-weight: 700; font-size: 12px; letter-spacing: 1px; }
+.data-table td:last-child { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--navy-deep); }
+.data-table tr:hover td { background: var(--gray-50); }
+
+/* Figure-specific tweaks (reuse only, no new colors) */
+.data-table--compare td { vertical-align: top; }
+.data-table--compare td:last-child { text-align: left; font-weight: 400; font-variant-numeric: normal; color: var(--text); }
+.data-table--compare td:first-child { white-space: nowrap; font-weight: 700; color: var(--navy-deep); }
+
+.data-table--stack th, .data-table--stack td { text-align: left; vertical-align: top; }
+.data-table--stack td:last-child { text-align: left; font-weight: 400; font-variant-numeric: normal; color: var(--text); }
+
+@media (max-width: 640px) {
+  .data-table--stack { border: 0; }
+  .data-table--stack thead { border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+  .data-table--stack tr {
+    display: block;
+    margin-bottom: 12px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+  }
+  .data-table--stack td {
+    display: block;
+    border-bottom: 0;
+    padding: 4px 0;
+  }
+  .data-table--stack td:first-child {
+    font-size: 15px;
+    color: var(--navy-deep);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .data-table--stack td:not(:first-child)::before {
+    content: attr(data-label);
+    display: inline;
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-right: 6px;
+  }
+  .data-table--stack tr:hover td { background: transparent; }
+}
+
+/* Flow figure */
+.flow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 8px 0; }
+.flow__card {
+  background: var(--blue-pale);
+  border: 1px solid var(--blue-light);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  text-align: center;
+  min-width: 220px;
+  max-width: 100%;
+}
+.flow__card-title { font-weight: 700; color: var(--navy-deep); font-size: 15px; line-height: 1.5; }
+.flow__card-sub { font-size: 12.5px; color: var(--text-light); margin-top: 4px; line-height: 1.6; }
+.flow__arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 1;
+  padding: 6px 0;
+}
+.flow__arrow-note { font-size: 11.5px; color: var(--text-light); margin-top: 2px; text-align: center; line-height: 1.5; }
+.flow__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 8px;
+}
+.flow__split .flow__card { min-width: 0; }
+.flow__branch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 520px;
+  color: var(--blue);
+  font-size: 18px;
+  padding: 2px 0 4px;
+}
+.flow__branch-cell { display: flex; justify-content: center; }
+.flow__card--goal { background: var(--gold-light); border-color: var(--gold); }
+.flow__split-note { display: none; }
+.flow__split-mobile { display: none; }
+
+@media (max-width: 560px) {
+  .flow__split { grid-template-columns: 1fr; max-width: 100%; gap: 10px; }
+  .flow__branch { display: none; }
+  .flow__split-mobile {
+    display: block;
+    font-size: 12.5px;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.6;
+    margin: 4px 0 6px;
+  }
+  .flow__split-mobile strong { color: var(--navy-deep); font-weight: 700; }
+}
+
+.glossary { background: var(--blue-pale); padding: 40px 0; margin-top: 48px; }
+.glossary h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 900; color: var(--navy-deep); margin-bottom: 20px; }
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 700; color: var(--navy-deep); margin-top: 18px; margin-bottom: 4px; font-size: 15px; }
+.glossary dd { margin: 0 0 8px 0; color: var(--text); font-size: 14.5px; line-height: 1.85; }
+
+/* CTA */
+.cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 56px 0; text-align: center; }
+.cta-section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+.cta-section p { color: #b8d4e8; margin-bottom: 24px; font-size: 15px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+.cta-btn.primary { background: var(--gold); color: var(--navy-deep); }
+.cta-btn.primary:hover { background: #d4b45a; transform: translateY(-1px); }
+.cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.cta-btn.secondary:hover { background: rgba(255,255,255,0.18); }
+.cta-form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.75); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  .article-hero { padding: 32px 0 24px; }
+  .article-body { padding: 32px 0 16px; }
+  .article-body figure { padding: 8px; }
+  .cta-section { padding: 40px 0; }
+  .cta-section h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="/">ホーム</a> ／ <a href="/insights/">実務ノート</a> ／ 製造AX拠点から考える、中小製造業の「AIに使えるデータ」
+    </p>
+    <h1 class="article-h1">製造AX拠点から考える、中小製造業の「AIに使えるデータ」</h1>
+    <div class="article-meta">
+      <time datetime="2026-08-03">公開：2026年8月3日</time>
+      <span>著者：岡 実（中小企業診断士／オカピー・パートナーズ代表）</span>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag">生成AI</span>
+      <span class="article-tag">製造業DX</span>
+      <span class="article-tag">製造データ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container">
+
+    <p class="article-lead">
+      現場の改善に使える形が、AIにも使える形になる。
+    </p>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事の要点</p>
+      <ul class="article-lead-box__list">
+        <li>産業技術総合研究所（産総研）が7月に始動を発表した「製造AX拠点」は、製造データをAIに活かすための構想です</li>
+        <li>ただしAI以前に、自社のデータが現場の改善に使える形で残せているか、が問われています</li>
+        <li>加工時間や停止時間を、製品・工程・設備・理由と結びつける。それが土台になります</li>
+      </ul>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#ax-kyoten">製造データをAIに生かす構想が始まった</a></li>
+        <li><a href="#minutes-25">「25分かかった」だけでは、改善点は見えない</a></li>
+        <li><a href="#stoppage">同じ「停止」でも、理由は一つではない</a></li>
+        <li><a href="#start-small">AI以前に、改善に使える形にする</a></li>
+        <li><a href="#closing">データの意味を説明できる会社へ</a></li>
+        <li><a href="#glossary">この記事に出てきた主な用語</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="ax-kyoten">製造データをAIに生かす構想が始まった</h2>
+
+    <p>2026年版ものづくり白書で、「製造AX拠点」という構想が打ち出されました。全国の製造現場に散らばっている生産設備の稼働データや品質データを集約・統合し、その活用を通じて生産の効率化や省人化につながる仕組みの開発を後押しする、という考え方です。</p>
+
+    <p>この構想を受けて、産総研が2026年7月2日、拠点の構築と運営を担うと発表しました。国の生成AI開発支援事業のもとで、大手メーカーとの共同プロジェクトも動き始めています。</p>
+
+    <p>拠点といっても、どこかに新しい建物が建つわけではありません。国内の工場と、AIを開発する事業者と、製造プラットフォームを提供する事業者をつなぐハブとして機能する、バーチャルな拠点だと説明されています。産総研が担うとされているのは、製造データを取得する段階の支援、集めたデータの匿名化・構造化による外部提供可能なデータセットの構築、そしてそのデータを活用したAI開発の支援などです。</p>
+
+    <p>公式の発表では、従来は企業や設備ごとに分断されていたデータを統合し、横断的に活用できる基盤を構築するとしています。</p>
+
+    <p>裏を返せば、データは集めただけでは横断的に使えない、ということでもあります。設備ごとに項目の持ち方が違えば、そもそも並べて比べることができません。国が手間をかけて整えようとしているのは、その手前のところのように思われます。</p>
+
+    <p>そしてこれは、全国規模の話に限りません。同じことは、一つの工場の中でも起きています。自社の中のデータは、並べて比べられる形になっているでしょうか。</p>
+
+    <h2 id="minutes-25">「25分かかった」だけでは、改善点は見えない</h2>
+
+    <p>ある設備で、加工に25分かかった。この数字だけを見て、改善が必要かどうかを判断できるでしょうか。</p>
+
+    <p>おそらく、できません。何を作っていたのか。どの設備を使ったのか。通常は何分かかる作業なのか。段取りに時間がかかったのか、それとも加工そのものが長かったのか。こうした情報が結びついて初めて、25分という数字は「長い」とも「まあ妥当だ」とも読めるようになります。</p>
+
+    <p>25分という数字には、もともと「加工に要した時間」という意味があります。足りないのは意味ではなく、比べる相手のほうです。製品、設備、工程、通常なら何分かかるのか。そうした情報と結びつくことで、はじめて比較や改善に使える情報になります。</p>
+
+    <figure>
+      <div class="data-table-wrap">
+        <table class="data-table data-table--compare">
+          <thead>
+            <tr><th>見えている情報</th><th>まだ分からないこと</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5">加工時間 25分</td>
+              <td>長いのか、妥当なのか</td>
+            </tr>
+            <tr><td>どの製品を作っていたか</td></tr>
+            <tr><td>どの設備・工程だったか</td></tr>
+            <tr><td>通常は何分かかる作業か</td></tr>
+            <tr><td>段取りが長いのか、加工が長いのか</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>表1　「25分」という数字だけでは、改善点は見えない</figcaption>
+    </figure>
+
+    <p>日報や設備の画面に時間の記録が残っていても、それだけで改善に使えるとは限りません。たとえば「あのときは特殊なケースだった」と説明されても、何が特殊だったのかが残っていなければ、後から比較できません。これは記録が足りないのではなく、<strong>数字に添えるべき情報が足りていない</strong>状態です。</p>
+
+    <p>判断の材料になるかどうかは、比較できるかどうかで決まります。同じ製品を、同じ設備で、同じ工程で加工した過去の記録と横に並べられるか。並べられれば、25分が普段より5分長いことも、その5分が段取りで生まれたのか加工で生まれたのかも見えてきます。並べられなければ、25分は最後まで25分のままです。</p>
+
+    <p>そして、人が25分という数字を判断するときにも、実は同じ比較をしています。「この製品をこの設備で加工するなら、普段はこのくらい」と過去の経験に照らして、長いか短いかを考えています。その比較に使っている条件を、本人以外にも見える形にしておく作業だと考えると、少し身近になるかもしれません。</p>
+
+    <h2 id="stoppage">同じ「停止」でも、理由は一つではない</h2>
+
+    <p>もう一つ、設備の停止を例に考えてみます。</p>
+
+    <p>設備から「3号機　10時32分　停止」というデータが取れたとします。しかしこれだけでは、設備が止まったという事実しか分かりません。</p>
+
+    <p>故障で止まったのか。段取り替えなのか。材料待ちなのか。品質の確認をしていたのか。計画していた清掃や点検なのか。停止しているという事実は同じでも、その原因や扱いはまったく違います。減らすべき停止もあれば、必要な停止もあります。</p>
+
+    <figure>
+      <table class="data-table data-table--stack">
+        <thead>
+          <tr><th>停止の理由</th><th>どう見るか</th><th>記録しておきたいこと</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>故障</td>
+            <td data-label="見方：">減らしたい停止</td>
+            <td data-label="記録：">設備、対応内容、再開までの時間</td>
+          </tr>
+          <tr>
+            <td>段取り替え</td>
+            <td data-label="見方：">必要だが短くしたい停止</td>
+            <td data-label="記録：">前後の製品、工程、所要時間</td>
+          </tr>
+          <tr>
+            <td>材料待ち</td>
+            <td data-label="見方：">前後の工程や計画に原因がある停止</td>
+            <td data-label="記録：">待った材料、待ち時間、発生した工程</td>
+          </tr>
+          <tr>
+            <td>品質確認</td>
+            <td data-label="見方：">必要な停止</td>
+            <td data-label="記録：">対象製品、確認内容、判定結果</td>
+          </tr>
+          <tr>
+            <td>清掃・点検</td>
+            <td data-label="見方：">計画された停止</td>
+            <td data-label="記録：">予定どおりか、頻度は妥当か</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>表2　同じ「停止」でも、理由が違えば扱いが変わる</figcaption>
+    </figure>
+
+    <p>仮にAIで停止時間を分析しようとしても、すべてが同じ「停止」として記録されていれば、原因別の分析は難しく、停止時間の合計や推移を確認するところにとどまりやすくなります。知りたいのは合計ではなく、どこを減らせるのかのはずです。停止の理由、そのとき流していた製品、工程、行った対応、再開した時刻。これらが結びついて、はじめて手を打てるデータになります。</p>
+
+    <p>加工時間、段取り時間、停止時間を、製品・工程・設備と結びつけて残す。そうすると、たとえば次のような見方ができるようになります。</p>
+
+    <ul>
+      <li>製品Aを設備1で加工すると、設備2で加工したときより時間が長い</li>
+      <li>製品Bは、加工時間よりも段取り時間のばらつきが大きい</li>
+      <li>特定の製品と設備の組み合わせのときだけ、停止や手直しが増えている</li>
+    </ul>
+
+    <p>どれも、単独の数字を眺めているだけでは出てこない見方です。そして、どれも次の一手につながります。設備の割り当てを見直すのか、段取りの手順を揃えるのか、その組み合わせのときの条件を確認するのか。改善について、共通の記録をもとに話し合いやすくなります。</p>
+
+    <p>ここで大事なのは、これが特別なシステムの話ではないということです。現場の方が「材料待ちで止まった」「材料のロット違いで手直しが出た」と理由を書き添えているなら、その記録もすでにデータの一部です。データに、製品や工程、停止理由などの情報を結びつける作業は、実は現場のちょっとした習慣から始まっています。</p>
+
+    <h2 id="start-small">AI以前に、改善に使える形にする</h2>
+
+    <p>ここまで読んで、「AIのために手間をかけるのか」と感じた方もいるかもしれません。順序は逆です。</p>
+
+    <p>製品、設備、工程、時間、停止理由を結びつけて記録しておけば、AIを導入する前の段階で、すでに改善に使えます。AIのために特別なデータを集めるのではなく、現場の改善に使える形でデータを残しておく。その延長線上に、AIにも使えるという状態があります。</p>
+
+    <p>始め方も、大掛かりなものである必要はありません。</p>
+
+    <p>まず、改善したい問題を一つだけ選びます。加工時間のばらつきが気になるのか、段取りが長引くことが多いのか、同じ設備の停止が繰り返し起きているのか。会社によって、いちばん困っていることは違うはずです。</p>
+
+    <p>そのうえで、今ある記録に何を一つ足せば比べられるかを考えます。加工時間のばらつきを見たいなら、時間の記録に製品名や設備名を添える。設備停止を見たいなら、停止記録に大まかな理由を加える。最初からすべての項目をそろえる必要はありません。</p>
+
+    <p>足すときに一つだけ決めておきたいのは、書き方です。今日は「材待ち」、明日は「材料が来ない」と書けば、後から並べられません。</p>
+
+    <p>一つの問題について、比較に必要な情報を少しだけ補う。まずはそこから、単なる時間や停止の記録が、改善に使えるデータへ変わり始めます。新しい設備や大掛かりなシステムを導入する前にも、始められることがあります。</p>
+
+    <figure>
+      <div class="flow" aria-label="改善に使える形で整ったデータは、AIにも使いやすい">
+        <div class="flow__card">
+          <div class="flow__card-title">時間・停止だけの記録</div>
+          <div class="flow__card-sub">「25分」「3号機 停止」</div>
+        </div>
+        <div class="flow__arrow" aria-hidden="true">↓</div>
+        <div class="flow__card">
+          <div class="flow__card-title">条件を結びつける</div>
+          <div class="flow__card-sub">製品・工程・設備・理由などを一つずつ補う</div>
+        </div>
+        <div class="flow__arrow" aria-hidden="true">↓</div>
+        <div class="flow__card">
+          <div class="flow__card-title">比較できる記録</div>
+        </div>
+        <div class="flow__branch" aria-hidden="true">
+          <div class="flow__branch-cell">↘</div>
+          <div class="flow__branch-cell">↙</div>
+        </div>
+        <p class="flow__split-mobile">同じ土台から、<strong>次の2つが同時に</strong>生まれる</p>
+        <div class="flow__split">
+          <div class="flow__card flow__card--goal">
+            <div class="flow__card-title">現場の改善に使える</div>
+          </div>
+          <div class="flow__card flow__card--goal">
+            <div class="flow__card-title">AIにも使いやすい</div>
+          </div>
+        </div>
+      </div>
+      <figcaption>図1　改善に使える形で整ったデータは、AIにも使いやすい</figcaption>
+    </figure>
+
+    <h2 id="closing">データの意味を説明できる会社へ</h2>
+
+    <p>製造AX拠点と中小製造業との関わりは、これから少しずつ形が見えてくる段階です。将来は、拠点の成果として生まれた製造プラットフォームを使う側になるかもしれません。実証やデータ提供に関わる可能性もあります。ただ、中小企業向けの窓口はまだ公表されていません。</p>
+
+    <p>いま注目しておきたいのは、誰が参加できるのかよりも、自社のデータが製品・工程・設備・理由などと結びつき、比較できる形になっているかどうかです。その数字が何を表し、どんな条件で記録されたものかを説明できる会社は、社内の改善が早く回ります。そして外部とデータをやり取りする場面が来たときにも、そのまま強みになります。</p>
+
+    <p>データを持っている会社から、データの意味を説明できる会社へ。製造AX拠点の始動は、その違いを考えるいい機会だと思います。</p>
+
+    <p>生成AIの活用をどこから始めるかという全体像は、<a href="/insights/genai-katsuyo-map-756/#katsuyo-map">「製造業の生成AI活用756件を活用マップに重ねて読む」</a>で整理しています。あわせてご覧ください。</p>
+
+  </div>
+</article>
+
+<!-- GLOSSARY -->
+<section class="glossary" id="glossary">
+  <div class="container">
+    <h2>この記事に出てきた主な用語</h2>
+    <dl>
+      <dt>製造AX拠点</dt>
+      <dd>経済産業省が推進する構想で、2026年版ものづくり白書で提唱された。産業技術総合研究所（産総研）が2026年7月2日に構築・運営を担うと発表している。全国の製造現場に分散していた生産設備の稼働データや品質データなどを集約・統合する基盤であり、そのデータをAIによって高度化された製造向けサービスの開発に活用し、成果を再び製造現場へ還元する循環をつくることを目指している。物理的な施設ではなく、国内の工場・AI開発事業者・製造プラットフォーマーをつなぐハブとして機能するバーチャルな拠点とされている。</dd>
+
+      <dt>AX（AIトランスフォーメーション）</dt>
+      <dd>AIを活用して、仕事や事業の仕組みを変えていく取り組み。本記事では、製造現場でAIを用いて生産性向上や省人化、新たな価値創出を目指す動きを指す。</dd>
+
+      <dt>製造プラットフォーム</dt>
+      <dd>製造現場において生産設備等から取得したデータを用いて開発され、生産の効率化・省人化など製造業の高度化やDXに資する機能を提供するもの（出典：2026年版ものづくり白書 第1部第4章第3節コラム）。<br>なお、中小製造業にとっては、製造AX拠点の成果を受け取る入口のひとつになると考えられる（本記事の見方）。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2>セミナー・研修のご案内</h2>
+    <p>
+      この記事の内容は、製造業向けの生成AI・データ活用研修でもお話ししています。<br>
+      製造業における生成AI・データ活用を、自社の業務に置き換えて考える構成です。
+    </p>
+    <div class="cta-actions">
+      <a href="/seminar/" class="cta-btn primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM6 21h12M12 17v4"/></svg>
+        セミナー・研修のご案内
+      </a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="cta-btn secondary" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        30分の無料相談
+      </a>
+    </div>
+    <p class="cta-form-note">生成AIを自社でどう使い始めるかについては、30分の無料相談もご利用いただけます。</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
