@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+  もりやま創業塾「創業を成功に導くAI活用」受講者配布ページ
+  ★編集される方へ★
+  問2（#q2）は、投影スライドでは2枚に分かれていますが、
+  このページでは 1 つの <pre> にまとめてあります。絶対に分割しないでください。
+  分割すると、受講者が2回に分けて送ってしまい、ワークが成立しません。
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>もりやま創業塾｜創業を成功に導くAI活用｜プロンプト</title>
+<style>
+  :root{ --blue:#0A5884; --ink:#1F2A31; --muted:#7C8C96; --line:#C3D2DB; --soft:#F5F9FB; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; padding:0 16px 64px; font-family:"BIZ UDPゴシック","Hiragino Sans","Noto Sans JP",sans-serif;
+        color:var(--ink); line-height:1.75; background:#fff; }
+  .wrap{ max-width:760px; margin:0 auto; }
+  header{ background:var(--blue); color:#fff; margin:0 -16px 28px; padding:26px 16px; }
+  header h1{ margin:0; font-size:21px; }
+  header p{ margin:6px 0 0; font-size:14px; color:#C8E1EF; }
+  h2{ font-size:19px; color:var(--blue); border-bottom:2px solid var(--blue);
+      padding-bottom:6px; margin:38px 0 4px; }
+  .step{ display:inline-block; background:var(--blue); color:#fff; font-size:13px;
+         padding:2px 9px; margin-bottom:8px; }
+  .note{ font-size:14px; color:var(--muted); margin:0 0 10px; }
+  .card{ border:1px solid var(--line); background:var(--soft); }
+  pre{ margin:0; padding:16px; white-space:pre-wrap; word-break:break-word;
+       font-family:inherit; font-size:15.5px; }
+  pre.long{ max-height:230px; overflow:hidden; position:relative;
+            -webkit-user-select:none; user-select:none; }
+  .fade{ height:46px; margin-top:-46px; position:relative;
+         background:linear-gradient(rgba(245,249,251,0),rgba(245,249,251,1)); }
+  .bar{ display:flex; justify-content:space-between; align-items:center;
+        border-top:1px solid var(--line); padding:8px 12px; background:#fff; }
+  .bar small{ color:var(--muted); font-size:12.5px; }
+  button{ font-family:inherit; font-size:14px; font-weight:700; color:#fff;
+          background:var(--blue); border:0; padding:9px 18px; cursor:pointer; }
+  button:active{ opacity:.75; }
+  button.done{ background:#2E7D4F; }
+  .warn{ border-left:5px solid #A85B00; background:#FBF2E4; padding:12px 14px;
+         font-size:14.5px; margin:10px 0 12px; }
+  .reviews{ font-size:13px; color:#43535D; }
+  footer{ margin-top:44px; padding-top:16px; border-top:1px solid var(--line);
+          font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>創業を成功に導くAI活用</h1>
+  <p>もりやま創業塾　2026年8月22日｜オカピー・パートナーズ 岡 実</p>
+</header>
+
+<p class="note">上から順に使います。<b>コピー</b>を押して、自分のAIに貼り付けて送ってください。</p>
+<div class="warn">
+  手が止まったら、<b>画面を開いたまま手を挙げてください</b>。講師が見に行きます。
+</div>
+
+<!-- ============ 共通ワーク ============ -->
+<h2>共通ワーク｜1　口コミを読む</h2>
+<p class="note">最初の1回だけ、新しいチャットを開いてください。ここから⑤までは、同じチャットに続けて送ります。</p>
+<div class="card">
+<pre id="c1" class="long">次は、守山市とその周辺にある焼き菓子カフェ5店に寄せられた口コミ40件です。
+
+【A店】
+1　★4　夕方に伺いました。フィナンシェもコーヒーもおいしかったです。席が4つしかなく、少し待ちました。
+2　★3　焼き菓子の種類が多くて選ぶのが楽しいです。店内が狭いので、長居はしづらいです。
+3　★5　店員さんが気さくで、初めてでも入りやすかったです。
+4　★2　昼過ぎに行くと、人気のものはたいてい売り切れです。
+5　★4　駅から近いので、仕事帰りに寄れます。
+6　★3　イートインは2席だけ。ほぼ持ち帰り前提のお店です。
+7　★4　詰め合わせを自宅用に買いました。日持ちするのが助かります。
+8　★3　レジ前が狭く、待つ人と出る人がぶつかります。
+
+【B店】
+9　★4　静かで落ち着けます。平日の午後に本を読んで2時間過ごしました。
+10　★2　土曜の昼は30分待ちと言われて諦めました。
+11　★4　Wi-Fiはありませんが、そのぶん静かです。
+12　★3　駐車場が2台分しかなく、近くのコインパーキングに停めました。
+13　★5　一人で行っても居心地がよく、常連さんが多い印象です。
+14　★3　コーヒーは深煎りで、焼き菓子とよく合います。
+15　★2　子ども連れには少し気を遣う雰囲気でした。
+16　★4　窓際の席が気持ちよく、つい長居してしまいます。
+
+【C店】
+17　★3　値段は良心的です。ただ、いつも混んでいて座れたことがありません。
+18　★4　テイクアウトなら待ち時間も短く、使いやすいです。
+19　★2　週末は行列で、店内で食べるのは難しいです。
+20　★4　クッキー1枚から買えるのがうれしいです。
+21　★3　味は素朴で、毎日食べても飽きません。
+22　★5　近所にあってありがたいです。学校帰りの子どもも寄っています。
+23　★2　席の間隔が近く、隣の会話が聞こえます。
+24　★4　平日の朝なら空いていて、ゆっくりできます。
+
+【D店】
+25　★4　クッキーの詰め合わせを手土産に買いました。包装がきれいで喜ばれました。1,800円は少し高いかなと思いましたが、味は間違いないです。
+26　★3　贈り物には向きますが、自分用には少し高いです。
+27　★5　熨斗や紙袋の対応が丁寧で、急な手土産に助かりました。
+28　★4　季節の焼き菓子が毎月変わるので、通う楽しみがあります。
+29　★2　イートインはなく、買って帰るだけのお店です。
+30　★3　予約しておくと待たずに受け取れます。
+31　★4　個包装なので、職場で配りやすいです。
+32　★3　価格の割に、量は控えめだと感じました。
+
+【E店】
+33　★5　子どもと一緒に入りましたが、店員さんが声をかけてくださって安心しました。
+34　★4　ベビーカーは畳んで入口に置かせてもらいました。
+35　★3　郊外で駐車場は広いですが、車がないと行きにくいです。
+36　★4　座席が広く、母親同士でゆっくり話せました。
+37　★2　子どもの声が響くので、静かに過ごしたい人には向きません。
+38　★4　キッズスペースがあり、小さい子がいても慌てずに済みます。
+39　★3　焼き菓子は素朴で、子どもも食べやすい甘さです。
+40　★5　平日の午前中は空いていて、ゆっくり選べます。
+
+この口コミを読んで、お客さんが店を選ぶときに何を見ているかを整理してください。
+
+・多く出てくる順に、3つか4つにまとめてください
+・それぞれ、どんな声からそう言えるのかを一言で
+・良い評価と悪い評価の両方を見てください
+・書かれていないことは、書かないでください
+・表は使わず、箇条書きで書いてください</pre><div class="fade"></div>
+<div class="bar"><small>口コミ40件と指示を、まとめてコピーします</small><button data-copy="c1">口コミ40件と指示をまとめてコピー</button></div>
+</div>
+
+<h2>共通ワーク｜2　商売の形と試し方</h2>
+<p class="note">同じチャットに、続けて送ります。</p>
+<div class="card">
+<pre id="c2">この整理結果を使って、「安心して過ごせる焼き菓子カフェ」の
+
+・誰に、何を、いくらで、どこで・どう提供するか
+・店を借りる前に試せる方法を3つ
+
+を考えてください。
+3案には、費用・期間と、何が分かるかも付けてください。
+価格や費用を仮に置く場合は、「（仮）」と付けてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="c2">コピー</button></div>
+</div>
+
+<h2>共通ワーク｜3　数字で確かめる</h2>
+<div class="card">
+<pre id="c3">レンタルスペースで、焼き菓子カフェの1日体験会を行います。
+
+本格的に始める前に、体験会で確かめたい数字を3つ挙げてください。
+
+それぞれ、
+・何を判断するための数字か
+・当日どう記録するか
+を短く書いてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="c3">コピー</button></div>
+</div>
+
+<h2>共通ワーク｜4　確認先を調べる</h2>
+<div class="card">
+<pre id="c4">守山市で、焼き菓子カフェの1日体験会を行います。
+
+必要な許可や届出と、それぞれの確認先を教えてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="c4">コピー</button></div>
+</div>
+
+<h2>共通ワーク｜5　告知文を書く</h2>
+<div class="card">
+<pre id="c5">レンタルスペースで焼き菓子のカフェ体験会をやります。
+
+知り合いに送る短い告知文を書いてください。
+日時や場所など、決まっていないことは「未定」と書いてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="c5">コピー</button></div>
+</div>
+
+<!-- ============ 個別ワーク ============ -->
+<h2>個別ワーク｜問1</h2>
+<p class="note"><b>ここで新しいチャットを開いてください。</b>【　】の中に、いま考えていることを書いてから送ります。</p>
+<div class="card">
+<pre id="q1">いま考えていることは、次のとおりです。
+
+【ここに、そのまま書いてください】
+
+この話の中で、先に確かめておいたほうがいいことを3つ挙げてください。
+
+それぞれ、
+・何が分かっていないのか
+・どうやったら確かめられるのか
+を一言ずつ書いてください。</pre>
+<div class="bar"><small>【　】を自分の言葉に置き換えてから送ります</small><button data-copy="q1">コピー</button></div>
+</div>
+
+<h2>個別ワーク｜問2</h2>
+<div class="warn">
+  <b>これで1つの文章です。1回だけ送ります。</b><br>
+  投影画面では2枚に分かれていますが、送るのはこの1回だけです。<br>
+  問1の2番、3番を取り上げる方は、1行目の番号だけ変えてください。
+</div>
+<div class="card">
+<pre id="q2">1番でお願いします。
+
+これを確かめるために、私が今週できることを3つ出してください。
+
+それぞれ、
+・やること
+・かかる費用と時間（だいたいで構いません）
+・やってみると、何が分かるのか
+を書いてください。
+
+お店を借りる、まとめて仕入れるなど、先に大きなお金がかかる方法は入れないでください。
+
+私が話していないところを補った場合は、「（仮）」と付けてください。</pre>
+<div class="bar"><small>ここまでで1つ。分けずにコピーされます</small><button data-copy="q2">コピー</button></div>
+</div>
+
+<footer>
+  オカピー・パートナーズ（<a href="https://oka-pi.com">oka-pi.com</a>）／中小企業診断士 岡 実
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('button[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var text = document.getElementById(b.dataset.copy).innerText;
+    var done = function () {
+      b.textContent = 'コピーしました';
+      b.classList.add('done');
+      setTimeout(function () { b.textContent = 'コピー'; b.classList.remove('done'); }, 1800);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch (e) { b.textContent = '長押しで選択'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
