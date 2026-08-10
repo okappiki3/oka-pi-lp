@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="zu1-title zu1-desc" font-family="'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif">
+  <title id="zu1-title">生成AIは論点まで。決めるのは人</title>
+  <desc id="zu1-desc">生成AIが手元資料を整理して気になる取引に当たりをつけ、人が事実と仮説を区別して判断し、次のアクションを決めるという役割分担の図</desc>
+
+  <defs>
+    <style>
+      .h { fill: #0a3d5c; font-weight: 700; }
+      .sub { fill: #555d6b; }
+      .card-title { fill: #0a3d5c; font-weight: 700; }
+      .label { fill: #0a5884; font-weight: 700; }
+      .label-gold { fill: #a37f1f; font-weight: 700; }
+      .txt { fill: #2a2f38; }
+      .quote { fill: #0a5884; font-style: italic; }
+      .quote-gold { fill: #8a6a1f; font-style: italic; }
+      .foot { fill: #555d6b; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="720" fill="#ffffff"/>
+
+  <!-- Heading -->
+  <text x="40" y="60" class="h" font-size="34">生成AIは論点まで。決めるのは人</text>
+  <text x="40" y="98" class="sub" font-size="20">データが足りないまま断定が返ってきたら、それは誤り</text>
+
+  <!-- Card 1: 生成AI -->
+  <g>
+    <rect x="40" y="140" width="440" height="440" rx="12" ry="12" fill="#e8f1f8" stroke="#0a5884" stroke-width="2"/>
+    <text x="70" y="200" class="card-title" font-size="30">生成AI</text>
+
+    <text x="70" y="256" class="label" font-size="18">やること</text>
+    <text x="70" y="292" class="txt" font-size="20">資料の整理</text>
+    <text x="70" y="328" class="txt" font-size="20">事実の突き合わせ</text>
+    <text x="70" y="364" class="txt" font-size="20">確認候補の絞り込み</text>
+
+    <line x1="70" y1="400" x2="450" y2="400" stroke="#b8cfe0" stroke-width="1"/>
+
+    <text x="70" y="440" class="label" font-size="18">出すもの</text>
+    <text x="90" y="484" class="quote" font-size="22">「確認する価値がある」</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g stroke="#0a5884" stroke-width="3" fill="none">
+    <line x1="500" y1="360" x2="560" y2="360"/>
+    <polyline points="546,346 562,360 546,374"/>
+  </g>
+
+  <!-- Card 2: 人 -->
+  <g>
+    <rect x="580" y="140" width="440" height="440" rx="12" ry="12" fill="#e8f1f8" stroke="#0a5884" stroke-width="2"/>
+    <text x="610" y="200" class="card-title" font-size="30">人</text>
+
+    <text x="610" y="256" class="label" font-size="18">やること</text>
+    <text x="610" y="292" class="txt" font-size="20">元資料との照合</text>
+    <text x="610" y="328" class="txt" font-size="20">事実と仮説の区別</text>
+    <text x="610" y="364" class="txt" font-size="20">経営判断</text>
+
+    <line x1="610" y1="400" x2="990" y2="400" stroke="#b8cfe0" stroke-width="1"/>
+
+    <text x="610" y="440" class="label" font-size="18">出すもの</text>
+    <text x="630" y="484" class="quote" font-size="22">「この取引から交渉する」</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g stroke="#0a5884" stroke-width="3" fill="none">
+    <line x1="1040" y1="360" x2="1100" y2="360"/>
+    <polyline points="1086,346 1102,360 1086,374"/>
+  </g>
+
+  <!-- Card 3: 次のアクション -->
+  <g>
+    <rect x="1120" y="140" width="440" height="440" rx="12" ry="12" fill="#f5edda" stroke="#c9a84c" stroke-width="2"/>
+    <text x="1150" y="200" class="card-title" font-size="30" fill="#5f4a12">次のアクション</text>
+
+    <text x="1150" y="256" class="label-gold" font-size="18">決めること</text>
+    <text x="1150" y="292" class="txt" font-size="20">交渉する取引</text>
+    <text x="1150" y="328" class="txt" font-size="20">伸ばす取引</text>
+    <text x="1150" y="364" class="txt" font-size="20">これから記録する項目</text>
+
+    <line x1="1150" y1="400" x2="1530" y2="400" stroke="#d9c68a" stroke-width="1"/>
+
+    <text x="1150" y="440" class="label-gold" font-size="18">絞ってから</text>
+    <text x="1170" y="484" class="quote-gold" font-size="22">そこだけ記録を始める</text>
+  </g>
+
+  <!-- Footer notes -->
+  <text x="40" y="640" class="foot" font-size="20">手元資料 ＝ 決算書／製造原価報告書（3期分）／売上明細</text>
+  <text x="40" y="680" class="foot" font-size="20">製品ごとの原価が無いままでも、確認すべき取引までは絞り込める</text>
+</svg>
