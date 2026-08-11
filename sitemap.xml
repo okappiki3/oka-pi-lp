@@ -17,7 +17,12 @@
   </url>
   <url>
     <loc>https://oka-pi.com/insights/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://oka-pi.com/insights/shien-kikan-genai-kenshu/</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
