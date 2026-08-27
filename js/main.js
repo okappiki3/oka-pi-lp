@@ -311,6 +311,11 @@ function initSmoothScroll() {
                 return;
             }
 
+            // Skip if href was rewritten to an external URL after init (e.g. Ask AI buttons)
+            if (!targetId || !targetId.startsWith('#')) {
+                return;
+            }
+
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
