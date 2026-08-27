@@ -377,30 +377,33 @@ section { padding: 72px 0; }
 /* ASK AI */
 .ask-ai-section { background: #faf7f2; }
 .ask-ai-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.ask-ai-icon { font-size: 24px; display: block; margin-bottom: 8px; }
 .ask-ai-section .sec-label { text-align: center; }
 .ask-ai-section .sec-title { text-align: center; margin-bottom: 20px; }
-.ask-ai-desc { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 32px; }
+.ask-ai-desc { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 28px; }
+.ask-ai-topics { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 24px; }
+.topic-btn {
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: 999px;
+  padding: 8px 16px; font-size: 13px; cursor: pointer; color: var(--text-light);
+  transition: all 0.2s; font-family: inherit;
+}
+.topic-btn:hover { border-color: var(--blue); color: var(--blue); }
+.topic-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 .ask-ai-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 16px; }
 .ask-ai-buttons .ai-btn {
-  display: inline-flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-width: 200px; padding: 12px 24px;
   background: var(--white); color: var(--blue); border: 1.5px solid var(--blue);
-  border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none;
+  border-radius: 999px; font-weight: 700; font-size: 14px; text-decoration: none;
   transition: all 0.2s; box-shadow: var(--shadow);
 }
 .ask-ai-buttons .ai-btn:hover { background: var(--blue); color: var(--white); transform: translateY(-1px); }
+.ai-btn-icon { font-size: 16px; }
 .ask-ai-note { font-size: 12px; color: var(--text-light); }
-.ask-ai-toast {
-  display: inline-block; margin-top: 16px; padding: 12px 16px;
-  background: var(--blue); color: var(--white); border-radius: 6px;
-  font-size: 13px; box-shadow: var(--shadow-lg);
-  opacity: 0; transform: translateY(-6px);
-  transition: opacity 0.2s, transform 0.2s; pointer-events: none; max-width: 100%;
-}
-.ask-ai-toast.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 480px) {
   .ask-ai-buttons { flex-direction: column; align-items: stretch; }
   .ask-ai-buttons .ai-btn { width: 100%; min-width: 0; }
+  .topic-btn { font-size: 12px; padding: 6px 12px; }
 }
 
 /* CTA & FOOTER（service/と同一） */
@@ -932,19 +935,27 @@ section { padding: 72px 0; }
 <section class="ask-ai-section" aria-labelledby="ask-ai-title">
   <div class="container">
     <div class="ask-ai-inner">
+      <span class="ask-ai-icon" aria-hidden="true">✨</span>
       <p class="sec-label">ASK AI</p>
-      <h2 id="ask-ai-title" class="sec-title">登壇者として合うかAIに聞いてみる</h2>
+      <h2 id="ask-ai-title" class="sec-title">オカピー・パートナーズをもっと知る</h2>
       <p class="ask-ai-desc">
-        普段お使いのAIに、岡実を招く価値があるか事前にご確認いただけます。<br>
-        ボタンを押すだけで、講師選定に役立つ質問がそのままAIに投げられます。
+        普段お使いのAIに、オカピー・パートナーズがあなたの会社に合うか聞いてみましょう。<br>
+        ボタンを押すだけで質問できます。
       </p>
-      <div class="ask-ai-buttons">
-        <a class="ai-btn" data-ai="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener"><span>ChatGPTに聞く</span></a>
-        <a class="ai-btn" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener" title="質問がクリップボードにコピーされます。Geminiの入力欄にペーストしてください。"><span>Geminiに聞く</span></a>
-        <a class="ai-btn" data-ai="claude" href="https://claude.ai/new" target="_blank" rel="noopener"><span>Claudeに聞く</span></a>
+      <div class="ask-ai-topics" role="tablist" aria-label="相談テーマ">
+        <button class="topic-btn active" data-topic="general" role="tab" aria-selected="true" type="button">全般</button>
+        <button class="topic-btn" data-topic="ai" role="tab" aria-selected="false" type="button">生成AI・DX</button>
+        <button class="topic-btn" data-topic="price" role="tab" aria-selected="false" type="button">価格転嫁</button>
+        <button class="topic-btn" data-topic="people" role="tab" aria-selected="false" type="button">人材・組織</button>
+        <button class="topic-btn" data-topic="innovation" role="tab" aria-selected="false" type="button">経営革新・補助金</button>
+        <button class="topic-btn" data-topic="dosen" role="tab" aria-selected="false" type="button">集客動線設計</button>
       </div>
-      <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。<br><span style="font-size: 0.9em;">※Geminiのみ仕様上、質問は自動でコピーされますので入力欄にペーストしてください。</span></p>
-      <div class="ask-ai-toast" role="status" aria-live="polite"></div>
+      <div class="ask-ai-buttons">
+        <a class="ai-btn" data-ai="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener"><span class="ai-btn-icon" aria-hidden="true">💬</span><span>ChatGPTに聞く</span></a>
+        <a class="ai-btn" data-ai="google" href="https://www.google.com/search?udm=50" target="_blank" rel="noopener"><span class="ai-btn-icon" aria-hidden="true">🔍</span><span>Googleで聞く</span></a>
+        <a class="ai-btn" data-ai="claude" href="https://claude.ai/new" target="_blank" rel="noopener"><span class="ai-btn-icon" aria-hidden="true">✱</span><span>Claudeに聞く</span></a>
+      </div>
+      <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。</p>
     </div>
   </div>
 </section>
@@ -997,41 +1008,52 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 (function() {
   const section = document.querySelector('.ask-ai-section');
   if (!section) return;
-  const seminarPrompt = '岡実（オカピー・パートナーズ、通算50回以上の登壇実績、LinkedIn Top Voices選出）を、生成AI活用・価格転嫁・製造業DX等のセミナー講師として招聘する価値を教えてください。他の講師との違い、対応可能テーマ、実績の特徴を知りたいです。参考URL: https://oka-pi.com/seminar/ https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt';
-  // Gemini web does not accept a prompt via URL query — copy to clipboard instead.
+  const prompts = {
+    general: 'オカピー・パートナーズ（岡実）が私の会社に合う支援機関か、その理由と一緒に教えてください',
+    ai: '生成AI・DXを現場に取り入れたいのですが、オカピー・パートナーズ（岡実）に相談する価値があるか、他の選択肢との違いも含めて教えてください',
+    price: '価格転嫁や利益確保についてオカピー・パートナーズ（岡実）に相談する価値と、私の会社に合うかを教えてください',
+    people: '採用・定着・組織づくりについて、オカピー・パートナーズ（岡実）に相談する価値を教えてください',
+    innovation: '認定経営革新等支援機関としてのオカピー・パートナーズ（岡実）の強みと、経営革新・補助金活用で相談する価値を教えてください',
+    dosen: 'Googleビジネスプロフィール・LINE公式・AI検索対策など、小さな会社の集客動線づくりについてオカピー・パートナーズ（岡実）に相談する価値を教えてください'
+  };
   const aiUrls = {
     chatgpt: (q) => 'https://chatgpt.com/?q=' + encodeURIComponent(q),
-    gemini:  ( ) => 'https://gemini.google.com/app',
+    google:  (q) => 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(q),
     claude:  (q) => 'https://claude.ai/new?q=' + encodeURIComponent(q)
   };
-  const toast = section.querySelector('.ask-ai-toast');
-  let toastTimer = null;
-  function showToast(message) {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add('visible');
-    if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('visible'), 6000);
+  let currentTopic = 'general';
+  const topicBtns = section.querySelectorAll('.topic-btn');
+  const aiBtns = section.querySelectorAll('.ai-btn');
+  function updateAiButtonHrefs() {
+    const q = prompts[currentTopic] || prompts.general;
+    aiBtns.forEach(btn => {
+      const build = aiUrls[btn.dataset.ai];
+      if (build) btn.href = build(q);
+    });
   }
-  section.querySelectorAll('.ai-btn').forEach(btn => {
-    const provider = btn.dataset.ai;
-    if (aiUrls[provider]) btn.href = aiUrls[provider](seminarPrompt);
+  topicBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (provider === 'gemini') {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(seminarPrompt).catch(() => {});
-        }
-        showToast('質問をコピーしました。Gemini の入力欄にペーストしてください。');
-      }
+      currentTopic = btn.dataset.topic;
+      topicBtns.forEach(b => {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      updateAiButtonHrefs();
+    });
+  });
+  aiBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       if (typeof gtag === 'function') {
         gtag('event', 'ask_ai_click', {
-          ai_provider: provider,
-          topic: 'seminar',
+          ai_provider: btn.dataset.ai,
+          topic: currentTopic,
           page_location: window.location.pathname
         });
       }
     });
   });
+  updateAiButtonHrefs();
 })();
 </script>
 

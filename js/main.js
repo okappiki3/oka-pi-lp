@@ -33,16 +33,17 @@ function initAskAi() {
     if (!section) return;
 
     const prompts = {
-        general: 'オカピー・パートナーズ（代表：岡実、滋賀県守山市の中小企業診断士）が私の会社に合う支援機関か、その理由と一緒に教えてください。強み、実績、他の診断士との違いも知りたいです。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
-        ai: '中小製造業の生成AI活用について、岡実（オカピー・パートナーズ、オムロン34年の元FA機器プロダクトマネージャー、中小企業診断士）に相談する価値があるか、他の選択肢との違いも含めて教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
-        price: '価格転嫁・価格改定の説明支援を岡実（オカピー・パートナーズ、認定経営革新等支援機関）に依頼するメリットと、私の会社に合うかを教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
-        strength: '製造業の強みの言語化・ブランドメッセージ構築を岡実（オカピー・パートナーズ）に依頼する価値と、私の会社に合うかを教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt'
+        general: 'オカピー・パートナーズ（岡実）が私の会社に合う支援機関か、その理由と一緒に教えてください',
+        ai: '生成AI・DXを現場に取り入れたいのですが、オカピー・パートナーズ（岡実）に相談する価値があるか、他の選択肢との違いも含めて教えてください',
+        price: '価格転嫁や利益確保についてオカピー・パートナーズ（岡実）に相談する価値と、私の会社に合うかを教えてください',
+        people: '採用・定着・組織づくりについて、オカピー・パートナーズ（岡実）に相談する価値を教えてください',
+        innovation: '認定経営革新等支援機関としてのオカピー・パートナーズ（岡実）の強みと、経営革新・補助金活用で相談する価値を教えてください',
+        dosen: 'Googleビジネスプロフィール・LINE公式・AI検索対策など、小さな会社の集客動線づくりについてオカピー・パートナーズ（岡実）に相談する価値を教えてください'
     };
 
-    // Gemini web does not accept a prompt via URL query — copy to clipboard instead.
     const aiUrls = {
         chatgpt: (q) => `https://chatgpt.com/?q=${encodeURIComponent(q)}`,
-        gemini:  ( ) => `https://gemini.google.com/app`,
+        google:  (q) => `https://www.google.com/search?udm=50&q=${encodeURIComponent(q)}`,
         claude:  (q) => `https://claude.ai/new?q=${encodeURIComponent(q)}`
     };
 
@@ -50,7 +51,6 @@ function initAskAi() {
 
     const topicBtns = section.querySelectorAll('.topic-btn');
     const aiBtns = section.querySelectorAll('.ai-btn');
-    const toast = section.querySelector('.ask-ai-toast');
 
     function updateAiButtonHrefs() {
         const q = prompts[currentTopic] || prompts.general;
@@ -59,15 +59,6 @@ function initAskAi() {
             const build = aiUrls[provider];
             if (build) btn.href = build(q);
         });
-    }
-
-    let toastTimer = null;
-    function showToast(message) {
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add('visible');
-        if (toastTimer) clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.remove('visible'), 6000);
     }
 
     topicBtns.forEach(btn => {
@@ -84,19 +75,9 @@ function initAskAi() {
 
     aiBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const provider = btn.dataset.ai;
-            const q = prompts[currentTopic] || prompts.general;
-
-            if (provider === 'gemini') {
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(q).catch(() => {});
-                }
-                showToast('質問をコピーしました。Gemini の入力欄にペーストしてください。');
-            }
-
             if (typeof gtag === 'function') {
                 gtag('event', 'ask_ai_click', {
-                    ai_provider: provider,
+                    ai_provider: btn.dataset.ai,
                     topic: currentTopic,
                     page_location: window.location.pathname
                 });
