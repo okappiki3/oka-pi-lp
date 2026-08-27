@@ -39,9 +39,10 @@ function initAskAi() {
         strength: '製造業の強みの言語化・ブランドメッセージ構築を岡実（オカピー・パートナーズ）に依頼する価値と、私の会社に合うかを教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt'
     };
 
+    // Gemini web does not accept a prompt via URL query — copy to clipboard instead.
     const aiUrls = {
         chatgpt: (q) => `https://chatgpt.com/?q=${encodeURIComponent(q)}`,
-        gemini:  (q) => `https://gemini.google.com/app?q=${encodeURIComponent(q)}`,
+        gemini:  ( ) => `https://gemini.google.com/app`,
         claude:  (q) => `https://claude.ai/new?q=${encodeURIComponent(q)}`
     };
 
@@ -49,6 +50,7 @@ function initAskAi() {
 
     const topicBtns = section.querySelectorAll('.topic-btn');
     const aiBtns = section.querySelectorAll('.ai-btn');
+    const toast = section.querySelector('.ask-ai-toast');
 
     function updateAiButtonHrefs() {
         const q = prompts[currentTopic] || prompts.general;
@@ -57,6 +59,15 @@ function initAskAi() {
             const build = aiUrls[provider];
             if (build) btn.href = build(q);
         });
+    }
+
+    let toastTimer = null;
+    function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('visible');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('visible'), 6000);
     }
 
     topicBtns.forEach(btn => {
@@ -73,9 +84,19 @@ function initAskAi() {
 
     aiBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            const provider = btn.dataset.ai;
+            const q = prompts[currentTopic] || prompts.general;
+
+            if (provider === 'gemini') {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(q).catch(() => {});
+                }
+                showToast('質問をコピーしました。Gemini の入力欄にペーストしてください。');
+            }
+
             if (typeof gtag === 'function') {
                 gtag('event', 'ask_ai_click', {
-                    ai_provider: btn.dataset.ai,
+                    ai_provider: provider,
                     topic: currentTopic,
                     page_location: window.location.pathname
                 });

@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=1.5">
+    <link rel="stylesheet" href="css/style.css?v=1.6">
 
     <!-- FontAwesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -998,14 +998,15 @@
                         <a class="ai-btn" data-ai="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">
                             <span>ChatGPTに聞く</span>
                         </a>
-                        <a class="ai-btn" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener">
+                        <a class="ai-btn" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener" title="質問がクリップボードにコピーされます。Geminiの入力欄にペーストしてください。">
                             <span>Geminiに聞く</span>
                         </a>
                         <a class="ai-btn" data-ai="claude" href="https://claude.ai/new" target="_blank" rel="noopener">
                             <span>Claudeに聞く</span>
                         </a>
                     </div>
-                    <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。</p>
+                    <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。<br><span style="font-size: 0.9em;">※Geminiのみ仕様上、質問は自動でコピーされますので入力欄にペーストしてください。</span></p>
+                    <div class="ask-ai-toast" role="status" aria-live="polite"></div>
                 </div>
             </div>
         </section>
@@ -1070,7 +1071,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/main.js?v=1.5"></script>
+    <script src="js/main.js?v=1.6"></script>
 </body>
 
 </html>

@@ -390,6 +390,14 @@ section { padding: 72px 0; }
 }
 .ask-ai-buttons .ai-btn:hover { background: var(--blue); color: var(--white); transform: translateY(-1px); }
 .ask-ai-note { font-size: 12px; color: var(--text-light); }
+.ask-ai-toast {
+  display: inline-block; margin-top: 16px; padding: 12px 16px;
+  background: var(--blue); color: var(--white); border-radius: 6px;
+  font-size: 13px; box-shadow: var(--shadow-lg);
+  opacity: 0; transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s; pointer-events: none; max-width: 100%;
+}
+.ask-ai-toast.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 480px) {
   .ask-ai-buttons { flex-direction: column; align-items: stretch; }
   .ask-ai-buttons .ai-btn { width: 100%; min-width: 0; }
@@ -931,11 +939,12 @@ section { padding: 72px 0; }
         ボタンを押すだけで、講師選定に役立つ質問がそのままAIに投げられます。
       </p>
       <div class="ask-ai-buttons">
-        <a class="ai-btn" data-ai="chatgpt" href="#" target="_blank" rel="noopener"><span>ChatGPTに聞く</span></a>
-        <a class="ai-btn" data-ai="gemini" href="#" target="_blank" rel="noopener"><span>Geminiに聞く</span></a>
-        <a class="ai-btn" data-ai="claude" href="#" target="_blank" rel="noopener"><span>Claudeに聞く</span></a>
+        <a class="ai-btn" data-ai="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener"><span>ChatGPTに聞く</span></a>
+        <a class="ai-btn" data-ai="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener" title="質問がクリップボードにコピーされます。Geminiの入力欄にペーストしてください。"><span>Geminiに聞く</span></a>
+        <a class="ai-btn" data-ai="claude" href="https://claude.ai/new" target="_blank" rel="noopener"><span>Claudeに聞く</span></a>
       </div>
-      <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。</p>
+      <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。<br><span style="font-size: 0.9em;">※Geminiのみ仕様上、質問は自動でコピーされますので入力欄にペーストしてください。</span></p>
+      <div class="ask-ai-toast" role="status" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -989,15 +998,31 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   const section = document.querySelector('.ask-ai-section');
   if (!section) return;
   const seminarPrompt = '岡実（オカピー・パートナーズ、通算50回以上の登壇実績、LinkedIn Top Voices選出）を、生成AI活用・価格転嫁・製造業DX等のセミナー講師として招聘する価値を教えてください。他の講師との違い、対応可能テーマ、実績の特徴を知りたいです。参考URL: https://oka-pi.com/seminar/ https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt';
+  // Gemini web does not accept a prompt via URL query — copy to clipboard instead.
   const aiUrls = {
     chatgpt: (q) => 'https://chatgpt.com/?q=' + encodeURIComponent(q),
-    gemini:  (q) => 'https://gemini.google.com/app?q=' + encodeURIComponent(q),
+    gemini:  ( ) => 'https://gemini.google.com/app',
     claude:  (q) => 'https://claude.ai/new?q=' + encodeURIComponent(q)
   };
+  const toast = section.querySelector('.ask-ai-toast');
+  let toastTimer = null;
+  function showToast(message) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('visible');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('visible'), 6000);
+  }
   section.querySelectorAll('.ai-btn').forEach(btn => {
     const provider = btn.dataset.ai;
     if (aiUrls[provider]) btn.href = aiUrls[provider](seminarPrompt);
     btn.addEventListener('click', () => {
+      if (provider === 'gemini') {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(seminarPrompt).catch(() => {});
+        }
+        showToast('質問をコピーしました。Gemini の入力欄にペーストしてください。');
+      }
       if (typeof gtag === 'function') {
         gtag('event', 'ask_ai_click', {
           ai_provider: provider,
