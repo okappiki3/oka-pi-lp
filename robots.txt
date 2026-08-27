@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 Sitemap: https://oka-pi.com/sitemap.xml

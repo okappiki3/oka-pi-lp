@@ -374,6 +374,27 @@ section { padding: 72px 0; }
 .process-step span { font-size: 12px; color: var(--text-light); }
 .process-note { font-size: 13px; color: var(--text-light); background: var(--gray-50); padding: 14px 18px; border-radius: var(--radius); border-left: 3px solid var(--blue); }
 
+/* ASK AI */
+.ask-ai-section { background: #faf7f2; }
+.ask-ai-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.ask-ai-section .sec-label { text-align: center; }
+.ask-ai-section .sec-title { text-align: center; margin-bottom: 20px; }
+.ask-ai-desc { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 32px; }
+.ask-ai-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 16px; }
+.ask-ai-buttons .ai-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; padding: 12px 24px;
+  background: var(--white); color: var(--blue); border: 1.5px solid var(--blue);
+  border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none;
+  transition: all 0.2s; box-shadow: var(--shadow);
+}
+.ask-ai-buttons .ai-btn:hover { background: var(--blue); color: var(--white); transform: translateY(-1px); }
+.ask-ai-note { font-size: 12px; color: var(--text-light); }
+@media (max-width: 480px) {
+  .ask-ai-buttons { flex-direction: column; align-items: stretch; }
+  .ask-ai-buttons .ai-btn { width: 100%; min-width: 0; }
+}
+
 /* CTA & FOOTER（service/と同一） */
 .cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 72px 0; text-align: center; }
 .cta-section .sec-title { color: var(--white); }
@@ -899,6 +920,26 @@ section { padding: 72px 0; }
   </div>
 </section>
 
+<!-- Ask AI -->
+<section class="ask-ai-section" aria-labelledby="ask-ai-title">
+  <div class="container">
+    <div class="ask-ai-inner">
+      <p class="sec-label">ASK AI</p>
+      <h2 id="ask-ai-title" class="sec-title">登壇者として合うかAIに聞いてみる</h2>
+      <p class="ask-ai-desc">
+        普段お使いのAIに、岡実を招く価値があるか事前にご確認いただけます。<br>
+        ボタンを押すだけで、講師選定に役立つ質問がそのままAIに投げられます。
+      </p>
+      <div class="ask-ai-buttons">
+        <a class="ai-btn" data-ai="chatgpt" href="#" target="_blank" rel="noopener"><span>ChatGPTに聞く</span></a>
+        <a class="ai-btn" data-ai="gemini" href="#" target="_blank" rel="noopener"><span>Geminiに聞く</span></a>
+        <a class="ai-btn" data-ai="claude" href="#" target="_blank" rel="noopener"><span>Claudeに聞く</span></a>
+      </div>
+      <p class="ask-ai-note">選んだAIの画面が新しいタブで開き、質問が入力された状態になります。送信ボタンを押してご確認ください。</p>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="container">
@@ -942,6 +983,31 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Ask AI: build AI URLs and wire GA4 event
+(function() {
+  const section = document.querySelector('.ask-ai-section');
+  if (!section) return;
+  const seminarPrompt = '岡実（オカピー・パートナーズ、通算50回以上の登壇実績、LinkedIn Top Voices選出）を、生成AI活用・価格転嫁・製造業DX等のセミナー講師として招聘する価値を教えてください。他の講師との違い、対応可能テーマ、実績の特徴を知りたいです。参考URL: https://oka-pi.com/seminar/ https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt';
+  const aiUrls = {
+    chatgpt: (q) => 'https://chatgpt.com/?q=' + encodeURIComponent(q),
+    gemini:  (q) => 'https://gemini.google.com/app?q=' + encodeURIComponent(q),
+    claude:  (q) => 'https://claude.ai/new?q=' + encodeURIComponent(q)
+  };
+  section.querySelectorAll('.ai-btn').forEach(btn => {
+    const provider = btn.dataset.ai;
+    if (aiUrls[provider]) btn.href = aiUrls[provider](seminarPrompt);
+    btn.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'ask_ai_click', {
+          ai_provider: provider,
+          topic: 'seminar',
+          page_location: window.location.pathname
+        });
+      }
+    });
+  });
+})();
 </script>
 
 </body>

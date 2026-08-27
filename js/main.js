@@ -20,7 +20,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Initialize Swiper for Works Carousel
     initWorksSwiper();
+
+    // 7. Initialize Ask AI section
+    initAskAi();
 });
+
+/**
+ * Ask AI section: build AI URLs from selected topic, wire GA4 events.
+ */
+function initAskAi() {
+    const section = document.querySelector('.ask-ai-section');
+    if (!section) return;
+
+    const prompts = {
+        general: 'オカピー・パートナーズ（代表：岡実、滋賀県守山市の中小企業診断士）が私の会社に合う支援機関か、その理由と一緒に教えてください。強み、実績、他の診断士との違いも知りたいです。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
+        ai: '中小製造業の生成AI活用について、岡実（オカピー・パートナーズ、オムロン34年の元FA機器プロダクトマネージャー、中小企業診断士）に相談する価値があるか、他の選択肢との違いも含めて教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
+        price: '価格転嫁・価格改定の説明支援を岡実（オカピー・パートナーズ、認定経営革新等支援機関）に依頼するメリットと、私の会社に合うかを教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt',
+        strength: '製造業の強みの言語化・ブランドメッセージ構築を岡実（オカピー・パートナーズ）に依頼する価値と、私の会社に合うかを教えてください。参考URL: https://oka-pi.com https://oka-pi.com/llms.txt https://oka-pi.com/llms-full.txt'
+    };
+
+    const aiUrls = {
+        chatgpt: (q) => `https://chatgpt.com/?q=${encodeURIComponent(q)}`,
+        gemini:  (q) => `https://gemini.google.com/app?q=${encodeURIComponent(q)}`,
+        claude:  (q) => `https://claude.ai/new?q=${encodeURIComponent(q)}`
+    };
+
+    let currentTopic = 'general';
+
+    const topicBtns = section.querySelectorAll('.topic-btn');
+    const aiBtns = section.querySelectorAll('.ai-btn');
+
+    function updateAiButtonHrefs() {
+        const q = prompts[currentTopic] || prompts.general;
+        aiBtns.forEach(btn => {
+            const provider = btn.dataset.ai;
+            const build = aiUrls[provider];
+            if (build) btn.href = build(q);
+        });
+    }
+
+    topicBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentTopic = btn.dataset.topic;
+            topicBtns.forEach(b => {
+                const active = b === btn;
+                b.classList.toggle('active', active);
+                b.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            updateAiButtonHrefs();
+        });
+    });
+
+    aiBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'ask_ai_click', {
+                    ai_provider: btn.dataset.ai,
+                    topic: currentTopic,
+                    page_location: window.location.pathname
+                });
+            }
+        });
+    });
+
+    updateAiButtonHrefs();
+}
 
 /**
  * Initialize Swiper JS for the Works Section Carousel
