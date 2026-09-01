@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと｜オカピー・パートナーズ</title>
+<meta name="description" content="支援先から「ChatGPTに顧客情報を入れても大丈夫か」と聞かれたら、まず確認したい3つのこと。何に使うのか、その情報は本当に必要か、どんな環境で使っているのか。中小企業診断士が支援する立場からの答え方を解説します。">
+<meta name="keywords" content="生成AI,セキュリティ,支援機関,ChatGPT,顧客情報,情報管理">
+<meta property="og:title" content="「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと｜オカピー・パートナーズ">
+<meta property="og:description" content="支援先から「ChatGPTに顧客情報を入れても大丈夫か」と聞かれたら、まず確認したい3つのこと。何に使うのか、その情報は本当に必要か、どんな環境で使っているのか。中小企業診断士が支援する立場からの答え方を解説します。">
+<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/genai-security/01/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-09-01">
+<meta property="article:modified_time" content="2026-09-01">
+<meta property="article:author" content="岡 実">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと｜オカピー・パートナーズ">
+<meta name="twitter:description" content="支援先から「ChatGPTに顧客情報を入れても大丈夫か」と聞かれたら、まず確認したい3つのこと。何に使うのか、その情報は本当に必要か、どんな環境で使っているのか。中小企業診断士が支援する立場からの答え方を解説します。">
+<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/genai-security/01/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://oka-pi.com/insights/genai-security/01/#article",
+      "headline": "「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと",
+      "description": "支援先から「ChatGPTに顧客情報を入れても大丈夫か」と聞かれたら、まず確認したい3つのこと。何に使うのか、その情報は本当に必要か、どんな環境で使っているのか。中小企業診断士が支援する立場からの答え方を解説します。",
+      "url": "https://oka-pi.com/insights/genai-security/01/",
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01",
+      "inLanguage": "ja",
+      "image": "https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://oka-pi.com/#person",
+        "name": "岡 実",
+        "url": "https://oka-pi.com/",
+        "jobTitle": "中小企業診断士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "オカピー・パートナーズ",
+        "url": "https://oka-pi.com/"
+      },
+      "keywords": "生成AI,セキュリティ,支援機関,ChatGPT,顧客情報,情報管理",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://oka-pi.com/insights/genai-security/#collection",
+        "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ",
+        "url": "https://oka-pi.com/insights/genai-security/"
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "name": "この記事に出てきた主な用語",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "生成AI", "description": "文章、画像、音声などを新しく作り出すAIの総称。ChatGPTやGeminiが代表例。あらかじめ決められた答えを返すのではなく、与えられた指示と文脈から毎回新しく出力を組み立てる。" },
+        { "@type": "DefinedTerm", "name": "学習（AIの学習に使われる設定）", "description": "利用者が入力した内容を、AI提供事業者がモデルの改良（追加学習）に用いるかどうかの設定。個人向けの無料利用では既定でオンになっていることが多く、組織向けの契約では既定でオフになっているのが一般的。設定画面や契約条項で確認できる。" },
+        { "@type": "DefinedTerm", "name": "組織向け（法人向け）プラン", "description": "会社などの組織単位で契約するAIサービスのプラン。管理者が利用者アカウント・権限・利用ログを管理できる、入力データを学習に使わない、退職時の情報回収ができる、といった点で個人契約とは扱いが異なる。事業者によって「エンタープライズ」「ビジネス」など呼称が違う。" },
+        { "@type": "DefinedTerm", "name": "管理者", "description": "組織向けプランで、利用者アカウントの追加・削除、利用できる機能の範囲、共有できるデータ、利用状況の確認などを設定・監督する役割。個人向けプランには無い機能で、会社として利用状況を把握するために必要になる。" },
+        { "@type": "DefinedTerm", "name": "データの保持期間", "description": "利用者がAIに入力したデータを、事業者側がどれくらいの期間保管するかの取り決め。契約プランや設定によって、即時削除・数十日保持・利用停止まで保持など幅がある。組織向けプランでは、監査目的で一定期間保持する一方、学習には使わないという設計が多い。" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ", "item": "https://oka-pi.com/insights/genai-security/" },
+        { "@type": "ListItem", "position": 4, "name": "「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy:       #0a3d5c;
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --gold-light: #f5edda;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-400:   #9ca3af;
+  --gray-600:   #555d6b;
+  --gray-800:   #2a2f38;
+  --gray-900:   #1a1d23;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      780px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container-wide { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+/* ARTICLE */
+.article-hero { background: var(--blue-pale); padding: 48px 0 32px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.series-label { display: inline-block; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 4px; text-decoration: none; margin-bottom: 12px; }
+.series-label:hover { background: var(--navy-deep); }
+.article-tags-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.article-tag-plain { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+.article-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; color: var(--navy-deep); line-height: 1.4; margin-bottom: 20px; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 13px; color: var(--text-light); }
+.article-meta time { font-weight: 700; color: var(--navy-deep); }
+
+.article-body { padding: 48px 0 24px; }
+.article-body h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+.article-body h3 { font-size: 18px; font-weight: 700; color: var(--navy-deep); margin: 32px 0 12px; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul { margin: 0 0 18px 24px; }
+.article-body ul li { margin-bottom: 8px; }
+.article-body strong { color: var(--navy-deep); font-weight: 700; }
+.article-body blockquote { margin: 20px 0; padding: 14px 20px; border-left: 4px solid var(--blue); background: var(--blue-pale); color: var(--text); font-size: 15px; line-height: 1.9; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-body blockquote + blockquote { margin-top: 12px; }
+.article-body figure { margin: 32px 0; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px; }
+.article-body figure img, .article-body figure svg { margin: 0 auto; display: block; max-width: 100%; height: auto; }
+.article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
+
+.glossary { background: var(--blue-pale); padding: 40px 0; margin-top: 48px; }
+.glossary h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 900; color: var(--navy-deep); margin-bottom: 20px; }
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 700; color: var(--navy-deep); margin-top: 18px; margin-bottom: 4px; font-size: 15px; }
+.glossary dd { margin: 0 0 8px 0; color: var(--text); font-size: 14.5px; line-height: 1.85; }
+
+/* CTA */
+.cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 56px 0; text-align: center; }
+.cta-section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+.cta-section p { color: #b8d4e8; margin-bottom: 24px; font-size: 15px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+.cta-btn.primary { background: var(--gold); color: var(--navy-deep); }
+.cta-btn.primary:hover { background: #d4b45a; transform: translateY(-1px); }
+.cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.cta-btn.secondary:hover { background: rgba(255,255,255,0.18); }
+.cta-form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.75); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  .article-hero { padding: 32px 0 24px; }
+  .article-body { padding: 32px 0 16px; }
+  .article-body figure { padding: 8px; }
+  .cta-section { padding: 40px 0; }
+  .cta-section h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="/">ホーム</a> ／ <a href="/insights/">実務ノート</a> ／ <a href="/insights/genai-security/">支援先に聞かれたらどう答える？ 生成AI×セキュリティ</a> ／ 第1回
+    </p>
+    <a href="/insights/genai-security/" class="series-label">連載｜支援先に聞かれたらどう答える？　生成AI×セキュリティ　第1回</a>
+    <div class="article-tags-top" aria-label="タグ">
+      <span class="article-tag-plain">生成AI</span>
+      <span class="article-tag-plain">セキュリティ</span>
+      <span class="article-tag-plain">支援機関</span>
+    </div>
+    <h1 class="article-h1">「ChatGPTに顧客情報を入れても大丈夫？」まず確認したい3つのこと</h1>
+    <div class="article-meta">
+      <time datetime="2026-09-01">公開：2026年9月1日</time>
+      <span>著者：岡 実（中小企業診断士／オカピー・パートナーズ代表）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container">
+
+    <p class="article-lead">
+      支援先の社長から、こう聞かれたとします。
+    </p>
+
+    <blockquote>「ChatGPTって便利ですね。うちでも顧客情報を入れて、営業資料を作らせても大丈夫ですか？」</blockquote>
+
+    <p class="article-lead">こういう場面、これから増えていくと思います。</p>
+
+    <p class="article-lead">さて、何と答えるでしょうか。</p>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事の要点</p>
+      <ol class="article-lead-box__list">
+        <li>「原則だめです」は分かりやすいが、一律の禁止は活用を止めるか、会社から見えない利用を残します。</li>
+        <li>顧客情報をAIに入れる前に確認するのは、何に使うのか・その情報は本当に必要か・どのAIをどんな環境で使っているのか、の3つです。</li>
+        <li>どう隠すかを考える前に、そもそも渡す必要があるかを考えます。この順番は、目的やAIが変わっても変わりません。</li>
+      </ol>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#gensoku-dame">「原則だめです」は、たしかに分かりやすい</a></li>
+        <li><a href="#kakunin-1">確認すること① 何に使うのか</a></li>
+        <li><a href="#kakunin-2">確認すること② その情報は、本当に必要か</a></li>
+        <li><a href="#kakunin-3">確認すること③ どのAIを、どんな環境で使っているのか</a></li>
+        <li><a href="#kiite-miru">支援先には、こう聞いてみる</a></li>
+        <li><a href="#yottsu-no-toi">この連載で使う「4つの問い」</a></li>
+        <li><a href="#junban">確認する順番を持っておく</a></li>
+        <li><a href="#glossary">この記事に出てきた主な用語</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="gensoku-dame">「原則だめです」は、たしかに分かりやすい</h2>
+
+    <p>現場では、こう答えている方も多いと思います。</p>
+
+    <blockquote>「顧客情報は、原則入れない方がいいです」</blockquote>
+
+    <p>分かりやすいですし、経営者にもすぐ伝わります。条件をいくつも並べて説明すると、たいてい「で、結局どっちなんですか」と言われますから、線を引いてあげる方が親切な場面もある。私も、その場でそう言うことはあります。</p>
+
+    <p>ただ、この言い方には続きがあります。</p>
+
+    <p>一律に禁止すると、活用そのものが止まることもあれば、<strong>会社から見えない利用が残ることもあります</strong>。厄介なのは後者です。禁止したつもりでも、使うのをやめるのではなく、見えなくなるだけ。</p>
+
+    <p>では、どう言えばよいか。</p>
+
+    <p>私は、<strong>分かりやすさは落とさずに、話が止まらない言い方</strong>にしたいと思っています。たとえば、こうです。</p>
+
+    <blockquote><strong>「今日のところは、実際の顧客情報は入れずに始めましょう。何に使うかが決まったら、必要な情報と利用環境を確認して、扱い方を考えましょう」</strong></blockquote>
+
+    <p>「原則だめ」と同じくらいはっきりしていて、その場で言えて、<strong>続きがある</strong>。経営者からすると「いまはやめとけ」と聞こえますから、伝わり方も変わりません。</p>
+
+    <p>そして、このあと確認したいのが、次の3つです。</p>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/01/fig1-kakunin-3tsu.svg" alt="「顧客情報をAIに入れて大丈夫？」と聞かれたときに確認する3つ。1 何に使う？（目的を確認する）、2 本当に必要な情報は？、3 どのAIをどんな環境で？" loading="lazy">
+      <figcaption>顧客情報をAIに入れる前に確認する3つ</figcaption>
+    </figure>
+
+    <h2 id="kakunin-1">確認すること① 何に使うのか</h2>
+
+    <p>まず、目的です。</p>
+
+    <p>営業資料を作りたいのか、顧客を分類したいのか、問い合わせへの返信文を作りたいのか。目的が変われば、必要な情報も変わります。</p>
+
+    <p>ここが決まらないうちは、「この情報は入れてよいか」という問いが成り立ちません。<strong>何のために必要なのかが分からなければ、必要かどうかを判断できない</strong>からです。</p>
+
+    <h2 id="kakunin-2">確認すること② その情報は、本当に必要か</h2>
+
+    <p>一つ例を見てみます。</p>
+
+    <p>支援先がこう言ったとします。</p>
+
+    <blockquote>「この顧客一覧をAIに入れて、重点的に営業すべき先を考えてもらいたい」</blockquote>
+
+    <p>顧客一覧には、会社名、担当者名、電話番号、売上金額、購入商品、最終取引日が入っています。</p>
+
+    <p>ここで私が聞きたいのは、これです。</p>
+
+    <blockquote><strong>「その分析に、担当者名や電話番号は必要ですか？」</strong></blockquote>
+
+    <p>重点先を見つけたいのであれば、使うのは売上規模、商品構成、最終購入時期あたりでしょう。<strong>担当者名も電話番号も、分析には使いません。</strong></p>
+
+    <p>それなら、渡さなくていい。会社名も、A社・B社と置き換えれば足りるかもしれません。</p>
+
+    <p>ここで大事なのは、順番です。</p>
+
+    <p>生成AIとセキュリティの話になると、どうしても「どうやって伏せるか」「どこまで隠せば安全か」という方向に行きがちです。ところが、隠す工夫には抜けが出ます。氏名を消しても、支店名と役職と年代が残っていれば、同じ職場の人には誰のことか分かってしまう。顧客名を記号に置き換えても、取引日と金額が残っていれば、営業担当者には特定できてしまう。</p>
+
+    <p><strong>必要のない情報までAIに渡さない。</strong> それだけでも、情報流出のリスクを一つ減らせます。</p>
+
+    <blockquote><strong>どう隠すかを考える前に、そもそも渡す必要があるかを考える。</strong></blockquote>
+
+    <p>この順番だけは、目的が何であっても、使っているAIが何であっても変わりません。</p>
+
+    <h2 id="kakunin-3">確認すること③ どのAIを、どんな環境で使っているのか</h2>
+
+    <p>業務によっては、どうしても実際のデータを扱わなければならない場面があります。そのときは、使っている環境を確認します。</p>
+
+    <p>入力したデータが学習などに使われる設定になっていないか。契約上、データの取扱いがどう定められているか。管理者が、誰が何に使っているかを把握できるか。データがどれくらいの期間、保持されるか。このあたりです。</p>
+
+    <p>ここで押さえておきたいことがあります。</p>
+
+    <p><strong>料金を払っているかどうかより、組織として管理できる契約・環境かどうかを見ることです。</strong></p>
+
+    <p>個人向けの利用環境と、管理者がアカウントや権限を管理できる組織向け環境とでは、会社として担保できる範囲が異なります。個人契約のままでは、会社として利用状況を把握したり、退職時に業務情報を確実に回収したりすることが難しくなります。</p>
+
+    <p>この点は次回、詳しく扱います。</p>
+
+    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
+      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
+        生成AIを業務で使うときのセキュリティは、支援機関・業界団体の職員向け研修でも扱っているテーマです。実際の質問を題材に、その場で手を動かす形で進めています。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
+      </p>
+    </aside>
+
+    <h2 id="kiite-miru">支援先には、こう聞いてみる</h2>
+
+    <blockquote><strong>「AIに何をしてほしいですか？」</strong></blockquote>
+    <blockquote><strong>「そのために、この顧客情報は全部必要ですか？」</strong></blockquote>
+    <blockquote><strong>「いま、会社として使っているAIはありますか？」</strong></blockquote>
+
+    <p>この3つを順に聞けば、話は整理できます。</p>
+
+    <p>もっとも、この3つだけで利用の可否が決まるわけではありません。外部に出す資料であれば、AIの出力をどう確認し、何に使うのかも考える必要があります。<strong>まず入口で確認したいのが、この3つ</strong>ということです。</p>
+
+    <p>経営者の方がお読みでしたら、顧客情報をAIに入れる前に、ご自身でこの3つを確認してみてください。<strong>これだけでも、「とりあえず顧客データをそのまま入れてみる」から一歩離れられます。</strong></p>
+
+    <h2 id="yottsu-no-toi">この連載で使う「4つの問い」</h2>
+
+    <p>生成AIを仕事で使うとき、見るべきことは4つあります。</p>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/01/fig2-4toi-01.svg" alt="生成AIを仕事で使うときの4つの問い。①何をAIに入れるか（今回はここ）②AIにどこまでアクセスさせるか ③出力を何に使うか ④どこまでAIに任せるか" loading="lazy">
+      <figcaption>生成AIを仕事で使うときの4つの問い。第1回で扱うのは①</figcaption>
+    </figure>
+
+    <p>今回扱ったのは、主に①でした。②から④<strong>も</strong>、回を追って見ていきます。</p>
+
+    <p><strong>4つ全部を毎回チェックするものではありません。</strong> チャットで文章を書かせるだけなら、主に①と③。ファイルや業務基盤につなぐようになると②が効いてきます。AIに実行までさせるなら④です。<strong>深く使うほど、見るべき問いが増える。</strong></p>
+
+    <p>AIを「どこに」使うかの整理は、<a href="/insights/genai-katsuyo-map-756/#katsuyo-map">活用マップ</a>で別に扱っています。</p>
+
+    <h2 id="junban">確認する順番を持っておく</h2>
+
+    <p>「ChatGPTに顧客情報を入れても大丈夫ですか」と聞かれたら、<strong>何に使うのか。そのために本当に必要な情報はどこまでか。会社としてどのAIをどんな環境で使っているのか。</strong></p>
+
+    <p>この3つが分かると、次に何を確認すべきかが見えてきます。確認が終わるまでは実際の顧客情報を入れずに始める、という進め方でしたら、その場ですぐ言えます。</p>
+
+    <p>禁止事項を増やしても、使える範囲は広がりません。<strong>確認する順番を持っておくと、安心して使える範囲は、むしろ広がっていきます。</strong></p>
+
+    <p>次回は、「無料版・有料版・法人版、何が違う？」を取り上げます。「有料なら安全」と言えない理由を、もう少し具体的に見ていきます。</p>
+
+  </div>
+</article>
+
+<!-- GLOSSARY -->
+<section class="glossary">
+  <div class="container">
+    <h2 id="glossary">この記事に出てきた主な用語</h2>
+    <dl>
+      <dt>生成AI</dt>
+      <dd>文章、画像、音声などを新しく作り出すAIの総称です。ChatGPTやGeminiが代表例です。あらかじめ決められた答えを返すのではなく、与えられた指示と文脈から毎回新しく出力を組み立てます。</dd>
+
+      <dt>学習（AIの学習に使われる設定）</dt>
+      <dd>利用者が入力した内容を、AI提供事業者がモデルの改良（追加学習）に用いるかどうかの設定です。個人向けの無料利用では既定でオンになっていることが多く、組織向けの契約では既定でオフになっているのが一般的です。設定画面や契約条項で確認できます。</dd>
+
+      <dt>組織向け（法人向け）プラン</dt>
+      <dd>会社などの組織単位で契約するAIサービスのプランです。管理者が利用者アカウント・権限・利用ログを管理できる、入力データを学習に使わない、退職時の情報回収ができる、といった点で個人契約とは扱いが異なります。事業者によって「エンタープライズ」「ビジネス」など呼称が違います。</dd>
+
+      <dt>管理者</dt>
+      <dd>組織向けプランで、利用者アカウントの追加・削除、利用できる機能の範囲、共有できるデータ、利用状況の確認などを設定・監督する役割です。個人向けプランには無い機能で、会社として利用状況を把握するために必要になります。</dd>
+
+      <dt>データの保持期間</dt>
+      <dd>利用者がAIに入力したデータを、事業者側がどれくらいの期間保管するかの取り決めです。契約プランや設定によって、即時削除・数十日保持・利用停止まで保持など幅があります。組織向けプランでは、監査目的で一定期間保持する一方、学習には使わないという設計が多くみられます。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>顧客情報をAIに入れる前に、この3つを確認してみませんか</h2>
+    <p>支援先で受けている実際の質問を題材に、確認の順番と伝え方を一緒に整理します。<br>商工会議所・業界団体・企業研修の講師もお引き受けしています。<br>初回30分は無料です。</p>
+    <div class="cta-actions">
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="cta-btn primary" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        30分の無料相談を申し込む
+      </a>
+      <a href="/seminar/" class="cta-btn secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM6 21h12M12 17v4"/></svg>
+        セミナー・研修のご依頼
+      </a>
+    </div>
+    <p class="cta-form-note">入力3分・営業メールはお送りしません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
