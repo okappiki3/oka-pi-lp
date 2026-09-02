@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「有料版なら顧客情報を入れて大丈夫？」料金では決まりません｜オカピー・パートナーズ</title>
+<meta name="description" content="生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。">
+<meta name="keywords" content="生成AI,セキュリティ,支援機関,ChatGPT,法人プラン,情報管理,DPA">
+<meta property="og:title" content="「有料版なら顧客情報を入れて大丈夫？」料金では決まりません｜オカピー・パートナーズ">
+<meta property="og:description" content="生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。">
+<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/genai-security/02/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-09-02">
+<meta property="article:modified_time" content="2026-09-02">
+<meta property="article:author" content="岡 実">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="「有料版なら顧客情報を入れて大丈夫？」料金では決まりません｜オカピー・パートナーズ">
+<meta name="twitter:description" content="生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。">
+<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/genai-security/02/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://oka-pi.com/insights/genai-security/02/#article",
+      "headline": "「有料版なら顧客情報を入れて大丈夫？」料金では決まりません",
+      "description": "生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。",
+      "url": "https://oka-pi.com/insights/genai-security/02/",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "inLanguage": "ja",
+      "image": "https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://oka-pi.com/#person",
+        "name": "岡 実",
+        "url": "https://oka-pi.com/",
+        "jobTitle": "中小企業診断士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "オカピー・パートナーズ",
+        "url": "https://oka-pi.com/"
+      },
+      "keywords": "生成AI,セキュリティ,支援機関,ChatGPT,法人プラン,情報管理,DPA",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://oka-pi.com/insights/genai-security/#collection",
+        "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ",
+        "url": "https://oka-pi.com/insights/genai-security/"
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "name": "この記事に出てきた主な用語",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "オプトアウト", "description": "入力したデータを、事業者側の学習利用の対象から外す設定。既定値や変更方法は、サービスやプランによって異なる。" },
+        { "@type": "DefinedTerm", "name": "DPA（データ処理契約）", "description": "事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合がある。" },
+        { "@type": "DefinedTerm", "name": "リージョン", "description": "サービスのデータが物理的に保管される場所（国や地域）。日本国内・米国・EUなど、選択できる場合と選べない場合がある。" },
+        { "@type": "DefinedTerm", "name": "越境移転", "description": "個人情報を国外へ移転すること。個人情報保護法では、本人への説明や、移転先の体制の確認などが求められる場面がある。" },
+        { "@type": "DefinedTerm", "name": "管理者機能", "description": "組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ", "item": "https://oka-pi.com/insights/genai-security/" },
+        { "@type": "ListItem", "position": 4, "name": "「有料版なら顧客情報を入れて大丈夫？」料金では決まりません" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy:       #0a3d5c;
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --gold-light: #f5edda;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-400:   #9ca3af;
+  --gray-600:   #555d6b;
+  --gray-800:   #2a2f38;
+  --gray-900:   #1a1d23;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      780px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container-wide { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+/* ARTICLE */
+.article-hero { background: var(--blue-pale); padding: 48px 0 32px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.series-label { display: inline-block; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 4px; text-decoration: none; margin-bottom: 12px; }
+.series-label:hover { background: var(--navy-deep); }
+.article-tags-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.article-tag-plain { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+.article-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; color: var(--navy-deep); line-height: 1.4; margin-bottom: 20px; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 13px; color: var(--text-light); }
+.article-meta time { font-weight: 700; color: var(--navy-deep); }
+
+.article-body { padding: 48px 0 24px; }
+.article-body h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+.article-body h3 { font-size: 18px; font-weight: 700; color: var(--navy-deep); margin: 32px 0 12px; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul { margin: 0 0 18px 24px; }
+.article-body ul li { margin-bottom: 8px; }
+.article-body strong { color: var(--navy-deep); font-weight: 700; }
+.article-body blockquote { margin: 20px 0; padding: 14px 20px; border-left: 4px solid var(--blue); background: var(--blue-pale); color: var(--text); font-size: 15px; line-height: 1.9; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-body blockquote + blockquote { margin-top: 12px; }
+.article-body figure { margin: 32px 0; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px; }
+.article-body figure img, .article-body figure svg { margin: 0 auto; display: block; max-width: 100%; height: auto; }
+.article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
+.article-body .table-wrap { margin: 24px 0; overflow-x: auto; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.75; }
+.article-body table th, .article-body table td { border: 1px solid var(--gray-200); padding: 10px 14px; text-align: left; vertical-align: top; }
+.article-body table thead th { background: var(--blue-pale); color: var(--navy-deep); font-weight: 700; }
+.article-body table tbody th { background: var(--gray-50); color: var(--navy-deep); font-weight: 700; white-space: nowrap; }
+.article-body .table-note { font-size: 12px; color: var(--text-light); margin: 4px 0 0; }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
+.article-footnote { margin-top: 40px; padding: 16px 20px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); font-size: 13px; color: var(--text-light); line-height: 1.85; }
+.article-footnote p { margin: 0; }
+
+.glossary { background: var(--blue-pale); padding: 40px 0; margin-top: 48px; }
+.glossary h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 900; color: var(--navy-deep); margin-bottom: 20px; }
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 700; color: var(--navy-deep); margin-top: 18px; margin-bottom: 4px; font-size: 15px; }
+.glossary dd { margin: 0 0 8px 0; color: var(--text); font-size: 14.5px; line-height: 1.85; }
+
+/* CTA */
+.cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 56px 0; text-align: center; }
+.cta-section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+.cta-section p { color: #b8d4e8; margin-bottom: 24px; font-size: 15px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+.cta-btn.primary { background: var(--gold); color: var(--navy-deep); }
+.cta-btn.primary:hover { background: #d4b45a; transform: translateY(-1px); }
+.cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.cta-btn.secondary:hover { background: rgba(255,255,255,0.18); }
+.cta-form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.75); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  .article-hero { padding: 32px 0 24px; }
+  .article-body { padding: 32px 0 16px; }
+  .article-body figure { padding: 8px; }
+  .article-body table th, .article-body table td { padding: 8px 10px; font-size: 13.5px; }
+  .cta-section { padding: 40px 0; }
+  .cta-section h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="/">ホーム</a> ／ <a href="/insights/">実務ノート</a> ／ <a href="/insights/genai-security/">支援先に聞かれたらどう答える？ 生成AI×セキュリティ</a> ／ 第2回
+    </p>
+    <a href="/insights/genai-security/" class="series-label">連載｜支援先に聞かれたらどう答える？　生成AI×セキュリティ　第2回</a>
+    <div class="article-tags-top" aria-label="タグ">
+      <span class="article-tag-plain">生成AI</span>
+      <span class="article-tag-plain">セキュリティ</span>
+      <span class="article-tag-plain">支援機関</span>
+    </div>
+    <h1 class="article-h1">「有料版なら顧客情報を入れて大丈夫？」料金では決まりません</h1>
+    <div class="article-meta">
+      <time datetime="2026-09-02">公開：2026年9月2日</time>
+      <span>著者：岡 実（中小企業診断士／オカピー・パートナーズ代表）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container">
+
+    <p class="article-lead">前回、「ChatGPTに顧客情報を入れても大丈夫ですか」と聞かれたとき、まず確認したい3つを取り上げました。</p>
+
+    <p class="article-lead">何に使うのか。その情報は本当に必要なのか。どのAIを、どんな環境で使っているのか。</p>
+
+    <p class="article-lead">3つ目まで話すと、こんな質問が返ってくることがあります。</p>
+
+    <blockquote>「じゃあ、有料版を使えば大丈夫なんですよね？」</blockquote>
+
+    <p class="article-lead">私なら、こう答えます。</p>
+
+    <blockquote><strong>「料金だけでは決められないんです。会社として管理できているかどうかも確かめます」</strong></blockquote>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事の要点</p>
+      <ol class="article-lead-box__list">
+        <li>無料と個人有料の差は<strong>機能</strong>、個人有料と法人向けの差は<strong>統制</strong>。「高いプランだから安全」ではありません。</li>
+        <li>設定でオフにする「学習利用」と、契約で定める「データの扱い（DPA）」は別。設定は変わることがあるので、定期的に確認します。</li>
+        <li>「顧客情報をAIに入れてよいか」は、案件ごとに担当者が決めることではなく、会社として決めておくこと。個人の設定では届かない範囲があります。</li>
+      </ol>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#nishu">「有料版」のひとことに、二種類ある</a></li>
+        <li><a href="#taishoku">その社員が辞めたら、どうなるか</a></li>
+        <li><a href="#gakushu-off">「学習利用はオフにしています」と言われたら</a></li>
+        <li><a href="#kankyo-kakunin">環境を確認するとき、何を聞くか</a></li>
+        <li><a href="#muryo-demo">無料版や個人契約でも、ここまではできる</a></li>
+        <li><a href="#kojin-todokanai">個人で頑張っても、届かない範囲がある</a></li>
+        <li><a href="#soshiki-plan">組織向けには、どんなプランがあるか</a></li>
+        <li><a href="#kiite-miru">支援先には、こう聞いてみる</a></li>
+        <li><a href="#glossary">この記事に出てきた主な用語</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="nishu">「有料版」のひとことに、二種類ある</h2>
+
+    <p>生成AIには、無料で使うもの、個人で契約する有料プラン、会社や組織で契約する環境があります。これを料金順に並べると、違いが見えなくなる。</p>
+
+    <p>無料から個人向けの有料プランに変えると、使える機能や利用量が変わります。</p>
+
+    <p>一方、個人向けから組織向けに変えると、会社が管理できる範囲が広がります。誰がアカウントを持つのか。利用者と権限を会社側で管理できるのか。誰が何に使っているか確認できるのか。退職や異動のときに止められるのか。</p>
+
+    <blockquote><strong>無料と個人有料の差は、機能。</strong><br><strong>個人有料と法人向けの差は、統制。</strong></blockquote>
+
+    <p>「統制」は堅い言葉ですが、中身はいま並べたとおりです。会社が決められる。確認できる。必要なら止められる。</p>
+
+    <p>「高いプランだから安全」ではありません。</p>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/02/fig1-3kankyo-02.svg" alt="無料・個人有料・法人向けの3つの環境で、誰が管理するか、使われ方の把握、データの扱い、退職・異動のとき、が何が変わるか。無料と個人有料の差は機能、個人有料と法人向けの差は統制。" loading="lazy">
+      <figcaption>無料・個人有料・法人向けで、何が変わるか</figcaption>
+    </figure>
+
+    <h2 id="taishoku">その社員が辞めたら、どうなるか</h2>
+
+    <p>社員が自分で有料プランを契約して、仕事にも使っているとします。</p>
+
+    <p>高性能なモデルが使える。ファイルも読ませられる。本人は学習利用の設定も確認している。</p>
+
+    <p>ここだけ見れば、無料版よりよほど安心に見えます。</p>
+
+    <p>では、その社員が退職したら。</p>
+
+    <p>会社は、そのアカウントを止められるでしょうか。業務で使ったやり取りやファイルを、回収できるでしょうか。これまで何を入力していたのか、会社から確認できるでしょうか。</p>
+
+    <p>個人契約のままだと、会社側から止めたり、業務情報を回収したりしにくい。</p>
+
+    <p><strong>「有料にすると安全になる」のではありません。「組織として管理できるようになる」んです。</strong> 同じ「有料」でも、個人有料で増えるのは自分が使える機能、組織向けで増えるのは会社が管理できる範囲です。</p>
+
+    <h2 id="gakushu-off">「学習利用はオフにしています」と言われたら</h2>
+
+    <p>もう一つ、よく返ってくるのがこれです。</p>
+
+    <blockquote>「学習に使われない設定にしてあるので、大丈夫です」</blockquote>
+
+    <p>設定画面を開いて、学習利用をオフにする。必要な作業です。</p>
+
+    <p>ただ、設定で学習利用をオフにすることと、データの扱いが契約で定められていることは別です。設定も規約も、事業者の側で変えられます。</p>
+
+    <p>組織向けのサービスでは、入力したデータをどう扱うかが、契約条件として書かれているものがあります。</p>
+
+    <p>設定で学習利用を止めることを、<strong>オプトアウト</strong>と呼びます。データの取り扱いについて定める契約が、<strong>DPA（データ処理契約）</strong>です。</p>
+
+    <p>サービスの比較表や契約ページでは、この言葉が出てきます。</p>
+
+    <p>設定は変わることがあるので、支援先に伝えるときは一言足します。</p>
+
+    <blockquote><strong>「設定して、そのあとも定期的に確認してください」</strong></blockquote>
+
+    <h2 id="kankyo-kakunin">環境を確認するとき、何を聞くか</h2>
+
+    <p>支援先で利用環境を確認するときは、次の7項目を使います。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">項目</th><th scope="col">確かめること</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">入力データの学習利用</th><td>設定で変えられるか。契約で担保されるか</td></tr>
+          <tr><th scope="row">データの保持期間</th><td>どれくらい残るか</td></tr>
+          <tr><th scope="row">DPA（データ処理契約）</th><td>事業者に取扱いの義務を負わせられるか</td></tr>
+          <tr><th scope="row">管理者機能・権限管理</th><td>誰が何に使っているか把握できるか</td></tr>
+          <tr><th scope="row">ログ</th><td>後から追えるか</td></tr>
+          <tr><th scope="row">リージョン</th><td>データがどこの国に置かれるか</td></tr>
+          <tr><th scope="row">退職・異動時</th><td>アカウントと情報を回収できるか</td></tr>
+        </tbody>
+      </table>
+      <p class="table-note">※典型的な違いです。中身はサービス・プランによって異なります。</p>
+    </div>
+
+    <p>個人情報を海外のサーバーに置くと、本人への説明や、移転先の体制の確認が要ることがあります。個人情報保護法では越境移転と呼ばれる論点です。</p>
+
+    <p>管理者機能があれば、誰にどこまで使わせるかを会社で決められます。ログが残れば、何か起きたときに、誰が何をしたのかを後から確かめられる。</p>
+
+    <p>生成AIだけの特別な話ではありません。情報セキュリティでは、もともとこういうところを確認します。誰がどのシステムを使えるか自体が決まっていなければ、生成AIの前に、アカウントと権限を整理する必要があります。</p>
+
+    <p>この表は、支援先の前で開いて、そのまま聞けます。時間が取れないときは、学習利用の設定、DPA、管理者機能、退職時の回収。私なら、この4つから聞きます。</p>
+
+    <h2 id="muryo-demo">無料版や個人契約でも、ここまではできる</h2>
+
+    <p>公開情報や架空のデータで文章を作る。顧客別の一覧をそのまま渡さず、集計した数字や一般化した条件だけを渡す。第1回で扱った「渡す必要があるか」の続きです。</p>
+
+    <p>ほかにも、個人でできることがあります。</p>
+
+    <ul>
+      <li>業務用と個人用のアカウントを分ける</li>
+      <li>学習利用と履歴の設定を確認する</li>
+      <li>案件ごとにスレッドを分ける</li>
+      <li>渡す情報を、必要な範囲に絞る</li>
+    </ul>
+
+    <p>会社で管理できる機能が少ない分、使う人の設定や社内ルールに頼る部分が増えます。担当者が変われば、やり方も変わります。</p>
+
+    <h2 id="kojin-todokanai">個人で頑張っても、届かない範囲がある</h2>
+
+    <p>上の4つは、全部「個人でできること」です。</p>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/02/fig2-3so-02.svg" alt="できることの3つの層。上から、契約・環境が要ること（実際の業務データ、アカウントと権限を会社で管理、ログ、DPA）、会社で決めること（何を入力してよいか、どのAIを業務で使うか、顧客情報の扱い、困ったときに誰に聞くか）、個人でできること（アカウントを分ける、学習利用と履歴の設定、案件ごとにスレッドを分ける、渡す情報を絞る）。" loading="lazy">
+      <figcaption>できることの3つの層</figcaption>
+    </figure>
+
+    <p>実際の業務データを扱いたい。複数の社員で使いたい。会社として利用状況を把握したい。ここまで来ると、個人の設定では届きません。</p>
+
+    <p><strong>「顧客情報をAIに入れてよいか」は、使う人が案件ごとに決めることではなく、会社として決めておくことです。</strong> 案件ごとに担当者が判断すると、人によって線引きが変わります。</p>
+
+    <p>支援先で「担当者が気をつけています」という話が出てきたら、決めているのは会社ではなく、その担当者です。</p>
+
+    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
+      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
+        生成AIの契約・環境の確認は、支援機関・業界団体の職員向け研修でも扱っているテーマです。この記事の7項目の表を配って、支援先の事例に当てながら手を動かす形で進めています。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
+      </p>
+    </aside>
+
+    <h2 id="soshiki-plan">組織向けには、どんなプランがあるか</h2>
+
+    <p>「では、何を契約すればいいのか」と聞かれます。主なサービスの組織向けプランは、2026年9月の時点でこの名前です。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">サービス</th><th scope="col">主な組織向けプラン</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">ChatGPT（OpenAI）</th><td>ChatGPT Business（2025年8月にTeamから改称）／ChatGPT Enterprise</td></tr>
+          <tr><th scope="row">Gemini（Google）</th><td>Google Workspace の Business・Enterprise 各エディション。以前あった「Gemini アドオン」は廃止され、各エディションに組み込まれました</td></tr>
+          <tr><th scope="row">Claude（Anthropic）</th><td>Claude Team／Claude Enterprise</td></tr>
+          <tr><th scope="row">Microsoft</th><td>Microsoft 365 Copilot</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>プラン名も料金も変わります。契約前に各社の公式ページで確かめてください。</p>
+
+    <p>契約の形が何であっても、確かめるのは前の7項目です。</p>
+
+    <h2 id="kiite-miru">支援先には、こう聞いてみる</h2>
+
+    <blockquote><strong>「そのAI、誰の名前で契約していますか」</strong></blockquote>
+    <blockquote><strong>「いま社内で誰が何に使っているか、会社として把握できますか」</strong></blockquote>
+    <blockquote><strong>「その人が辞めたら、やり取りは回収できますか」</strong></blockquote>
+
+    <p>この3つに答えが出れば、会社として管理できている範囲が分かります。答えが出ないところが、まだ決まっていないところです。</p>
+
+    <p>第1回で挙げた「どのAIを、どんな環境で使っているのか」で確認したかったのは、この3つでした。</p>
+
+    <p>次回は、出力側です。「AIが出してきた答え、どこまで信じていいのか」へ。</p>
+
+    <div class="article-footnote">
+      <p>本稿は2026年9月時点の情報にもとづいています。設定画面の場所もプラン名も変わりますので、実際の確認は各社の公式ページでお願いします。</p>
+    </div>
+
+  </div>
+</article>
+
+<!-- GLOSSARY -->
+<section class="glossary">
+  <div class="container">
+    <h2 id="glossary">この記事に出てきた主な用語</h2>
+    <dl>
+      <dt>オプトアウト</dt>
+      <dd>入力したデータを、事業者側の学習利用の対象から外す設定。既定値も変更方法も、サービスやプランによって異なります。</dd>
+
+      <dt>DPA（データ処理契約）</dt>
+      <dd>事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合があります。</dd>
+
+      <dt>リージョン</dt>
+      <dd>サービスのデータが物理的に保管される場所（国や地域）。日本国内・米国・EUなど、選択できる場合と選べない場合があります。</dd>
+
+      <dt>越境移転</dt>
+      <dd>個人情報を国外へ移転すること。個人情報保護法では、本人への説明や、移転先の体制の確認などが求められる場面があります。</dd>
+
+      <dt>管理者機能</dt>
+      <dd>組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。個人向けプランにはありません。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>「会社として管理できているか」を、一緒に確かめませんか</h2>
+    <p>支援先で使う7項目の確認表を、実際の案件に当てながらご一緒します。<br>商工会議所・業界団体・企業研修の講師もお引き受けしています。<br>初回30分は無料です。</p>
+    <div class="cta-actions">
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="cta-btn primary" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        30分の無料相談を申し込む
+      </a>
+      <a href="/seminar/" class="cta-btn secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM6 21h12M12 17v4"/></svg>
+        セミナー・研修のご依頼
+      </a>
+    </div>
+    <p class="cta-form-note">入力3分・営業メールはお送りしません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
