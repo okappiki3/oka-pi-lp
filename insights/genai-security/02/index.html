@@ -8,7 +8,7 @@
 <meta name="keywords" content="生成AI,セキュリティ,支援機関,ChatGPT,法人プラン,情報管理,DPA">
 <meta property="og:title" content="「有料版なら顧客情報を入れて大丈夫？」料金では決まりません｜オカピー・パートナーズ">
 <meta property="og:description" content="生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。">
-<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/02/ogp.png">
 <meta property="og:url" content="https://oka-pi.com/insights/genai-security/02/">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ja_JP">
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="「有料版なら顧客情報を入れて大丈夫？」料金では決まりません｜オカピー・パートナーズ">
 <meta name="twitter:description" content="生成AIの有料版なら顧客情報を入れて大丈夫か。無料・個人有料・法人向けの違いは、機能ではなく統制。会社として管理できているかを、支援先に確認するときの視点を整理します。">
-<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png">
+<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/02/ogp.png">
 <link rel="canonical" href="https://oka-pi.com/insights/genai-security/02/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
       "datePublished": "2026-09-02",
       "dateModified": "2026-09-02",
       "inLanguage": "ja",
-      "image": "https://oka-pi.com/assets/img/insights/genai-security/01/ogp.png",
+      "image": "https://oka-pi.com/assets/img/insights/genai-security/02/ogp.png",
       "author": {
         "@type": "Person",
         "@id": "https://oka-pi.com/#person",
@@ -72,7 +72,7 @@
       "hasDefinedTerm": [
         { "@type": "DefinedTerm", "name": "オプトアウト", "description": "入力したデータを、事業者側の学習利用の対象から外す設定。既定値や変更方法は、サービスやプランによって異なる。" },
         { "@type": "DefinedTerm", "name": "DPA（データ処理契約）", "description": "事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合がある。" },
-        { "@type": "DefinedTerm", "name": "リージョン", "description": "サービスのデータが物理的に保管される場所（国や地域）。日本国内・米国・EUなど、選択できる場合と選べない場合がある。" },
+        { "@type": "DefinedTerm", "name": "リージョン", "description": "データを保存する国や地域。" },
         { "@type": "DefinedTerm", "name": "越境移転", "description": "個人情報を国外へ移転すること。個人情報保護法では、本人への説明や、移転先の体制の確認などが求められる場面がある。" },
         { "@type": "DefinedTerm", "name": "管理者機能", "description": "組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。" }
       ]
@@ -379,7 +379,6 @@ a { color: var(--blue); }
           <tr><th scope="row">退職・異動時</th><td>アカウントと情報を回収できるか</td></tr>
         </tbody>
       </table>
-      <p class="table-note">※典型的な違いです。中身はサービス・プランによって異なります。</p>
     </div>
 
     <p>個人情報を海外のサーバーに置くと、本人への説明や、移転先の体制の確認が要ることがあります。個人情報保護法では越境移転と呼ばれる論点です。</p>
@@ -392,7 +391,7 @@ a { color: var(--blue); }
 
     <h2 id="muryo-demo">無料版や個人契約でも、ここまではできる</h2>
 
-    <p>公開情報や架空のデータで文章を作る。顧客別の一覧をそのまま渡さず、集計した数字や一般化した条件だけを渡す。第1回で扱った「渡す必要があるか」の続きです。</p>
+    <p>公開情報や架空のデータで文章を作る。顧客別の一覧をそのまま渡さず、集計した数字や一般化した条件だけを渡す。<a href="/insights/genai-security/01/">第1回</a>で扱った「渡す必要があるか」の続きです。</p>
 
     <p>ほかにも、個人でできることがあります。</p>
 
@@ -419,13 +418,6 @@ a { color: var(--blue); }
     <p><strong>「顧客情報をAIに入れてよいか」は、使う人が案件ごとに決めることではなく、会社として決めておくことです。</strong> 案件ごとに担当者が判断すると、人によって線引きが変わります。</p>
 
     <p>支援先で「担当者が気をつけています」という話が出てきたら、決めているのは会社ではなく、その担当者です。</p>
-
-    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
-      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
-      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
-        生成AIの契約・環境の確認は、支援機関・業界団体の職員向け研修でも扱っているテーマです。この記事の7項目の表を配って、支援先の事例に当てながら手を動かす形で進めています。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
-      </p>
-    </aside>
 
     <h2 id="soshiki-plan">組織向けには、どんなプランがあるか</h2>
 
@@ -457,7 +449,14 @@ a { color: var(--blue); }
 
     <p>この3つに答えが出れば、会社として管理できている範囲が分かります。答えが出ないところが、まだ決まっていないところです。</p>
 
-    <p>第1回で挙げた「どのAIを、どんな環境で使っているのか」で確認したかったのは、この3つでした。</p>
+    <p><a href="/insights/genai-security/01/">第1回</a>で挙げた「どのAIを、どんな環境で使っているのか」で確認したかったのは、この3つでした。</p>
+
+    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
+      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
+        生成AIの契約・環境の確認は、支援機関・業界団体の職員向け研修でも扱うテーマです。この記事の7項目も、支援先の利用環境を考える材料として使えます。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
+      </p>
+    </aside>
 
     <p>次回は、出力側です。「AIが出してきた答え、どこまで信じていいのか」へ。</p>
 
@@ -480,13 +479,13 @@ a { color: var(--blue); }
       <dd>事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合があります。</dd>
 
       <dt>リージョン</dt>
-      <dd>サービスのデータが物理的に保管される場所（国や地域）。日本国内・米国・EUなど、選択できる場合と選べない場合があります。</dd>
+      <dd>データを保存する国や地域。</dd>
 
       <dt>越境移転</dt>
       <dd>個人情報を国外へ移転すること。個人情報保護法では、本人への説明や、移転先の体制の確認などが求められる場面があります。</dd>
 
       <dt>管理者機能</dt>
-      <dd>組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。個人向けプランにはありません。</dd>
+      <dd>組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。個人向けプランでは使えません。</dd>
     </dl>
   </div>
 </section>
