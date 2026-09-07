@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります｜オカピー・パートナーズ</title>
+<meta name="description" content="AIの回答は毎回ファクトチェックが必要か。全部を同じ重さで確認する必要はありません。自分用のメモか、支援先に渡す資料か、外部への提出か。使い道で確認の重さは変わります。中小企業診断士が、支援する立場からの確かめ方を解説します。">
+<meta name="keywords" content="生成AI,セキュリティ,支援機関,ハルシネーション,ファクトチェック,RAG">
+<meta property="og:title" content="「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります｜オカピー・パートナーズ">
+<meta property="og:description" content="AIの回答は毎回ファクトチェックが必要か。全部を同じ重さで確認する必要はありません。自分用のメモか、支援先に渡す資料か、外部への提出か。使い道で確認の重さは変わります。中小企業診断士が、支援する立場からの確かめ方を解説します。">
+<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/03/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/genai-security/03/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-09-08">
+<meta property="article:modified_time" content="2026-09-08">
+<meta property="article:author" content="岡 実">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります｜オカピー・パートナーズ">
+<meta name="twitter:description" content="AIの回答は毎回ファクトチェックが必要か。全部を同じ重さで確認する必要はありません。自分用のメモか、支援先に渡す資料か、外部への提出か。使い道で確認の重さは変わります。中小企業診断士が、支援する立場からの確かめ方を解説します。">
+<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/03/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/genai-security/03/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://oka-pi.com/insights/genai-security/03/#article",
+      "headline": "「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります",
+      "description": "AIの回答は毎回ファクトチェックが必要か。全部を同じ重さで確認する必要はありません。自分用のメモか、支援先に渡す資料か、外部への提出か。使い道で確認の重さは変わります。中小企業診断士が、支援する立場からの確かめ方を解説します。",
+      "url": "https://oka-pi.com/insights/genai-security/03/",
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "ja",
+      "image": "https://oka-pi.com/assets/img/insights/genai-security/03/ogp.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://oka-pi.com/#person",
+        "name": "岡 実",
+        "url": "https://oka-pi.com/",
+        "jobTitle": "中小企業診断士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "オカピー・パートナーズ",
+        "url": "https://oka-pi.com/"
+      },
+      "keywords": "生成AI,セキュリティ,支援機関,ハルシネーション,ファクトチェック,RAG",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://oka-pi.com/insights/genai-security/#collection",
+        "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ",
+        "url": "https://oka-pi.com/insights/genai-security/"
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "name": "この記事に出てきた主な用語",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "ハルシネーション", "description": "生成AIが、事実ではないことを、もっともらしい文章で出力してしまう現象。文章として整っているため、読んだだけでは見分けにくい。" },
+        { "@type": "DefinedTerm", "name": "RAG（検索拡張生成）", "description": "AIが回答するときに、あらかじめ読み込ませておいた社内文書などから関連箇所を検索し、その中身をもとに答えを組み立てる仕組み。回答と一緒に、どの文書のどこを参照したかが示されることが多い。" },
+        { "@type": "DefinedTerm", "name": "ファクトチェック", "description": "文章に書かれている事実（数字、日付、固有名詞、制度の内容など）が正しいかどうかを、元の資料や一次情報にあたって確かめること。" },
+        { "@type": "DefinedTerm", "name": "一次情報・原典", "description": "資料や制度の内容を、他人がまとめたものではなく、発表元・作成元の公式ページや原本で確かめられる情報。制度・法令なら官公庁のページ、統計なら公表元、契約なら契約書そのもの。" },
+        { "@type": "DefinedTerm", "name": "プロンプト（指示文）", "description": "AIに何をどう答えてほしいかを伝える文章。渡す元資料や、答えの形、制約（この資料に書かれていないことは書かない、など）を書き添えることで、出力を調整できる。" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ", "item": "https://oka-pi.com/insights/genai-security/" },
+        { "@type": "ListItem", "position": 4, "name": "「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy:       #0a3d5c;
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --gold-light: #f5edda;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-400:   #9ca3af;
+  --gray-600:   #555d6b;
+  --gray-800:   #2a2f38;
+  --gray-900:   #1a1d23;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      780px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container-wide { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+/* ARTICLE */
+.article-hero { background: var(--blue-pale); padding: 48px 0 32px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.series-label { display: inline-block; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 4px; text-decoration: none; margin-bottom: 12px; }
+.series-label:hover { background: var(--navy-deep); }
+.article-tags-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.article-tag-plain { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+.article-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; color: var(--navy-deep); line-height: 1.4; margin-bottom: 20px; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 13px; color: var(--text-light); }
+.article-meta time { font-weight: 700; color: var(--navy-deep); }
+
+.article-body { padding: 48px 0 24px; }
+.article-body h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+.article-body h3 { font-size: 18px; font-weight: 700; color: var(--navy-deep); margin: 32px 0 12px; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul { margin: 0 0 18px 24px; }
+.article-body ul li { margin-bottom: 8px; }
+.article-body strong { color: var(--navy-deep); font-weight: 700; }
+.article-body blockquote { margin: 20px 0; padding: 14px 20px; border-left: 4px solid var(--blue); background: var(--blue-pale); color: var(--text); font-size: 15px; line-height: 1.9; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-body blockquote + blockquote { margin-top: 12px; }
+.article-body figure { margin: 32px 0; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px; }
+.article-body figure img, .article-body figure svg { margin: 0 auto; display: block; max-width: 100%; height: auto; }
+.article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
+.article-body .table-wrap { margin: 24px 0; overflow-x: auto; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.75; }
+.article-body table th, .article-body table td { border: 1px solid var(--gray-200); padding: 10px 14px; text-align: left; vertical-align: top; }
+.article-body table thead th { background: var(--blue-pale); color: var(--navy-deep); font-weight: 700; }
+.article-body table tbody th { background: var(--gray-50); color: var(--navy-deep); font-weight: 700; white-space: nowrap; }
+.article-body .table-note { font-size: 12px; color: var(--text-light); margin: 4px 0 0; }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
+.article-footnote { margin-top: 40px; padding: 16px 20px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); font-size: 13px; color: var(--text-light); line-height: 1.85; }
+.article-footnote p { margin: 0; }
+
+.glossary { background: var(--blue-pale); padding: 40px 0; margin-top: 48px; }
+.glossary h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 900; color: var(--navy-deep); margin-bottom: 20px; }
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 700; color: var(--navy-deep); margin-top: 18px; margin-bottom: 4px; font-size: 15px; }
+.glossary dd { margin: 0 0 8px 0; color: var(--text); font-size: 14.5px; line-height: 1.85; }
+
+/* CTA */
+.cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 56px 0; text-align: center; }
+.cta-section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+.cta-section p { color: #b8d4e8; margin-bottom: 24px; font-size: 15px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+.cta-btn.primary { background: var(--gold); color: var(--navy-deep); }
+.cta-btn.primary:hover { background: #d4b45a; transform: translateY(-1px); }
+.cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.cta-btn.secondary:hover { background: rgba(255,255,255,0.18); }
+.cta-form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.75); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  .article-hero { padding: 32px 0 24px; }
+  .article-body { padding: 32px 0 16px; }
+  .article-body figure { padding: 8px; }
+  .article-body table th, .article-body table td { padding: 8px 10px; font-size: 13.5px; }
+  .cta-section { padding: 40px 0; }
+  .cta-section h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="/">ホーム</a> ／ <a href="/insights/">実務ノート</a> ／ <a href="/insights/genai-security/">支援先に聞かれたらどう答える？ 生成AI×セキュリティ</a> ／ 第3回
+    </p>
+    <a href="/insights/genai-security/" class="series-label">連載｜支援先に聞かれたらどう答える？　生成AI×セキュリティ　第3回</a>
+    <div class="article-tags-top" aria-label="タグ">
+      <span class="article-tag-plain">生成AI</span>
+      <span class="article-tag-plain">セキュリティ</span>
+      <span class="article-tag-plain">支援機関</span>
+    </div>
+    <h1 class="article-h1">「AIの回答、毎回ファクトチェックが必要？」使い道で、確認の重さが変わります</h1>
+    <div class="article-meta">
+      <time datetime="2026-09-08">公開：2026年9月8日</time>
+      <span>著者：岡 実（中小企業診断士／オカピー・パートナーズ代表）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container">
+
+    <p class="article-lead">支援先の社長から、こう言われたとします。</p>
+
+    <blockquote>「AIって、けっこう間違えますよね。だから全部チェックしないと、と思っているんです。でも、それをやると自分で調べるのと変わらないんですよ」</blockquote>
+
+    <p class="article-lead">そうなんですよね。全部を確認するなら、自分で調べたほうが早い。</p>
+
+    <p class="article-lead">私なら、こう答えます。</p>
+
+    <blockquote><strong>「全部を同じ重さで確認しなくて大丈夫です。何に使うかで、確認する場所を決めましょう」</strong></blockquote>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事の要点</p>
+      <ol class="article-lead-box__list">
+        <li>AIの出力を<strong>全部同じ重さで確認する必要はなく</strong>、何に使うかで確認の重さが変わります。</li>
+        <li>すぐ気づける間違いより、文章が整ったまま<strong>数字や事実だけがずれている間違い</strong>のほうが厄介です。</li>
+        <li>数字を一つずつ照合しても、<strong>元の資料にないことまで言い切っている箇所</strong>は見つかりません。</li>
+      </ol>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#tsuzukanai">「必ず確認しましょう」は、続かない</a></li>
+        <li><a href="#kizukinikui">すぐ気づく間違いもあれば、気づきにくい間違いもある</a></li>
+        <li><a href="#dare-ni-miseru">そのAIの答え、誰に見せますか</a></li>
+        <li><a href="#tsukiawase">元の資料と突き合わせるところ</a></li>
+        <li><a href="#soko-made">元の資料だけで、そこまで言えますか？</a></li>
+        <li><a href="#shutten">「出典が付いているから大丈夫」と言われたら</a></li>
+        <li><a href="#tema-o-herasu">確認の手間を減らすには</a></li>
+        <li><a href="#kiite-miru">支援先には、こう聞いてみる</a></li>
+        <li><a href="#glossary">この記事に出てきた主な用語</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="tsuzukanai">「必ず確認しましょう」は、続かない</h2>
+
+    <p>生成AIの解説は、たいてい「出力は必ず確認してください」で終わります。</p>
+
+    <p>そのとおりなのですが、全部確認してください、と言われても、毎回続けるのは難しい。そのうち、重要な資料でも確認を飛ばすようになります。</p>
+
+    <p><strong>間違えたときに困るところだけ、人がきちんと確認する。</strong></p>
+
+    <p>そのためには、まずAIの答えを何に使うのかを決めます。</p>
+
+    <h2 id="kizukinikui">すぐ気づく間違いもあれば、気づきにくい間違いもある</h2>
+
+    <p>決算書と売上明細をAIに読ませて、現状を整理させたとします。</p>
+
+    <p>戻ってきた文章に食品衛生の話が混ざっていれば、金属加工業の資料なので、すぐに「これは違う」と気づきます。笑って消せます。</p>
+
+    <p>厄介なのは、営業利益率が1％ずれているような間違いです。文章を読んでも違和感がありません。前後の日本語も整っています。</p>
+
+    <p>AIは、情報が足りないところを、それらしく補ってしまうことがあります。しかも、文章を読んだだけでは、どこまで確かなのか分かりません。</p>
+
+    <p>こうした、もっともらしい形で出てくる事実誤りを<strong>ハルシネーション</strong>と呼びます。</p>
+
+    <p>文章がきれいでも、数字や事実まで正しいとは限りません。</p>
+
+    <h2 id="dare-ni-miseru">そのAIの答え、誰に見せますか</h2>
+
+    <p>AIが出してきた文章を、自分のメモにするのか、支援先の社長に渡すのかで、確かめ方は変わってきます。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">何に使うか</th><th scope="col">間違っていたら</th><th scope="col">どこまで確かめるか</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">自分用のメモ、アイデア出し</th><td>自分が気づけば直せる</td><td>全体を読んで違和感がないか確認</td></tr>
+          <tr><th scope="row">社内の下書き</th><td>人が手を入れてから使う</td><td>数字・日付・固有名詞など、間違えると困るところ</td></tr>
+          <tr><th scope="row">支援先に渡す資料</th><td>誤った前提のまま経営判断が進む</td><td>元の資料と突き合わせる</td></tr>
+          <tr><th scope="row">交渉・申請・外部への提出</th><td>相手に伝わったあとでは修正しにくい</td><td>原典まで確認。AIの文章は下書きとして使う</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/03/fig1-tsukaimichi.svg" alt="使い道が変わると、確認の重さも変わる。自分用のメモ・アイデア出しは全体を読んで違和感がないか、社内の下書きは数字・日付・固有名詞、支援先に渡す資料は元の資料と突き合わせる、交渉・申請・外部への提出は原典まで確認。下にいくほど間違えたときの影響が大きくなる。" loading="lazy">
+      <figcaption>使い道が変われば、確認の重さも変わる</figcaption>
+    </figure>
+
+    <p>アイデア出しなら、欲しいのはまず案の数です。一つひとつの数字を検算する必要はないでしょう。</p>
+
+    <p>一方、交渉や申請に使う数字や制度の内容が間違っていたら困ります。そこは元の資料まで戻って確認します。</p>
+
+    <h2 id="tsukiawase">元の資料と突き合わせるところ</h2>
+
+    <p>私なら、まずこのあたりを確かめます。</p>
+
+    <ul>
+      <li>数字（計算結果、比率、合計）</li>
+      <li>日付と期間</li>
+      <li>制度名、法令名、補助金の要件</li>
+      <li>人名、会社名、商品名</li>
+    </ul>
+
+    <p>ここは、元の資料と突き合わせれば見つけやすいところです。</p>
+
+    <p>ただ、それだけでは見つからないものもあります。</p>
+
+    <h2 id="soko-made">元の資料だけで、そこまで言えますか？</h2>
+
+    <p>品目別の原価を記録していない会社の資料をAIに読ませた時、</p>
+
+    <blockquote>「この商品は赤字の可能性が高い」</blockquote>
+
+    <p>と出力してきたとします。</p>
+
+    <p>数字そのものは合っています。元の資料と突き合わせても、計算間違いは出てきません。文章だけ読めば、経営分析として違和感もありません。</p>
+
+    <p>でも、その会社には品目ごとの材料使用量も作業時間もありません。それなら、その資料だけで商品の採算までは分かりません。</p>
+
+    <p>この資料だけなら、</p>
+
+    <blockquote>「品目別の原価が分からないため、採算は判断できません」</blockquote>
+
+    <p>で本来は止めるところです。</p>
+
+    <p>実際には赤字かもしれません。ですから、「赤字の可能性が高い」という文章そのものが間違いだとは限りません。</p>
+
+    <p><strong>ただ、この資料だけでは、そこまで言い切れない。</strong></p>
+
+    <p>こういうところは、数字を一つずつ照合しても見つけにくい。</p>
+
+    <blockquote><strong>「元の資料にないことまで、言い切っていませんか？」</strong></blockquote>
+
+    <p>という目で、もう一度見直します。気になったところだけ、元の数字や記述に戻って確かめます。</p>
+
+    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
+      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
+        AIが出してきた答えをどこまで確かめるかは、支援機関・業界団体の職員向け研修でも扱っているテーマです。実際にAIに出させた文章を題材に、「元の資料にないことまで言い切っている箇所」を参加者に探してもらう形で進めています。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
+      </p>
+    </aside>
+
+    <h2 id="shutten">「出典が付いているから大丈夫」と言われたら</h2>
+
+    <p>社内の文書を読み込ませて、その中から答えさせる仕組みがあります。回答と一緒に、どの文書をもとにしたのかが示されるものです。<strong>RAG</strong>と呼ばれます。</p>
+
+    <p>どこを確認すればいいかが分かるので、確かめる手間は減ります。</p>
+
+    <p>ただ、その資料自体が古ければ、回答も古い内容になります。</p>
+
+    <p>たとえば、制度改正前のマニュアルを読ませていれば、AIがそのマニュアルどおりに答えても、現在の制度とは違っているかもしれません。</p>
+
+    <p>出典が付いていても、その文書を開かなければ、いつの情報なのか、AIの回答と本当に合っているのかは確認できません。</p>
+
+    <h2 id="tema-o-herasu">確認の手間を減らすには</h2>
+
+    <ul>
+      <li>元資料を一緒に渡して、<strong>「この資料に書かれていないことは書かないでください」</strong>と条件をつける</li>
+      <li>数字はAIに書かせず、文章の骨組みだけ作らせて、あとから人が入れる</li>
+      <li>元資料を渡しているなら、<strong>「この回答の根拠になった箇所を示してください」</strong>と聞き、示された場所を自分で開く</li>
+      <li>「これ、合っていますか」とAIに聞き返すだけで終わらせない。元の資料で確かめる</li>
+    </ul>
+
+    <p>外に出す資料なら、最後は人が確認します。</p>
+
+    <h2 id="kiite-miru">支援先には、こう聞いてみる</h2>
+
+    <blockquote><strong>「そのAIの答え、誰に見せますか」</strong></blockquote>
+    <blockquote><strong>「元の資料にないことまで、言い切っていませんか」</strong></blockquote>
+    <blockquote><strong>「間違っていたら、あとで直せますか」</strong></blockquote>
+
+    <p>第1回で挙げた<a href="/insights/genai-security/#yottsu-no-toi">4つの問い</a>のうち、今回扱ったのは③「出力を何に使うか」です。</p>
+
+    <p>次回は①に戻ります。「では結局、何なら入れていいのか」へ。</p>
+
+    <div class="article-footnote">
+      <p>本稿は2026年9月時点の考え方にもとづいています。生成AIの機能や設定は日々変わりますので、実際の運用は各社の公式情報でご確認ください。</p>
+    </div>
+
+  </div>
+</article>
+
+<!-- GLOSSARY -->
+<section class="glossary">
+  <div class="container">
+    <h2 id="glossary">この記事に出てきた主な用語</h2>
+    <dl>
+      <dt>ハルシネーション</dt>
+      <dd>生成AIが、事実ではないことを、もっともらしい文章で出力してしまう現象。文章として整っているため、読んだだけでは見分けにくいのが厄介です。数字や固有名詞など、単体では確からしく見える部分に紛れます。</dd>
+
+      <dt>RAG（検索拡張生成）</dt>
+      <dd>Retrieval-Augmented Generation の略。AIが回答するときに、あらかじめ読み込ませておいた社内文書などから関連箇所を検索し、その中身をもとに答えを組み立てる仕組みです。回答と一緒に、どの文書のどこを参照したかが示されることが多く、確認の手がかりになります。</dd>
+
+      <dt>ファクトチェック</dt>
+      <dd>文章に書かれている事実（数字、日付、固有名詞、制度の内容など）が正しいかどうかを、元の資料や一次情報にあたって確かめる作業。AIの出力に対しては、どこを確かめるかを使い道に応じて決めてから行います。</dd>
+
+      <dt>一次情報・原典</dt>
+      <dd>資料や制度の内容を、他人がまとめたものではなく、発表元・作成元の公式ページや原本で確かめられる情報。制度・法令なら官公庁のページ、統計なら公表元、契約なら契約書そのものが該当します。</dd>
+
+      <dt>プロンプト（指示文）</dt>
+      <dd>AIに何をどう答えてほしいかを伝える文章。渡す元資料や、答えの形、制約（「この資料に書かれていないことは書かないでください」など）を書き添えることで、出力の質と確認のしやすさが変わります。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>AIの出力を、どこまで確かめるか決めていますか</h2>
+    <p>使い道ごとに確認の重さをどう分けるか、実際の案件に沿ってご一緒します。<br>商工会議所・業界団体・企業研修の講師もお引き受けしています。<br>初回30分は無料です。</p>
+    <div class="cta-actions">
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="cta-btn primary" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        30分の無料相談を申し込む
+      </a>
+      <a href="/seminar/" class="cta-btn secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM6 21h12M12 17v4"/></svg>
+        セミナー・研修のご依頼
+      </a>
+    </div>
+    <p class="cta-form-note">入力3分・営業メールはお送りしません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
