@@ -17,12 +17,12 @@
   </url>
   <url>
     <loc>https://oka-pi.com/insights/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://oka-pi.com/insights/genai-security/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -32,7 +32,12 @@
   </url>
   <url>
     <loc>https://oka-pi.com/insights/genai-security/02/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://oka-pi.com/insights/genai-security/03/</loc>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
