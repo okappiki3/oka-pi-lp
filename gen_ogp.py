@@ -89,9 +89,9 @@ def main():
     draw.text((bx1 + 22, 62), badge_txt, font=f_badge, fill=NAVY)
 
     # 中央見出し（2行・Black）
-    f_h = jp_font(SANS_BLACK, 62)
-    line1 = "ものづくり企業の強みを、"
-    line2 = "価値と次の一手につなげる。"
+    f_h = jp_font(SANS_BLACK, 56)
+    line1 = "経営の相談から、"
+    line2 = "一緒にやってみるところまで。"
     y0 = 215
     draw.text((70, y0), line1, font=f_h, fill=DARK)
     draw.text((70, y0 + 90), line2, font=f_h, fill=DARK)
@@ -102,7 +102,7 @@ def main():
     # サブコピー
     f_sub = jp_font(SANS_BOLD, 31)
     draw.text((70, y0 + 232),
-              "製造業専門コンサルタント｜中小企業診断士",
+              "中小企業診断士 岡 実",
               font=f_sub, fill=NAVY)
 
     # 右側: 顔写真（円形） or プレースホルダー
