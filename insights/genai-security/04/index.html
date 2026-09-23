@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「何ならAIに入れていい？」入力だけでは決まりません｜オカピー・パートナーズ</title>
+<meta name="description" content="「何ならAIに入れていい？」は、情報の中身だけでは決まりません。どのAIの、どんな契約で扱われ、できたものを誰が読むのか。何を守るか・どこで起きるか・どう守るかの3×3の見取り図で、確かめる場所を整理します。">
+<meta name="keywords" content="生成AI,セキュリティ,支援機関,CIA,機密性,AIエージェント">
+<meta property="og:title" content="「何ならAIに入れていい？」入力だけでは決まりません｜オカピー・パートナーズ">
+<meta property="og:description" content="「何ならAIに入れていい？」は、情報の中身だけでは決まりません。どのAIの、どんな契約で扱われ、できたものを誰が読むのか。何を守るか・どこで起きるか・どう守るかの3×3の見取り図で、確かめる場所を整理します。">
+<meta property="og:image" content="https://oka-pi.com/assets/img/insights/genai-security/04/ogp.png">
+<meta property="og:url" content="https://oka-pi.com/insights/genai-security/04/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-09-23">
+<meta property="article:modified_time" content="2026-09-23">
+<meta property="article:author" content="岡 実">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="「何ならAIに入れていい？」入力だけでは決まりません｜オカピー・パートナーズ">
+<meta name="twitter:description" content="「何ならAIに入れていい？」は、情報の中身だけでは決まりません。どのAIの、どんな契約で扱われ、できたものを誰が読むのか。何を守るか・どこで起きるか・どう守るかの3×3の見取り図で、確かめる場所を整理します。">
+<meta name="twitter:image" content="https://oka-pi.com/assets/img/insights/genai-security/04/ogp.png">
+<link rel="canonical" href="https://oka-pi.com/insights/genai-security/04/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04PKV1W0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04PKV1W0CR');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://oka-pi.com/insights/genai-security/04/#article",
+      "headline": "「何ならAIに入れていい？」入力だけでは決まりません",
+      "description": "「何ならAIに入れていい？」は、情報の中身だけでは決まりません。どのAIの、どんな契約で扱われ、できたものを誰が読むのか。何を守るか・どこで起きるか・どう守るかの3×3の見取り図で、確かめる場所を整理します。",
+      "url": "https://oka-pi.com/insights/genai-security/04/",
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "inLanguage": "ja",
+      "image": "https://oka-pi.com/assets/img/insights/genai-security/04/ogp.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://oka-pi.com/#person",
+        "name": "岡 実",
+        "url": "https://oka-pi.com/",
+        "jobTitle": "中小企業診断士"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "オカピー・パートナーズ",
+        "url": "https://oka-pi.com/"
+      },
+      "keywords": "生成AI,セキュリティ,支援機関,CIA,機密性,AIエージェント",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "@id": "https://oka-pi.com/insights/genai-security/#collection",
+        "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ",
+        "url": "https://oka-pi.com/insights/genai-security/"
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "name": "この記事に出てきた主な用語",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "機密性・完全性・可用性（CIA）", "description": "情報セキュリティで、守りたい状態を整理する3つの視点。機密性は、見せてはいけない相手に、情報が見えない状態。完全性は、中身が間違っておらず、知らないうちに書き換わってもいない状態。可用性は、使いたいときに、使える状態。3つの頭文字をとって、CIAと呼ばれます。" },
+        { "@type": "DefinedTerm", "name": "DPA（データ処理契約）", "description": "事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合があります。" },
+        { "@type": "DefinedTerm", "name": "管理者機能", "description": "組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。個人向けプランにはありません。" },
+        { "@type": "DefinedTerm", "name": "学習利用", "description": "設定や契約によっては、入力した内容がAIの学習に使われること。止められるサービスなら、設定で止めます。" },
+        { "@type": "DefinedTerm", "name": "AIエージェント", "description": "次に行う処理を選びながら、人に代わって一連の作業を進めるAI。" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://oka-pi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "実務ノート", "item": "https://oka-pi.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "支援先に聞かれたらどう答える？ 生成AI×セキュリティ", "item": "https://oka-pi.com/insights/genai-security/" },
+        { "@type": "ListItem", "position": 4, "name": "「何ならAIに入れていい？」入力だけでは決まりません" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --navy:       #0a3d5c;
+  --navy-deep:  #062a40;
+  --blue:       #0a5884;
+  --blue-light: #e8f1f8;
+  --blue-pale:  #f3f8fb;
+  --gold:       #c9a84c;
+  --gold-light: #f5edda;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f0f2f5;
+  --gray-200:   #e2e5ea;
+  --gray-400:   #9ca3af;
+  --gray-600:   #555d6b;
+  --gray-800:   #2a2f38;
+  --gray-900:   #1a1d23;
+  --text:       #2a2f38;
+  --text-light: #555d6b;
+  --radius:     8px;
+  --radius-lg:  16px;
+  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --max-w:      780px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.site-header { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+.site-header .container-wide { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-logo-text { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.site-nav a:hover { color: var(--blue); }
+.site-nav .nav-cta { background: var(--blue); color: var(--white); padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 12px; }
+.site-nav .nav-cta:hover { background: var(--navy); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; color: var(--navy); }
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .nav-toggle { display: block; }
+}
+
+/* ARTICLE */
+.article-hero { background: var(--blue-pale); padding: 48px 0 32px; border-bottom: 1px solid var(--gray-200); }
+.breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 16px; }
+.breadcrumb a { color: var(--text-light); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.series-label { display: inline-block; background: var(--blue); color: var(--white); font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 4px; text-decoration: none; margin-bottom: 12px; }
+.series-label:hover { background: var(--navy-deep); }
+.article-tags-top { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.article-tag-plain { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 3px 10px; border-radius: 4px; }
+.article-h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; color: var(--navy-deep); line-height: 1.4; margin-bottom: 20px; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 13px; color: var(--text-light); }
+.article-meta time { font-weight: 700; color: var(--navy-deep); }
+
+.article-body { padding: 48px 0 24px; }
+.article-body h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 2.6vw, 26px); font-weight: 900; color: var(--navy-deep); line-height: 1.5; margin: 48px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-light); }
+.article-body h3 { font-size: 18px; font-weight: 700; color: var(--navy-deep); margin: 32px 0 12px; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul { margin: 0 0 18px 24px; }
+.article-body ul li { margin-bottom: 8px; }
+.article-body strong { color: var(--navy-deep); font-weight: 700; }
+.article-body blockquote { margin: 20px 0; padding: 14px 20px; border-left: 4px solid var(--blue); background: var(--blue-pale); color: var(--text); font-size: 15px; line-height: 1.9; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-body blockquote + blockquote { margin-top: 12px; }
+.article-body figure { margin: 32px 0; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px; }
+.article-body figure img, .article-body figure svg { margin: 0 auto; display: block; max-width: 100%; height: auto; }
+.article-body figcaption { font-size: 12px; color: var(--text-light); margin-top: 10px; text-align: center; line-height: 1.7; }
+.article-body .table-wrap { margin: 24px 0; overflow-x: auto; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.75; }
+.article-body table th, .article-body table td { border: 1px solid var(--gray-200); padding: 10px 14px; text-align: left; vertical-align: top; }
+.article-body table thead th { background: var(--blue-pale); color: var(--navy-deep); font-weight: 700; }
+.article-body table tbody th { background: var(--gray-50); color: var(--navy-deep); font-weight: 700; white-space: nowrap; }
+.article-body .table-note { font-size: 12px; color: var(--text-light); margin: 4px 0 0; }
+.article-lead { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 20px; }
+.article-lead + .article-lead { margin-top: 20px; }
+.article-lead-box { border-left: 4px solid var(--blue); background: var(--blue-pale); padding: 20px 24px; margin: 24px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.article-lead-box__label { font-weight: 700; color: var(--blue); margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; }
+.article-lead-box__list { margin: 0; padding-left: 22px; }
+.article-lead-box__list li { margin: 8px 0; line-height: 1.85; font-size: 14.5px; color: var(--text); overflow-wrap: break-word; }
+.article-lead-box__list li strong { color: var(--navy-deep); }
+.article-toc { background: var(--gray-50); border: 1px solid var(--gray-200); padding: 18px 24px 18px 22px; margin: 24px 0 40px; border-radius: var(--radius); }
+.article-toc__label { font-weight: 700; color: var(--navy-deep); margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; }
+.article-toc__list { margin: 0; padding-left: 22px; font-size: 14px; }
+.article-toc__list li { margin: 4px 0; line-height: 1.8; overflow-wrap: break-word; }
+.article-toc__list a { color: var(--blue); text-decoration: none; }
+.article-toc__list a:hover { text-decoration: underline; }
+.article-footnote { margin-top: 40px; padding: 16px 20px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius); font-size: 13px; color: var(--text-light); line-height: 1.85; }
+.article-footnote p { margin: 0; }
+
+.glossary { background: var(--blue-pale); padding: 40px 0; margin-top: 48px; }
+.glossary h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 900; color: var(--navy-deep); margin-bottom: 20px; }
+.glossary dl { margin: 0; }
+.glossary dt { font-weight: 700; color: var(--navy-deep); margin-top: 18px; margin-bottom: 4px; font-size: 15px; }
+.glossary dd { margin: 0 0 8px 0; color: var(--text); font-size: 14.5px; line-height: 1.85; }
+
+/* CTA */
+.cta-section { background: linear-gradient(165deg, var(--navy-deep) 0%, var(--blue) 100%); color: var(--white); padding: 56px 0; text-align: center; }
+.cta-section h2 { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+.cta-section p { color: #b8d4e8; margin-bottom: 24px; font-size: 15px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 20px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+.cta-btn.primary { background: var(--gold); color: var(--navy-deep); }
+.cta-btn.primary:hover { background: #d4b45a; transform: translateY(-1px); }
+.cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.cta-btn.secondary:hover { background: rgba(255,255,255,0.18); }
+.cta-form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.75); }
+
+.site-footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); padding: 32px 0; font-size: 12px; text-align: center; line-height: 1.8; }
+.site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.site-footer a:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  .article-hero { padding: 32px 0 24px; }
+  .article-body { padding: 32px 0 16px; }
+  .article-body figure { padding: 8px; }
+  .article-body table th, .article-body table td { padding: 8px 10px; font-size: 13.5px; }
+  .cta-section { padding: 40px 0; }
+  .cta-section h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container-wide">
+    <a href="/" class="site-logo-text">オカピー・パートナーズ</a>
+    <button class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="メニュー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="site-nav">
+      <a href="/#services">サービス</a>
+      <a href="/service/">メニュー・料金</a>
+      <a href="/seminar/">セミナー・研修</a>
+      <a href="/insights/">実務ノート</a>
+      <a href="/#about">プロフィール</a>
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">30分無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb">
+      <a href="/">ホーム</a> ／ <a href="/insights/">実務ノート</a> ／ <a href="/insights/genai-security/">支援先に聞かれたらどう答える？ 生成AI×セキュリティ</a> ／ 第4回
+    </p>
+    <a href="/insights/genai-security/" class="series-label">連載｜支援先に聞かれたらどう答える？　生成AI×セキュリティ　第4回</a>
+    <div class="article-tags-top" aria-label="タグ">
+      <span class="article-tag-plain">生成AI</span>
+      <span class="article-tag-plain">セキュリティ</span>
+      <span class="article-tag-plain">支援機関</span>
+    </div>
+    <h1 class="article-h1">「何ならAIに入れていい？」入力だけでは決まりません</h1>
+    <p style="font-size: 15px; font-weight: 700; color: var(--text-light); margin: 0 0 12px;">生成AIのリスクを3×3の見取り図で考える</p>
+    <div class="article-meta">
+      <time datetime="2026-09-23">公開：2026年9月23日</time>
+      <span>著者：岡 実（中小企業診断士／オカピー・パートナーズ代表）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container">
+
+    <p class="article-lead">支援先の社長から、こう聞かれたとします。</p>
+
+    <blockquote>「いろいろ確かめるのは分かりました。で、結局、何なら入れていいんですか？」</blockquote>
+
+    <p class="article-lead">前回の終わりに残した問いです。</p>
+
+    <p class="article-lead">私なら、こう答えます。</p>
+
+    <blockquote><strong>「中身だけでは決められないんです。同じ資料でも、どのAIに入れるか、できたものを誰に見せるかで、入れていいかどうかが変わるんです」</strong></blockquote>
+
+    <aside class="article-lead-box">
+      <p class="article-lead-box__label">この記事の要点</p>
+      <ol class="article-lead-box__list">
+        <li>何ならAIに入れていいかは、情報の中身だけでは決まりません。<strong>どのAIの、どんな契約の中で扱われ、できたものを誰が読むか</strong>で変わります。</li>
+        <li><strong>何を守るか（漏れない・正しい・止まらない）、どこで起きるか（入力・処理・出力）、どう守るか（設定・契約・社内ルール）</strong>の3×3で見ると、その会社で何を入れてよいかを決める前に、確かめる場所が分かります。</li>
+        <li>新しい機能が出てきても、注意事項を一つずつ覚えるのではなく、<strong>見取り図を開いて確かめます</strong>。</li>
+      </ol>
+    </aside>
+
+    <nav class="article-toc" aria-label="目次">
+      <p class="article-toc__label">目次</p>
+      <ol class="article-toc__list">
+        <li><a href="#onaji-meisai">同じ売上明細でも、確かめることが変わる</a></li>
+        <li><a href="#mitorizu">何を守るか、どこで起きるか、どう守るか</a></li>
+        <li><a href="#yottsu-no-toi">4つの問いは、この見取り図を確かめる聞き方だった</a></li>
+        <li><a href="#koremade">これまでの3回は、どこの話だったか</a></li>
+        <li><a href="#tomaranai">AIが止まったら、仕事も止まるか</a></li>
+        <li><a href="#kyoyu-folder">「共有フォルダにつなぎたい」と言われたら</a></li>
+        <li><a href="#nani-nara">で、何なら入れていいのか</a></li>
+        <li><a href="#atarashii-kino">新しい機能が出てきたら</a></li>
+        <li><a href="#glossary">この記事に出てきた主な用語</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="onaji-meisai">同じ売上明細でも、確かめることが変わる</h2>
+
+    <p>売上明細をAIに扱わせるとします。</p>
+
+    <ul>
+      <li>会社で契約したAIに、経理担当が明細を貼りつけて、月次の傾向をメモにまとめさせる</li>
+      <li>営業担当が個人で契約したAIで、取引先に出す見積の根拠資料を作らせる</li>
+      <li>社内の共有フォルダにAIをつないで、明細を読みにいかせる</li>
+    </ul>
+
+    <p>AIに渡る情報は、どれも同じ売上明細です。それでも、確かめるところが違います。</p>
+
+    <p>1つ目なら、会社の契約でデータがどう扱われるかと、明細のどこまでを貼りつけるか。2つ目は個人の契約なので、扱われ方の確認から始めることになりますし、取引先に出す前に、数字を元の明細と突き合わせる手間も加わります。3つ目では、人は明細を貼りつけてもいません。確かめるのは、つないだフォルダのどこまでをAIが読めるかです。</p>
+
+    <p>明細の中身だけを眺めていても、この違いは出てきません。どのAIの、どんな契約の中で扱われるのか。できたものを誰が読むのか。社内でどんな決まりがあるのか。それをまとめて確かめるために、見取り図を使います。</p>
+
+    <h2 id="mitorizu">何を守るか、どこで起きるか、どう守るか</h2>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/04/fig1-mitorizu.svg" alt="生成AIのリスクの見取り図。何を守るか（漏れない＝機密性、正しい＝完全性、止まらない＝可用性）、どこで起きるか（入力・処理・出力）、どう守るか（設定や機能、法律や契約、社内のルールと人）の3行で整理した図" loading="lazy">
+      <figcaption>何を守るか、どこで起きるか、どう守るか</figcaption>
+    </figure>
+
+    <h3 id="nani-o-mamoru">何を守るか</h3>
+
+    <p>情報セキュリティでは、守りたい状態を3つの視点で整理します。</p>
+
+    <p>1つ目は、漏れないこと。見せてはいけない相手に、情報が見えない状態です。顧客名簿が外に出ない。支援先の値上げの検討が、取引先に知られない。これを<strong>機密性</strong>（Confidentiality）と呼びます。</p>
+
+    <p>2つ目は、正しいこと。中身が間違っておらず、知らないうちに書き換わってもいない状態です。AIが出した数字が合っている。登録した予定が、別の日にずれていない。これが<strong>完全性</strong>（Integrity）です。</p>
+
+    <p>3つ目は、止まらないこと。使いたいときに、使える状態です。AIのサービスが止まっても、その日の仕事が回る。これを<strong>可用性</strong>（Availability）と言います。</p>
+
+    <p>3つの頭文字をとって、<strong>CIA</strong>と呼ばれます。</p>
+
+    <h3 id="doko-de-okiru">どこで起きるか</h3>
+
+    <p><strong>入力</strong>は、人がAIに渡すところです。質問を打ち込む。ファイルを読ませる。</p>
+
+    <p><strong>処理</strong>は、AIの側で扱われるところです。設定や契約によっては、入力した内容が保存されたり、学習に使われたりする。つないだフォルダのファイルを読みにいく。外から届いたメールやWebページの文章を、指示として扱ってしまう。</p>
+
+    <p><strong>出力</strong>は、AIから出ていくものです。人が読んでから使う回答や資料のほかに、AIがそのまま行う送信・登録・更新も含めます。AIに予定を登録させれば、その登録も出力です。</p>
+
+    <p>この連載では、入力と処理を、誰が渡すかで分けます。人が渡せば入力。つないだフォルダなどからAIが読み込めば処理。さきほどの売上明細の3つ目は、処理で起きています。</p>
+
+    <h3 id="dou-mamoru">どう守るか</h3>
+
+    <ul>
+      <li><strong>設定や機能</strong>：学習利用の設定、共有範囲の設定、管理者機能</li>
+      <li><strong>法律や契約</strong>：個人情報保護法、著作権法、利用規約、データの扱いを定めた契約（DPA）、支援先や取引先との約束</li>
+      <li><strong>社内のルールと人</strong>：利用ルール、承認の手順、役割分担、教育</li>
+    </ul>
+
+    <p>学習利用は、止められるサービスなら設定で止めます。入力したデータを事業者がどう扱うかは、利用規約やプライバシーポリシー、契約で決まります。どのフォルダをAIにつないでいいかは、社内で決めます。</p>
+
+    <h2 id="yottsu-no-toi">4つの問いは、この見取り図を確かめる聞き方だった</h2>
+
+    <p>第1回で、生成AIを仕事で使うときに確かめる<a href="/insights/genai-security/#yottsu-no-toi">4つの問い</a>を挙げました。①何をAIに入れるか、②AIにどこまでアクセスさせるか、③出力を何に使うか、④どこまでAIに任せるか。</p>
+
+    <p>主にどこに関わるかで並べると、①は入力、②は処理です。③と④は、どちらも出力にあたります。③は人が読んでから使う出力、④はAIがそのまま行う送信や登録です。</p>
+
+    <figure>
+      <img src="/assets/img/insights/genai-security/04/fig2-4toi-doko.svg" alt="どこで起きるかと4つの問い。入力に①何をAIに入れるか、処理に②AIにどこまでアクセスさせるか、出力に③出力を何に使うか（人が読んでから使う）と④どこまでAIに任せるか（AIがそのまま送る・登録する）が対応する" loading="lazy">
+      <figcaption>4つの問いは、どこで起きるかに対応している</figcaption>
+    </figure>
+
+    <p>「顧客情報を入れていますか」と聞くだけでは、社内のフォルダをAIにつないでいることは分かりません。「AIに、どのフォルダまで読ませていますか」と②を聞いて、はじめて出てくる話です。AIで作った文章を、人が読んでから送っているのか、そのまま顧客に届いているのか。これも③と④を聞かないと出てきません。</p>
+
+    <h2 id="koremade">これまでの3回は、どこの話だったか</h2>
+
+    <p><a href="/insights/genai-security/01/">第1回「ChatGPTに顧客情報を入れても大丈夫？」</a>は、漏れないを中心に、入力を扱いました。守り方は、主に社内のルールと人の側です。何に使うのか、その情報は本当に必要か、を確かめる話でした。</p>
+
+    <p><a href="/insights/genai-security/02/">第2回「有料版なら顧客情報を入れて大丈夫？」</a>も、漏れないが中心です。扱ったのは、AIを使う環境。入力した情報がAIの側でどう扱われるかまで話が広がり、学習利用の設定、DPA、社内で誰が何に使っているかの把握と、守り方の3つすべてに関わりました。芯にあったのは、会社として管理できるかどうかです。</p>
+
+    <p><a href="/insights/genai-security/03/">第3回「AIの回答、毎回ファクトチェックが必要？」</a>は、正しいを中心に、出力を扱いました。守り方は社内のルールと人。使い道によって、確認の重さを決めておく話です。</p>
+
+    <h2 id="tomaranai">AIが止まったら、仕事も止まるか</h2>
+
+    <p>3回をこうして並べると、漏れないと正しいは扱っているのに、止まらないは一度も出てきていません。</p>
+
+    <p>いまの使い方なら、困る場面はまだ少ないでしょう。私は支援先との打ち合わせを録音して、ほとんど生成AIで文字起こししていますが、文字起こしが使えない日でも録音は手元に残ります。手間が増えるだけで、支援は続けられる。下書きやアイデア出しも、AIが使えなければ自分で書けば済む話です。</p>
+
+    <p>事情が変わるのは、AIがメールやカレンダー、社内のファイル、業務システムにつながって、問い合わせへの返信や予定の登録、その先の処理まで進めるようになったときです。人が頼んで答えを受け取るだけだったAIが、仕事の途中を受け持つようになる。次に行う処理を選びながら、人に代わって一連の作業を進めるAIは、AIエージェントと呼ばれています。</p>
+
+    <p>そうなると、AIが止まれば、AIに任せていた返信や予定の登録も止まります。</p>
+
+    <h2 id="kyoyu-folder">「共有フォルダにつなぎたい」と言われたら</h2>
+
+    <p>見取り図は、心配なことが出てきたときに開きます。</p>
+
+    <p>たとえば、社長から「共有フォルダにAIをつなぎたいんです」と相談されたとします。</p>
+
+    <p>つないだフォルダをAIが読みにいくのは、処理です。フォルダに人事評価や取引先との契約書が入っていれば、AIがそれも読める場合がある。これは漏れないの話です。フォルダの資料が古ければ、それをもとにしたAIの答えも古くなる。こちらは正しいの話で、<a href="/insights/genai-security/03/">第3回</a>で扱いました。</p>
+
+    <p>では、守り方はどうなっているか。設定で、AIが読める範囲を絞っているか。どのフォルダならつないでいいか、社内で決めているか。</p>
+
+    <p>設定は確かめたけれど、どのフォルダならつないでいいかは誰も決めていない。そうと分かれば、つないでいいフォルダを社内で決めます。</p>
+
+    <aside class="article-lead-box" style="border-left-color: var(--navy-deep);">
+      <p class="article-lead-box__label">セミナー・研修でも扱っています</p>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.85;">
+        生成AIのリスクをどこで見つけるかは、支援機関・業界団体の職員向け研修でも扱っているテーマです。会員向けセミナーや職員研修で扱ってみたい方は、<a href="/seminar/">セミナー・研修のご案内</a>をご覧ください。
+      </p>
+    </aside>
+
+    <h2 id="nani-nara">で、何なら入れていいのか</h2>
+
+    <p>売上明細なら、入力のところでは、その明細が本当に必要かを確かめます。第1回の話です。</p>
+
+    <p>そのうえで、処理のところで、入れた明細がAIの側でどう扱われるか。出力のところで、社内のメモで終わるのか、取引先に出す資料になるのか。そして、学習利用を止める設定にしているか。会社の契約で、データの扱いが定められているか。社内の利用ルールで、売上明細をAIに入れてよいと決めているか。</p>
+
+    <p>ここまで確かめて、その会社で何を入れてよいかを決められます。</p>
+
+    <h2 id="atarashii-kino">新しい機能が出てきたら</h2>
+
+    <p>生成AIには、新しい機能が次々に加わります。そのたびに注意事項を一つずつ覚えていくと、きりがありません。</p>
+
+    <p>新しい話が出てきたら、見取り図を開いて、この3つを確かめます。人が渡すのか、AIが取りにいくのか、AIがそのまま送るのか。漏れると困るのか、間違うと困るのか、止まると困るのか。設定、契約、社内のルールのうち、もう対策をしているのはどれで、していないのはどれか。</p>
+
+    <p>次回は、支援先から「うちはまだ、AIのルールが何もないんです」と言われたときの話です。</p>
+
+    <div class="article-footnote">
+      <p>本稿は2026年9月時点の考え方にもとづいています。生成AIの機能や設定は日々変わりますので、実際の運用は各社の公式情報でご確認ください。</p>
+    </div>
+
+  </div>
+</article>
+
+<!-- GLOSSARY -->
+<section class="glossary">
+  <div class="container">
+    <h2 id="glossary">この記事に出てきた主な用語</h2>
+    <dl>
+      <dt>機密性・完全性・可用性（CIA）</dt>
+      <dd>情報セキュリティで、守りたい状態を整理する3つの視点。機密性は、見せてはいけない相手に、情報が見えない状態。完全性は、中身が間違っておらず、知らないうちに書き換わってもいない状態。可用性は、使いたいときに、使える状態。3つの頭文字をとって、CIAと呼ばれます。</dd>
+
+      <dt>DPA（データ処理契約）</dt>
+      <dd>事業者に、入力データの取扱い（用途、保管、削除、再委託など）についての義務を契約として負わせるもの。組織向けプランで結べる場合があります。</dd>
+
+      <dt>管理者機能</dt>
+      <dd>組織向けプランで、アカウント発行、権限設定、利用状況の確認などを行える機能。個人向けプランにはありません。</dd>
+
+      <dt>学習利用</dt>
+      <dd>設定や契約によっては、入力した内容がAIの学習に使われること。止められるサービスなら、設定で止めます。</dd>
+
+      <dt>AIエージェント</dt>
+      <dd>次に行う処理を選びながら、人に代わって一連の作業を進めるAI。</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>何をAIに入れてよいか、社内で決まっていますか</h2>
+    <p>もう確かめているところと、まだのところを、実際の使い方に沿って一緒に整理します。<br>商工会議所・業界団体・企業研修の講師もお引き受けしています。<br>初回30分は無料です。</p>
+    <div class="cta-actions">
+      <a href="https://forms.gle/NRzEEgxwAYDsYU4H9" class="cta-btn primary" target="_blank" rel="noopener" onclick="gtag('event', 'click_contact_form', {'event_category': 'cta'});">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        30分の無料相談を申し込む
+      </a>
+      <a href="/seminar/" class="cta-btn secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM6 21h12M12 17v4"/></svg>
+        セミナー・研修のご依頼
+      </a>
+    </div>
+    <p class="cta-form-note">入力3分・営業メールはお送りしません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container-wide">
+    <strong>オカピー・パートナーズ</strong>（代表：岡 実） ／ Okapi Partners<br>
+    〒524-0042 滋賀県守山市焔魔堂町（全国オンライン対応・滋賀関西中心に訪問可）<br>
+    <a href="mailto:contact@oka-pi.com">contact@oka-pi.com</a> ／
+    TEL <a href="tel:08058161996" onclick="gtag('event','click_tel');">080-5816-1996</a>（平日 8:00〜18:00）<br>
+    <span style="font-size: 0.85rem; opacity: 0.8;">※セミナー・研修中、訪問中は折り返しいたします。</span><br>
+    <a href="https://oka-pi.com/" target="_blank">oka-pi.com</a> ／
+    <a href="https://share.google/Z3fIjpnJRnKWcKA9M" target="_blank" rel="noopener noreferrer">Googleビジネスプロフィール・クチコミ</a><br>
+    <span style="margin-top: 8px; display: inline-block; font-size: 0.85rem; opacity: 0.8;">適格請求書発行事業者 登録番号：T7810762096187</span><br>
+    <span style="margin-top: 4px; display: inline-block;">© 2024-2026 Oka-pi Partners. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
