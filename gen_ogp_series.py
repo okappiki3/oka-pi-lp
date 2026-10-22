@@ -77,6 +77,8 @@ def main():
     ap.add_argument("--title", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--wrap", type=int, default=20)
+    ap.add_argument("--badge", default=None,
+                    help="右上バッジの文言（例: 連載　特別編）。指定時は --kai より優先")
     ap.add_argument("--series",
                     default="支援先に聞かれたらどう答える？　生成AI×セキュリティ")
     args = ap.parse_args()
@@ -106,7 +108,10 @@ def main():
     draw.text((70, 90), "OKA-pi PARTNERS", font=f_brand_en, fill=(90, 130, 160))
 
     # 右上: 連載バッジ
-    badge_txt = f"連載　第{args.kai}回" if args.kai else "連載"
+    if args.badge:
+        badge_txt = args.badge
+    else:
+        badge_txt = f"連載　第{args.kai}回" if args.kai else "連載"
     f_badge = jp_font(SANS_BOLD, 22)
     bw = draw.textlength(badge_txt, font=f_badge)
     bx2 = W - 70
