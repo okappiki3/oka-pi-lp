@@ -25,7 +25,7 @@
   <rect x="212" y="88" width="58" height="250" rx="10" fill="#0a5884"/>
   <text x="241" y="213" font-size="19" fill="#ffffff" font-weight="700" text-anchor="middle" writing-mode="tb" glyph-orientation-vertical="0" letter-spacing="4">ログイン</text>
   <text x="241" y="360" font-size="14" text-anchor="middle" fill="#0a5884" font-weight="700">ログインの設定</text>
-  <text x="241" y="380" font-size="13" text-anchor="middle" fill="#3e4c59">誰に使わせるか</text>
+  <text x="241" y="380" font-size="13" text-anchor="middle" fill="#3e4c59">誰がログインできるか</text>
 
   <!-- account frame -->
   <rect x="298" y="40" width="482" height="300" rx="14" fill="#f2f7fa" stroke="#0a5884" stroke-width="2"/>
@@ -48,9 +48,9 @@
 
   <!-- learning setting tag under 処理 -->
   <line x1="539" y1="158" x2="539" y2="178" stroke="#0a5884" stroke-width="1.5"/>
-  <rect x="452" y="178" width="174" height="50" rx="6" fill="#ffffff" stroke="#0a5884" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="436" y="178" width="206" height="50" rx="6" fill="#ffffff" stroke="#0a5884" stroke-width="1.5" stroke-dasharray="4 3"/>
   <text x="539" y="199" font-size="14" text-anchor="middle" fill="#0a5884" font-weight="700">学習の設定</text>
-  <text x="539" y="218" font-size="13" text-anchor="middle" fill="#3e4c59">何に使わせるか</text>
+  <text x="539" y="218" font-size="13" text-anchor="middle" fill="#3e4c59">入れた情報を学習に使うか</text>
 
   <!-- stored contents -->
   <rect x="320" y="252" width="438" height="68" rx="8" fill="#e3edf3"/>
