@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" font-family="'Noto Sans CJK JP','Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0a5884"/></marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9a3b2e"/></marker>
+    <marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6b78"/></marker>
+  </defs>
+  <rect width="800" height="400" fill="#ffffff"/>
+
+  <!-- people -->
+  <g>
+    <circle cx="70" cy="118" r="17" fill="#0a5884"/>
+    <path d="M40,168 a30,26 0 0 1 60,0 z" fill="#0a5884"/>
+    <text x="70" y="192" font-size="16" text-anchor="middle" fill="#1f2933" font-weight="700">本人</text>
+
+    <circle cx="70" cy="262" r="17" fill="#9a3b2e"/>
+    <path d="M40,312 a30,26 0 0 1 60,0 z" fill="#9a3b2e"/>
+    <text x="70" y="336" font-size="16" text-anchor="middle" fill="#9a3b2e" font-weight="700">他人</text>
+  </g>
+
+  <!-- arrows to gate -->
+  <line x1="110" y1="150" x2="208" y2="190" stroke="#0a5884" stroke-width="2.5" marker-end="url(#ah)"/>
+  <line x1="110" y1="294" x2="208" y2="232" stroke="#9a3b2e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ahg)"/>
+
+  <!-- gate -->
+  <rect x="212" y="88" width="58" height="250" rx="10" fill="#0a5884"/>
+  <text x="241" y="213" font-size="19" fill="#ffffff" font-weight="700" text-anchor="middle" writing-mode="tb" glyph-orientation-vertical="0" letter-spacing="4">ログイン</text>
+  <text x="241" y="360" font-size="14" text-anchor="middle" fill="#0a5884" font-weight="700">ログインの設定</text>
+  <text x="241" y="380" font-size="13" text-anchor="middle" fill="#3e4c59">誰に使わせるか</text>
+
+  <!-- account frame -->
+  <rect x="298" y="40" width="482" height="300" rx="14" fill="#f2f7fa" stroke="#0a5884" stroke-width="2"/>
+  <text x="318" y="70" font-size="16" fill="#0a5884" font-weight="700">AIのアカウントの中</text>
+
+  <!-- arrow from gate into account -->
+  <line x1="270" y1="213" x2="296" y2="213" stroke="#0a5884" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- three boxes -->
+  <g font-size="18" font-weight="700" text-anchor="middle" fill="#1f2933">
+    <rect x="320" y="96" width="122" height="62" rx="8" fill="#ffffff" stroke="#5b6b78" stroke-width="1.5"/>
+    <text x="381" y="134">入力</text>
+    <rect x="478" y="96" width="122" height="62" rx="8" fill="#ffffff" stroke="#0a5884" stroke-width="2.5"/>
+    <text x="539" y="134">処理</text>
+    <rect x="636" y="96" width="122" height="62" rx="8" fill="#ffffff" stroke="#5b6b78" stroke-width="1.5"/>
+    <text x="697" y="134">出力</text>
+  </g>
+  <line x1="442" y1="127" x2="474" y2="127" stroke="#5b6b78" stroke-width="2" marker-end="url(#ahs)"/>
+  <line x1="600" y1="127" x2="632" y2="127" stroke="#5b6b78" stroke-width="2" marker-end="url(#ahs)"/>
+
+  <!-- learning setting tag under 処理 -->
+  <line x1="539" y1="158" x2="539" y2="178" stroke="#0a5884" stroke-width="1.5"/>
+  <rect x="452" y="178" width="174" height="50" rx="6" fill="#ffffff" stroke="#0a5884" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="539" y="199" font-size="14" text-anchor="middle" fill="#0a5884" font-weight="700">学習の設定</text>
+  <text x="539" y="218" font-size="13" text-anchor="middle" fill="#3e4c59">何に使わせるか</text>
+
+  <!-- stored contents -->
+  <rect x="320" y="252" width="438" height="68" rx="8" fill="#e3edf3"/>
+  <text x="539" y="278" font-size="13" text-anchor="middle" fill="#3e4c59">ログインした人が読めるもの</text>
+  <text x="539" y="303" font-size="15" text-anchor="middle" fill="#1f2933" font-weight="700">会話履歴・アップロードした資料・つないだメールやドライブ</text>
+</svg>
