@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--
+  栗東市商工会「AI×事業計画策定セミナー」（2026/11/9）受講者配布ページ
+  内容は「AI×事業計画 プロンプト集」（Googleドキュメント）と同じです。直すときは両方そろえてください。
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>栗東市商工会｜AI×事業計画策定セミナー｜プロンプト</title>
+<style>
+  :root{ --blue:#0A5884; --ink:#1F2A31; --muted:#7C8C96; --line:#C3D2DB; --soft:#F5F9FB; }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; padding:0 16px 64px; font-family:"BIZ UDPゴシック","Hiragino Sans","Noto Sans JP",sans-serif;
+        color:var(--ink); line-height:1.75; background:#fff; }
+  .wrap{ max-width:760px; margin:0 auto; }
+  header{ background:var(--blue); color:#fff; margin:0 -16px 28px; padding:26px 16px; }
+  header h1{ margin:0; font-size:21px; }
+  header p{ margin:6px 0 0; font-size:14px; color:#C8E1EF; }
+  h2{ font-size:19px; color:var(--blue); border-bottom:2px solid var(--blue);
+      padding-bottom:6px; margin:38px 0 8px; }
+  h2.part{ background:var(--blue); color:#fff; border:0; padding:8px 12px; margin-top:52px; }
+  .step{ display:inline-block; background:var(--blue); color:#fff; font-size:13px;
+         padding:2px 9px; margin-right:10px; vertical-align:2px; font-weight:400; }
+  .note{ font-size:14px; color:var(--muted); margin:0 0 10px; }
+  .li{ font-size:14px; color:var(--muted); margin:0 0 4px; }
+  .card{ border:1px solid var(--line); background:var(--soft); margin-bottom:12px; }
+  pre{ margin:0; padding:16px; white-space:pre-wrap; word-break:break-word;
+       font-family:inherit; font-size:15.5px; }
+  .bar{ display:flex; justify-content:space-between; align-items:center; gap:10px;
+        border-top:1px solid var(--line); padding:8px 12px; background:#fff; }
+  .bar small{ color:var(--muted); font-size:12.5px; }
+  button{ font-family:inherit; font-size:14px; font-weight:700; color:#fff; flex-shrink:0;
+          background:var(--blue); border:0; padding:9px 18px; cursor:pointer; }
+  button:active{ opacity:.75; }
+  button.done{ background:#2E7D4F; }
+  .warn{ border-left:5px solid #A85B00; background:#FBF2E4; padding:12px 14px;
+         font-size:14.5px; margin:10px 0 12px; }
+  h3{ font-size:16px; color:var(--blue); margin:18px 0 6px; font-weight:700; }
+  details.pts{ margin:4px 0 8px; font-size:14px; }
+  details.pts summary{ cursor:pointer; color:var(--blue); font-weight:700; }
+  .plab{ margin:10px 0 2px; font-weight:700; }
+  details.pts ul{ margin:0; padding-left:1.3em; }
+  details.home{ border:1px solid var(--line); margin:10px 0; }
+  details.home > summary{ cursor:pointer; padding:12px 14px; font-weight:700; color:var(--blue); font-size:16.5px; }
+  details.home[open] > summary{ border-bottom:1px solid var(--line); }
+  details.home .inner{ padding:12px 14px 4px; }
+  .toc{ font-size:14px; margin:6px 0 0; }
+  .toc a{ color:var(--blue); }
+  .tbl{ overflow-x:auto; margin:6px 0 12px; }
+  table{ border-collapse:collapse; font-size:13.5px; min-width:520px; }
+  th,td{ border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  th{ background:var(--soft); }
+  ul.must{ padding-left:1.3em; font-size:15px; }
+  footer{ margin-top:44px; padding-top:16px; border-top:1px solid var(--line);
+          font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>AI×事業計画策定セミナー｜プロンプト集</h1>
+  <p>栗東市商工会　2026年11月9日｜オカピー・パートナーズ 岡 実</p>
+</header>
+
+<p class="note">スライドのワークに合わせて、上から順に使います。<b>コピー</b>を押して、自分のAIに貼り付けて送ってください。</p>
+<div class="warn">
+  手が止まったら、<b>画面を開いたまま手を挙げてください</b>。講師が見に行きます。<br>
+  GビズIDのパスワードや、お客様の個人情報は入力しないでください。
+</div>
+<nav class="toc"><a href="#day">当日使うもの</a>　<a href="#home">帰宅後に使うもの</a>　<a href="#must">申請までに必要なこと</a></nav>
+
+<h2 id="day" class="part">当日使うもの</h2>
+<h2>はじめに｜練習で1回送る</h2>
+<p class="note">新しいチャットを開いて、操作の確認のために1回だけ送ります。返ってきた答えの中身は気にしなくて大丈夫です。</p>
+<div class="card">
+<pre id="p1">こんにちは。今日は事業計画づくりを手伝ってください。準備ができたら「準備できました」とだけ返してください。</pre>
+<div class="bar"><small>練習用です。送ったら、自社用の新しいチャットを開きます</small><button data-copy="p1">コピー</button></div>
+</div>
+<div class="warn"><b>ここで、自社用の新しいチャットを開いてください。</b>No.1からNo.24までは、このチャットに続けて送ります。</div>
+<h2 id="no1"><span class="step">ワーク①</span>No.1 企業概要</h2>
+<p class="note">最初の一本。箇条書きの材料が文章になるのを体験します。</p>
+<div class="card">
+<pre id="p2">このあと、自社の材料を箇条書きで送ります。
+それをもとに、事業計画書の「企業概要」を300字程度で書いてください。
+材料にないことは書かないでください。
+文体は「である調」で書いてください。事業計画書に使う文章は「である調」にそろえてください。お客様向けの案内文や質問文は、用途に合う自然な文体にしてください。
+
+材料を受け取るまでは、「材料をどうぞ」とだけ返してください。</pre>
+<div class="bar"><small>自社用のチャットに、最初に送ります</small><button data-copy="p2">コピー</button></div>
+</div>
+<h3>材料（「材料をどうぞ」と返ってきたら送る）</h3>
+<div class="card">
+<pre id="p3">・商品・サービス：
+・主なお客様：
+・販売・提供の方法：
+・所在地（市町村まで）・営業年数・体制：
+・最近の状況：
+・今、困っていること・改善したいこと：</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p3">コピー</button></div>
+</div>
+<p class="note">まだ開業していない人は、「今していること」と「予定」を分けて書きます。</p>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>知らない人に、何をしている会社かが伝わるように書く。商品名やお客様は具体的に。</li><li>材料にないことを書かせないのは、自分の会社の計画にするためです（P.1）。</li><li>文体を最初にそろえておくと、あとの文章もまとまります。</li></ul><p class="plab">留意点</p><ul><li>材料にない言葉（「専門店」「地域密着」など）が入っていたら直す。</li><li>材料の項目名（「商品・サービスとして」など）がそのまま残ることがあります。自分の言葉に直します。</li><li>今日の文章は、申請画面の「1-1 自社の概要」のたたき台です。困っていることは「1-3 経営課題」の材料になります。売上・利益の状況（1-2）は、No.11で作ります。</li></ul></details>
+<h2 id="no2"><span class="step">ワーク②</span>No.2 強みとお客様</h2>
+<p class="note">普段の仕事で当たり前にしていることを書き、AIに強みの候補として言い直してもらいます。うちを強みのない店だと思っている人も、そのまま使えます。まだ開業していない人は、前の仕事で頼まれたことや、試作品・試食への反応を書きます。</p>
+<div class="card">
+<pre id="p4">次は、強みを考えたいです。私は「うちには強みがない」と思っています。下に、普段の仕事で当たり前にしていることを書きます。そこから、お客様に選ばれる理由（強み）の候補を見つけてください。
+
+・最近、お客様に頼まれたこと、言われたこと：
+・面倒でも、手間をかけて続けていること：
+・お客様が、ほかではなくうちを選ぶ理由（想像でよい）：
+
+【返し方】
+・強みの候補を3つまで。それぞれ、強み（1行）／もとになった私の言葉／誰に役立つか。
+・私が書いていないことは書かないでください。
+・最後に「ピンとくる番号と、違うところがあれば教えてください」と聞いて止まってください。
+・私が返したら、強み・裏づける事実・役立つお客様の3行にまとめてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p4">コピー</button></div>
+</div>
+<h3>候補が出たら（番号と一言を送る）</h3>
+<div class="card">
+<pre id="p5">（　）番。（違うところや、思い出したことがあれば一言。例：1番。ただ、相談は電話でも受けている）</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p5">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>「丁寧」「高品質」で止めず、お客様に喜ばれた事実で言う（審査①）。</li><li>強みには、裏づける事実を添える（審査③「客観的事実に基づいて」）。</li><li>その強みが届くお客様まで決める（審査②）。補助事業に使えない強みでは意味がありません。</li></ul><p class="plab">留意点</p><ul><li>候補は、選んだあとでも言い方を直せます。自分の実感と違うところは一言返します。「丁寧」のように、何をしているか分からない言葉は、していることに言い換えます。</li><li>「リピーターがいる」は結果です。なぜ来てくれるのか、が強みです。</li><li>今のお客様の利用を増やすのか、新しいお客様に届けるのかを考えます。</li></ul></details>
+<h2 id="no3"><span class="step">ワーク③</span>No.3 販路開拓の取組</h2>
+<p class="note">強みとお客様、困っていることをもとに、補助金で行う取組を具体的にします。</p>
+<div class="card">
+<pre id="p6">次は、さきほどまとめた強みとお客様、困っていることをもとに、補助金で行う「販路開拓の取組」を考えたいです。
+このあと、私の条件を送ります。
+
+ルール
+・取組案を2〜3個、各2行で出す。それぞれに「誰に・何を・どう届けるか」を入れる
+・私の条件で実行できない案は出さない
+・ホームページや広告を使う案は、誰に何を伝え、購入・予約・相談にどうつなげるかまで書く
+・すでに考えている取組があれば、新しい案は出さず、それを「誰に・何を・どう届けるか」に整理する
+・推測した部分には【要確認】
+
+条件を受け取るまでは何も作らず、「条件をどうぞ」とだけ返してください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p6">コピー</button></div>
+</div>
+<h3>条件（「条件をどうぞ」と返ってきたら送る）</h3>
+<div class="card">
+<pre id="p7">・使える人手：
+・予算の目安：
+・いつまでに（補助金を使うなら、交付決定のあとに始める）：
+・すでに考えている取組（あれば）：</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p7">コピー</button></div>
+</div>
+<h3>案が出たら（違う所や足したい条件があれば、先に一つだけ書く）</h3>
+<div class="card">
+<pre id="p8">この案で進めます。（案がいくつか出たときは「2番目の案で進めます。」のように番号を書く）
+担当・時期・必要な準備を、分かる範囲で整理してください。
+お客様が知ってから、買う・予約する・相談するまでの流れも、短い箇条書きで書いてください。
+費用は分かるものだけ書き、分からないものは空欄のまま【要確認】としてください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p8">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>「誰に・何を・どう届けるか」で具体的にする（審査③「具体的」）。</li><li>自分の人手・予算・時期でできる形にする（審査③「実現可能性」）。</li><li>ホームページや広告は、作ること自体を目的にしない。告知を見たお客様が、どう予約・購入・相談するかまで具体化します。経費の条件はNo.15で確かめます。</li></ul><p class="plab">留意点（出てきたら、自分に問う）</p><ul><li>この取組で、今の困りごとの何が改善しますか？</li><li>予約や相談は、どうやって受けますか？（電話・ホームページのフォーム・LINEなど）</li><li>新しいお客様に届きますか？</li><li>補助金で行う分は、交付決定のあとに始められますか？（交付決定前の発注・契約・支払は対象外。P.24）</li></ul></details>
+<h2 id="no4"><span class="step">ワーク④</span>No.4 売上と粗利</h2>
+<p class="note">取組が売上と粗利にどうつながるかを、理由つきで整理します。</p>
+<div class="card">
+<pre id="p9">この取組が、売上と粗利にどうつながるか、一緒に整理してください。
+
+ルール
+・質問は1回に1つ
+・次の順に聞く：①今の売上がどう生まれているか（どんなお客様が、何に、どのくらい払っているか）　②この取組で増えそうな注文・契約・利用と、そのうち今の売上が別の買い方に置き換わるだけの分はないか　③そう考える理由（実績・お客様の声・問い合わせなど）　④増える分にかかる材料・仕入れなどの費用
+・開業前の場合は、どんなお客様が何にいくら払うと見込んでいるかと、その理由を聞く
+・理由は私の答えから書く。私が言っていない理由は書かない
+・今の売上が別の買い方に置き換わる分は、売上の増加として二重に数えない。単価や購入回数が変わる場合は、変更前との差額で考える
+・粗利は、売上から材料・仕入れなどの費用を引いて考える
+・数字は私が答えたものだけを使う。分からない数字は埋めずに「確認すること」に入れる
+・4つ答えたら、次の形で短くまとめる
+　①この取組で増えるもの
+　②そう考える理由（実績・お客様の声・問い合わせなど）
+　③試算（分かる範囲だけ）
+　④作ったもの（ホームページ・設備など）を、今後どう使い続けるか
+　⑤これから確認すること（箇条書き。理由を答えていない数字があれば、それも入れる）</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p9">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>第20回から、売上高・売上総利益（粗利）が増える見込みを、根拠とともに示すことが求められています（P.7、審査②③）。</li><li>増える分は「お客様の数×来てくれる回数×1回の金額」などに分け、それぞれに理由をつける。サービス業なら、予約数や通う回数で考える。</li><li>今の売上が別の買い方に置き換わる分は、売上の増加として二重に数えません。単価や購入回数が変わる場合は、変更前との差額で考えます。</li><li>補助事業で作ったものを、終わったあとも使い続けることを示す（審査③）。</li></ul><p class="plab">留意点</p><ul><li>数字ごとに「その数字は、何を見てそう思いましたか？」と自分に聞く。数えた数字か、感覚か。</li><li>感覚の数字は、まず個別相談までの1週間、記録をとって確かめる（例：断った注文や帰ったお客様を数える）。</li><li>粗利を増やす道には、数を増やすだけでなく、1回の金額の見直しもあります。その場合は、その値段で選ばれる理由も書きます。</li><li>まとめの④（作ったものを今後どう使い続けるか）が、自分の考えと合っているか確かめます。自分が伝えていない使い方はAIの提案なので、採用するか決め、必要なら直します。</li></ul></details>
+<h2 id="no5"><span class="step">ワーク④の最後</span>No.5 ここまでのまとめ（ワーク④の最後・途中でやめるとき）</h2>
+<p class="note">ワーク④の最後と、帰宅後に途中でやめるときに使います。念のための控えです。続きは基本、同じ会話で行います。</p>
+<div class="card">
+<pre id="p10">ここまでに作ったものを、言葉を変えずに、そのまま順に並べてください。それぞれ、最後に確かめて直した版を使ってください。
+短くまとめ直さないでください。まだ作っていないものは「未作成」と書いてください。
+①企業概要の文章
+②強み・裏づける事実・役立つお客様の3行
+③取組の整理（担当・時期・準備・お客様の流れ）
+④売上と粗利のまとめ
+⑤このほかに作ったもの（弱み・顧客ニーズ・方針など）</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p10">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>「短くまとめて」と頼むと、AIは削ります。「そのまま並べて」と頼みます。</li><li>出てきた文章をコピーして、自分宛てのメールかLINEに貼っておきます。</li><li>このあとNo.18を送り、写真・図・表の候補を一つ記録します。</li><li>AIが言葉を足したり、まだ作っていないものを作ったりすることがあります。①〜④が、自分で確かめて直した版と同じかを見比べます。</li></ul></details>
+<h2 id="no18"><span class="step">ワーク④のあと（時間がある人）</span>No.18 写真・図・表の候補（No.5のあと）</h2>
+<p class="note">No.5のまとめを保存したあとに送ります。</p>
+<div class="card">
+<pre id="p11">次は、上のまとめとは別の質問です。
+この計画に、写真・図・表を添えるとよい箇所を一つだけ提案してください。
+計画のどの部分か、何を写す・描くか、そこから何を読み取ってほしいかを、1行で書いてください。
+文章だけで十分なら「なし」と書いてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p11">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>写真や図は、文章より早く「何をどう変えるか」を伝えられます。</li><li>出てきた候補は、申請準備シートの「添える写真・図・表／用意するもの」の欄にメモします。</li><li>ほかの候補も見たいときは、帰宅後に「ほかに2つ挙げてください」と送ります。図や表は、No.20〜22でAIに作ってもらえます。</li></ul></details>
+<h2 id="no24"><span class="step">次の一歩</span>No.24 次の一歩（当日の最後）</h2>
+<p class="note">計画を、補助金の結果を待たずに、来週から試せる一歩にします。</p>
+<div class="card">
+<pre id="p12">ここまでの計画の取組を、補助金の結果を待たずに、来週から小さく試すとしたら、最初の一歩の候補を3つ示してください。
+・お金をほとんどかけず、1〜2週間でできること
+・試すと何が分かるか（お客様の反応、数字など）
+私が話していない設備・販売経路・SNSの利用などを、すでにあるものとして扱わないでください。新しく必要な場合は、準備するものとして示してください。
+候補を示したら、そこで止めて、私が選ぶのを待ってください。
+私が選んだら、実際に使う文章や記録表のたたき台を作ってください（質問なら3問まで、案内文なら200字程度）。足りない情報は【要確認】としてください。</pre>
+<div class="bar"><small>同じチャットに続けて送ります</small><button data-copy="p12">コピー</button></div>
+</div>
+<h3>候補が出たら（番号を入れて送る）</h3>
+<div class="card">
+<pre id="p13">候補の（　）番目にします。</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p13">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>迷ったら、ワーク④で【要確認】にした数字を、個別相談までの1週間で数える一歩を選びます。数えた数字は、売上・粗利の根拠になります。</li><li>実際に得たお客様の反応や数字は、計画の見直しや効果の試算（No.4、No.11）の根拠に使えます。聞いた人数や条件も残しておきます。</li></ul><p class="plab">留意点</p><ul><li>たたき台は、店の実情に合わせて自分で直してから使います。</li></ul></details>
+<h2 id="home" class="part">帰宅後に使うもの</h2>
+<p class="note">当日の会話を履歴から開いて、続けて使います。会話が見つからないときだけ、No.6から始めます。</p>
+<p class="note">帰宅後の進め方（全部を順にやらなくてかまいません）</p>
+<p class="note">・まず進める：No.7 弱み、No.8 顧客ニーズ、No.10 競合</p>
+<p class="note">・資料を手元に用意して進める：No.11 売上・利益の状況（決算書）、No.15 経費（見積書）、No.25 見積を頼むメモ</p>
+<p class="note">・材料がそろったらまとめる：No.12 経営方針・目標、No.13 スケジュール、No.16 事業名、No.17 読み直し</p>
+<p class="note">・「市場の動向」の欄は必ず準備する（AIによる調査は任意）：把握している商圏・業界の変化や資料をもとに書き、材料が不足する場合はNo.9 市場・地域の動きや商工会への相談で補う</p>
+<p class="note">・必要な場合だけ：No.6 続きを始める、No.14 業務効率化</p>
+<p class="note">・写真・図・表をつくる：No.19 写真の説明、No.20 表、No.21 図、No.22 完成イメージ</p>
+<p class="note">・別の立場から点検する：No.23 審査員役・お客様役</p>
+<p class="note">・申請欄の文章にする：①申請準備シートから、その欄の仕上げ指示をコピーする　②これまで相談したAIのチャットに貼り、出てきた文章を確認・修正する　③申請準備シートの該当欄に貼り、保存して文字数を確かめる</p>
+<p class="note">・途中でやめるときは、No.5でここまでの内容を残しておきます。</p>
+<p class="note">見出しを押すと開きます。</p>
+<details class="home" id="no6"><summary>No.6 続きを始める（新しい会話で始めるときだけ）</summary>
+<div class="inner">
+<div class="card">
+<pre id="p14">これから、補助金の事業計画を作る続きをします。
+まず、前回作ったまとめを貼ります。事業計画書に使う文章は「である調」にそろえてください。お客様向けの案内文や質問文は、用途に合う自然な文体にしてください。
+まとめを受け取るまでは、「まとめをどうぞ」とだけ返してください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p14">コピー</button></div>
+</div>
+</div></details>
+<details class="home" id="no7"><summary>No.7 弱み</summary>
+<div class="inner">
+<div class="card">
+<pre id="p15">次は、当社の「弱み」を整理したいです。ここまでの内容をふまえて、私に質問してください。
+
+ルール
+・質問は1回に1つだけ。まず3つまで
+・次の順に聞く：①お客様に応えきれていないこと（待たせる・断る・手が回らないなど）　②それが起きている店や会社の中の理由（人手・設備・やり方など）　③その結果、困っていること
+・まだ開業していない場合は、開業後に足りなくなりそうなものを聞く
+・3つ答えたら、弱みの候補を2〜3個、各1行で出す。それぞれ、私の答えのどの事実にもとづくかを添える
+・私が言っていないことは弱みにしない。推測した部分には【要確認】
+・最後に、今回の取組でその弱みがどう変わるかを1行で示す
+
+（候補が出たら）候補の（　）番目にします。私が答えた事実の言葉を使って、1行にまとめてください。</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p15">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査①は、強みだけでなく弱みも把握しているかを見ます。</li><li>弱みと取組がつながると、「なぜこの取組をするのか」に筋が通ります。</li></ul><p class="plab">留意点</p><ul><li>弱みは「起きていること（待たせる）」より、「その理由（製造が1人など）」の方が計画に使えます。</li><li>AIが、言っていないつながり（「AだからBになる」）を足していないか見ます。</li></ul></details>
+</div></details>
+<details class="home" id="no8"><summary>No.8 顧客ニーズ（自分が見聞きしたことから）</summary>
+<div class="inner">
+<div class="card">
+<pre id="p16">次は、「お客様が求めていること（顧客ニーズ）」を、私が実際に見聞きしたことから整理したいです。私に質問してください。
+
+ルール
+・質問は1回に1つだけ。まず3つまで
+・次の順に聞く：①お客様からよく聞かれること・頼まれること　②断った注文や、応えられなかった要望　③最近増えた注文や、お客様の変化
+・3つ答えたら、顧客ニーズを2〜3行でまとめる。それぞれ、私の答えのどの事実にもとづくかを添える
+・統計や調査の数字は書かない。必要そうなら「確認すること」に入れる
+・最後に、今回の取組がどのニーズに応えるかを1行で示す</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p16">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査②は、顧客のニーズを捉えた計画かを見ます。いちばん確かな材料は、自分のお客様の声と、断った注文です。</li><li>市場・顧客ニーズの中心は、このNo.8です。</li><li>断った注文は、No.4の「増える分」の根拠にもなります。数を記録しておくと強い材料です。</li></ul></details>
+</div></details>
+<details class="home" id="no9"><summary>No.9 市場・地域の動き（AIによる調査は任意）</summary>
+<div class="inner">
+<p class="note">No.8（自分で見聞きした顧客ニーズ）に、公的なデータを1〜2個添えたいとき。〇〇には自分の所在地（市町村）を書きます。</p>
+<div class="card">
+<pre id="p17">次は、「市場や地域の動き」を整理したいです。所在地は〇〇市です。
+
+ルール
+・当社の計画に関係しそうな数字を、インターネットで検索して3つまで示す
+・それぞれに、数字そのもの、その数字の年、出典の名前、ページのURLを書く
+・国や自治体、業界団体などの資料を優先する
+・URLを示せないものは出さない
+・最後に、その動きと、当社の顧客ニーズ・取組がどうつながるかを1行で示す</pre>
+<div class="bar"><small>【　】や（　）、「：」のあとを自分のことに書き換えて送ります</small><button data-copy="p17">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>公募要領は、客観的なデータを用いた市場や顧客ニーズの分析を求めています（P.7、審査②「市場（商圏）」）。</li><li>市場・顧客ニーズの中心は、No.8の自分で見聞きした事実です。No.9のデータは、それを補うものです。AIによる調査は任意です。「市場の動向」は、把握している商圏・業界の変化や資料をもとに書きます。材料が不足する場合は、No.9や商工会への相談で補います。</li><li>減っている数字でも、使えないとは限りません。「全体は減っているが、だからこそ〇〇を求める人がいる」と計画に生かせることもあります。どう生かすかを考えるのは自分です。</li></ul><p class="plab">留意点（AIの検索結果は、必ず開いて確かめる）</p><ul><li>URLを開き、その数字が本当に載っているかを確かめる。</li><li>国や自治体のページかを確かめる。民間のまとめサイトなら、その数字は使わないか、商工会で確かめる。</li><li>いつの資料かを確かめる。古すぎる資料は使わない。</li><li>元のページに書いてある方向（増えている・減っている）が、AIの要約と同じかを確かめる。AIは計画に都合のよい方向にまとめることがあります。</li><li>所在地が違う地名になっていたら、「所在地は〇〇市です」と一つだけ伝えて直す。</li><li>業種の数字が出なければ、無理に探さない。業種の市場データは、商工会の指導員に相談します（様式4の面談の機会もあります）。</li></ul></details>
+</div></details>
+<details class="home" id="no10"><summary>No.10 競合</summary>
+<div class="inner">
+<div class="card">
+<pre id="p18">次は、「競合（お客様がほかに選ぶ店やサービス）」を整理したいです。私に質問してください。
+
+ルール
+・質問は1回に1つだけ。まず3つまで
+・次の順に聞く：①お客様が当社の代わりに選んでいる店やサービス　②そことの違い（お客様から見て）　③お客様が当社を選ぶ理由、または選ばない理由
+・3つ答えたら、競合との違いを2〜3行でまとめる。それぞれ、私の答えのどの事実にもとづくかを添える
+・私が言っていないことは書かない。推測した部分には【要確認】
+・最後に、当社の強みとのつながりを1行で示す</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p18">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>競合と比べると、お客様から見た違いがはっきりします。</li></ul><p class="plab">留意点</p><ul><li>他店の実名や悪口は要りません。「近くのスーパーの贈答品売り場」「ネット通販」のように種類で書きます。</li></ul></details>
+</div></details>
+<details class="home" id="no11"><summary>No.11 売上・利益の状況（決算書を見ながら）</summary>
+<div class="inner">
+<div class="card">
+<pre id="p19">次は、決算書（または確定申告書）を見ながら、売上と粗利の状況を整理したいです。私に質問してください。
+
+ルール
+・質問は1回に1つだけ
+・次の順に聞く：①直近の決算がいつまでのものか　②その年の売上高と、売上総利益（粗利）　③その前の年の売上高と売上総利益（分かれば2年前も）　④売上や粗利が増えた・減った理由
+・売上総利益（粗利）の欄が見つからないときは、売上原価の欄を一緒に探す。分からなければ「確認すること」に入れる
+・まだ開業していない場合は、開業後1年目の売上・粗利の見込みと、その理由を聞く
+・数字は私が答えたものだけを使う
+・4つ答えたら、次の形でまとめる
+　①売上・粗利の推移（表にせず、年ごとに1行）
+　②増えた・減った理由
+　③今回の取組のあと、売上高と粗利がいくらになる見込みか（今の数字＋取組で増える分。増える分は、1年間続いた場合として書く）
+　④確認すること</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p19">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査①は、経営状況を適切に把握しているかを見ます。</li><li>No.4の「増える分」と今の数字をつなげて、「今いくらから、いくらになるか」を示します。</li></ul><p class="plab">留意点</p><ul><li>入れるのは数字だけ。店名・口座番号・取引先名は入れません。</li><li>申請に使う数字は、大体ではなく決算書の数字にします。</li><li>計算結果は、自分でも電卓で確かめます。</li><li>取組を始めた年は、1年分まるごとは増えません。初年度と、その次の年を分けて考えます。</li></ul></details>
+</div></details>
+<details class="home" id="no12"><summary>No.12 経営方針・目標と今後のプラン</summary>
+<div class="inner">
+<div class="card">
+<pre id="p20">次は、「経営方針・目標と今後のプラン」を考えたいです。
+
+ルール
+・ここまでの強み・弱み・顧客ニーズ・取組・試算をもとに、案を1つ書く
+・次の形で書く：①これから大事にすること（方針）を1〜2行　②3年後に目指す姿を1行　③今回の補助事業で行うこと　④2年目・3年目にやること（分からなければ【要確認】）
+・数字は、ここまでで私が答えたものだけを使う
+・書いたあとで、私に確認したいことを1つだけ質問する</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p20">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査②は、方針・目標が強みや弱み、顧客ニーズを踏まえ、売上高・売上総利益の増加を目指しているかを見ます。</li><li>今回の補助事業は、方針に向かう一歩として位置づけます。</li></ul><p class="plab">留意点</p><ul><li>「地域に選ばれ続ける店」のような、どこにでも当てはまる言葉は、自分の言葉に直します。</li><li>2〜3年目が決まっていなければ、【要確認】のまま、商工会に相談するときに持っていきます。</li></ul></details>
+</div></details>
+<details class="home" id="no13"><summary>No.13 スケジュール</summary>
+<div class="inner">
+<div class="card">
+<pre id="p21">次は、補助事業のスケジュールを作りたいです。
+
+ルール
+・交付決定を「1か月目」として、取組が終わるまでを月ごとに書く
+・各月に、やることと担当を1行で書く
+・発注や契約は、交付決定のあとに置く
+・担当や時期が決まっていないものは【要確認】
+・書いたあとで、私に確認したいことを1つだけ質問する</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p21">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>誰が、いつ、何をするかが分かると、実現可能性が伝わります（審査③）。</li></ul><p class="plab">留意点（公募要領 P.3、P.24）</p><ul><li>採択発表は2027年3月頃の予定。交付決定は、採択発表から概ね1〜2か月かかる場合があります。</li><li>補助事業は、交付決定日から2028年3月31日までに終える必要があります（支払まで含む）。</li><li>交付決定前の発注・契約・支払は、補助の対象外です。</li><li>「1か月目」などの月の番号を実際の月に置き換えて、支払いまで含めて、2028年3月31日までに終わるか確かめます。</li></ul></details>
+</div></details>
+<details class="home" id="no14"><summary>No.14 業務効率化（任意・必要な人だけ）</summary>
+<div class="inner">
+<div class="card">
+<pre id="p22">次は、販路開拓とあわせて行う「業務効率化」の取組があるかを考えたいです。私に質問してください。
+
+ルール
+・質問は1回に1つだけ。まず3つまで
+・次の順に聞く：①手間や時間がかかっている作業　②それを減らす方法で考えていること　③減った時間を何に使うか
+・3つ答えたら、取組案を1〜2個、各2行で出す
+・私が言っていないことは書かない。推測した部分には【要確認】</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p22">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>業務効率化（生産性向上）は、販路開拓等の取組とあわせて行う場合に対象になります（P.6）。単独ではできません。</li><li>減った時間を販路開拓に使う、とつながると筋が通ります。</li></ul><p class="plab">留意点</p><ul><li>入れるかどうか迷ったら、商工会に相談します。</li></ul></details>
+</div></details>
+<details class="home" id="no15"><summary>No.15 経費（見積書を見ながら）</summary>
+<div class="inner">
+<div class="card">
+<pre id="p23">次は、補助事業にかかる経費を整理したいです。見積書やカタログを見ながら答えます。私に質問してください。
+
+ルール
+・質問は1回に1つだけ。まず3つまで
+・次の順に聞く：①取組に必要なもの・頼むこと（ホームページ制作、チラシ、機械など）　②それぞれの金額（税抜か税込かも）　③どこに頼む予定か、見積は何社からとったか
+・3つ答えたら、品目ごとに1行で、品目・金額・見積の有無を並べる
+・補助の対象になるかどうかは判断しない。気になる点は「確認すること」に入れる
+・最後に、取組と経費が対応しているかを確かめる。取組にない経費、経費のない取組があれば指摘する</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p23">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査④は、計画に合った必要な経費か、金額が正確・明確かを見ます。</li><li>経費に出てくるものは、取組の説明にも書いておきます（例：予約の案内チラシを作り、近所に配る）。</li><li>申請に使う金額は、大体ではなく見積書の金額にします。</li></ul><p class="plab">留意点（公募要領。対象になるかどうかはAIに判断させず、商工会に確認する）</p><ul><li>補助率は2/3、補助上限は50万円（特例で上乗せあり）（P.3）。</li><li>広報費・ウェブサイト関連費は、それぞれ補助金の申請額で30万円（税込）まで（P.13〜14）。広報費の上限と、広報費だけでは申請できないことは、第20回で新しく設けられた規定です。ウェブサイト関連費だけでは申請できないことは、従来からの規定です。</li><li>1件の発注が50万円（税込）を超えるときは、2者以上の見積が必要です（P.12）。</li><li>消費税は、原則として補助の対象外です（P.20）。</li><li>交付決定前の発注・契約・支払は対象外です（P.24）。</li></ul></details>
+</div></details>
+<details class="home" id="no16"><summary>No.16 事業名</summary>
+<div class="inner">
+<div class="card">
+<pre id="p24">次は、補助事業の「事業名」の候補を3つ出してください。
+今回の取組の「誰に・何を・どう届けるか」が分かる名前にして、それぞれ30字以内で書いてください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p24">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">留意点</p><ul><li>言っていない言葉（「解消」「システム」など）が入っていないか見ます。</li></ul></details>
+</div></details>
+<details class="home" id="no17"><summary>No.17 読み直し</summary>
+<div class="inner">
+<div class="card">
+<pre id="p25">最後に、ここまでの内容を読み直して、次の点を指摘してください。直した文章は書かないでください。
+・強み・弱み・顧客ニーズ・取組・効果が、つながっていない所
+・理由が書かれていない数字
+・私の答えにない言葉（「丁寧に」「解消する」のような褒め言葉や言い切り）を、そのまま抜き出す</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p25">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>AIに「間違いはありますか」と聞くと「ありません」と答えることがあります。「抜き出して」と作業で頼むと見つけやすくなりますが、見落としもあります。</li><li>直すかどうかは自分で決めます。残してよい言い換えもあります。</li></ul><p class="plab">留意点</p><ul><li>話のつながりの飛躍（答えていない「AだからB」）は、AIの読み直しでは見つからないことがあります。最後は、知り合いや商工会の人に読んでもらいます。</li></ul></details>
+</div></details>
+<details class="home" id="photo"><summary>写真・図・表をつくる（帰宅後）</summary>
+<div class="inner">
+<p class="note">計画の文章に写真・図・表を添えると、何をどう変えるのかが伝わりやすくなります。写真は自分で撮り、図や表はAIに作ってもらえます。申請画面では「画像の挿入」「表の挿入」で入れます（画像は1枚150字程度、表は300字程度として文字数に数えられます。第19回の申請システム操作手引き）。</p>
+<h3>どこに何を添えるか（例）</h3>
+<div class="tbl"><table><tr><th>欄（申請画面）</th><th>添える写真・図・表</th><th>何を伝えるためか</th></tr><tr><td>1-1 自社の概要</td><td>店舗の外観・店内、主な商品、作業の様子</td><td>どんな店か</td></tr><tr><td>1-2 現在の売上・利益の状況</td><td>売上・利益の推移の表やグラフ</td><td>今の状況</td></tr><tr><td>1-3 経営課題</td><td>今の困りごとが分かる写真</td><td>なぜ取り組むのか</td></tr><tr><td>2-2 顧客ニーズ／3 強み・弱み</td><td>アンケートや口コミ、メディア掲載、競合との比較表</td><td>選ばれる理由</td></tr><tr><td>4-2 今後のプラン</td><td>月別のスケジュール表</td><td>実行できるか</td></tr><tr><td>補助事業 2-3 具体的な取組</td><td>導入する場所の今の写真、試作品、流れ図、完成イメージ</td><td>何をどう変えるか</td></tr><tr><td>補助事業 4-1・4-2 効果</td><td>今と取組後の比較表、試算の表</td><td>効果の根拠</td></tr></table></div>
+<p class="note">今の写真と計画案を並べると、比べやすくなります。文字や写真が小さくならないようにします。写真や図の下には、そこから何を読み取ってほしいかを1〜2行で書きます。</p>
+</div></details>
+<details class="home" id="no19"><summary>No.19 写真から説明を作る</summary>
+<div class="inner">
+<p class="note">取組の場所、商品、試作品などの写真に添える説明を作ります。</p>
+<div class="card">
+<pre id="p26">これから写真を1枚送ります。事業計画の「（入れる部分。例：取組の内容）」に入れる写真です。
+さきほどまでの計画をもとに、次の3つを書いてください。
+・写真に写っているもの（見て分かることだけ。推測した所には【要確認】）
+・写真に書き込むとよい矢印や注記の文言（3つまで。例：「ここに看板を設置」）
+・写真の下に付ける説明（この写真から何を読み取ってほしいかを1〜2行）</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p26">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>書き込みの案は、写真に矢印や文字を入れるときに使います。</li></ul><p class="plab">留意点</p><ul><li>無料版では、写真を読む回数に上限があります。止まったら時間をおくか、別のAIで試します。</li></ul></details>
+</div></details>
+<details class="home" id="no20"><summary>No.20 表を作る</summary>
+<div class="inner">
+<p class="note">スケジュール、効果の試算、取組の前後の比較などを表にします。</p>
+<div class="card">
+<pre id="p27">次は、事業計画に入れる表を作りたいです。
+作る表：（スケジュール／効果の試算／取組の前後の比較／お客様の声の整理 から一つ）
+ここまでの会話の内容と、私がこれから答える数字だけを使ってください。足りない数字は空欄にして【要確認】と書き、私に質問してください。
+表は列と行が分かる形で出し、最後に、この表から何を読み取ってほしいかを1〜2行で書いてください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p27">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>出てきた表は、申請画面の「表の挿入」で作った表に写します。</li></ul><p class="plab">留意点</p><ul><li>表の数字が、自分が答えた数字と同じかを確かめます。</li></ul></details>
+</div></details>
+<details class="home" id="no21"><summary>No.21 図を作る</summary>
+<div class="inner">
+<p class="note">取組の流れなどを、図の画像にしてもらいます。</p>
+<div class="card">
+<pre id="p28">上の計画の「（お客様が知ってから買うまでの流れ／課題→取組→効果のつながり／作業手順の前と後 から一つ）」を、図の画像にしてください。
+・箱は5つまで。矢印でつなぐ
+・箱の文字は日本語で、1つ10字以内
+・計画にない手順や言葉は入れない</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p28">コピー</button></div>
+</div>
+<h3>図ができたら</h3>
+<div class="card">
+<pre id="p29">この図の下に付ける説明として、この図から何を読み取ってほしいかを1〜2行で書いてください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p29">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">留意点</p><ul><li>文字の誤りと、計画にない内容がないかを見ます。直すときは「3番目の箱の文字を『店頭で受け取る』に直してください。ほかは変えないでください」のように一つずつ頼み、直ったかを自分の目で見ます。二つまとめて頼むと、一つ直らないことがあります。</li></ul></details>
+</div></details>
+<details class="home" id="no22"><summary>No.22 完成イメージを作る</summary>
+<div class="inner">
+<p class="note">予約画面や看板など、取組の完成イメージを画像にしてもらいます。</p>
+<div class="card">
+<pre id="p30">上の計画の「（ギフトセットの予約画面／看板／パッケージ など）」の完成イメージを、画像にしてください。
+計画にない商品名や値段は入れないでください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p30">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>申請に入れるときは、画像の下に「完成イメージ（計画案）」と書きます。今の写真と並べると、何が変わるかが伝わります。</li></ul><p class="plab">留意点</p><ul><li>直すときは、No.21と同じく一つずつ頼みます。</li></ul></details>
+</div></details>
+<details class="home" id="no23"><summary>No.23 別の立場から点検する（審査員役・お客様役）</summary>
+<div class="inner">
+<p class="note">自分では気づきにくい点を、別の立場から見つけてもらいます。</p>
+<h3>審査員役</h3>
+<div class="card">
+<pre id="p31">あなたは補助金の審査員です。ここまでの計画を読んで、分かりにくい点や、根拠が足りない点を3つ質問してください。直した文章は書かないでください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p31">コピー</button></div>
+</div>
+<h3>お客様役</h3>
+<div class="card">
+<pre id="p32">あなたは（取組で狙うお客様。例：手土産を探している地域の40代）です。ここまでの計画の取組や案内について、分かりにくい点や、確かめたい点を3つ挙げてください。</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p32">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>審査員役の質問に、計画の文章で答えられるようにします。</li></ul><p class="plab">留意点</p><ul><li>AIのお客様役の答えは、実際のお客様の声ではありません。確かめたいことを見つけるために使い、実際のお客様に聞いてみます（No.24）。</li></ul></details>
+</div></details>
+<details class="home" id="no25"><summary>No.25 見積を頼むメモ（業者に相談する前に）</summary>
+<div class="inner">
+<p class="note">取組に必要なものを業者に見積してもらう前に、伝えることを整理します。</p>
+<div class="card">
+<pre id="p33">ここまでの計画の取組について、業者に相談して見積をもらいたいです。業者に渡す見積依頼メモを作ってください。
+・頼みたいもの（ホームページ制作、チラシ、機械など）ごとに分ける
+・それぞれに、目的（誰に、何を届けるためか）、必要な内容や数量、希望の時期を書く
+・見積書には、項目ごとの内訳を書いてもらうよう頼む
+・計画にないものや、私が言っていない条件は書かない。分からないところは【要確認】にする</pre>
+<div class="bar"><small>コピーして、そのまま送ります</small><button data-copy="p33">コピー</button></div>
+</div>
+<details class="pts"><summary>ポイントと留意点</summary><p class="plab">ポイント</p><ul><li>内訳のある見積は、審査④（何に、いくら必要か）の根拠になります。11月18日の個別相談にも持ってきてください。</li></ul><p class="plab">留意点</p><ul><li>発注・契約は交付決定のあとです。見積をもらうのは申請の前でかまいません。</li><li>1件の発注が50万円（税込）を超えるときは、2者以上から見積をとります（P.12）。</li></ul></details>
+</div></details>
+<h2 id="must" class="part">申請までに必要なこと</h2>
+<ul class="must"><li>GビズIDプライムのアカウント（まだの人はすぐに。オンライン申請なら早い）</li><li>商工会に事業支援計画書（様式4）の発行を依頼：締切 2026年12月4日（P.3）</li><li>申請締切：2026年12月15日 17:00、電子申請のみ（P.3）</li><li>加点を選ぶ場合は、重点政策加点・政策加点から各1種類、合計2種類まで（P.33〜）</li><li>商工会・商工会議所以外の第三者の支援を受けた場合は、申請時に記載が必要（P.1）</li></ul>
+
+<footer>
+  オカピー・パートナーズ（<a href="https://oka-pi.com">oka-pi.com</a>）／中小企業診断士 岡 実
+</footer>
+</div>
+<script>
+document.querySelectorAll('button[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var text = document.getElementById(b.dataset.copy).innerText;
+    var label = b.textContent;
+    var done = function () {
+      b.textContent = 'コピーしました';
+      b.classList.add('done');
+      setTimeout(function () { b.textContent = label; b.classList.remove('done'); }, 1800);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch (e) { b.textContent = '長押しで選択'; }
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
